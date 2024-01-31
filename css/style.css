@@ -1,0 +1,77 @@
+/* Importation des polices */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+/* Styles de base */
+body {
+    font-family: 'Inter', sans-serif;
+    color: #000000; 
+}
+
+/* Styles de la barre de navigation */
+.navbar, .navbar * {
+    color: #000000;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+}
+
+.container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.navbar-collapse {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar-toggler {
+    border-color: #000000;
+    margin-right: 80px;
+}
+
+
+/* Styles du logo */
+.navbar-brand {
+    font-size: 36px; 
+    margin-left: 80px; 
+}
+
+.navbar-brand:hover, .navbar-brand:focus {
+    color: inherit; 
+}
+
+.sub-navbar-brand {
+    color: #FFAA00;
+}
+
+/* Styles des liens de la barre de navigation */
+.navbar-nav {
+    align-items: center;
+    font-size: 16px;
+    margin-top: 9px;
+}
+
+.navbar-nav .nav-link {
+    margin-right: 150px; 
+}
+
+.navbar-nav .nav-link:hover, .navbar-nav .nav-link:focus {
+    color: #2AC4FE;
+}
+
+.navbar-nav .nav-link.active {
+    color: #2AC4FE;
+}
+
+
+
+
+
+
