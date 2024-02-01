@@ -1,2 +1,2 @@
 <?php
-$pdo = new PDO("mysql:host=localhost;dbname=", "root", "");
+$pdo = new PDO("mysql:host=localhost;dbname=elitcar", "root", "");
