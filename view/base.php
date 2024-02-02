@@ -13,6 +13,10 @@
 </head>
 <body>
 
+<?php
+    session_start(); 
+?>
+
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a target="_self" href="index.php"><img src="img/Elitcar.png" alt="Logo" width="110px" height="27px" class="d-inline-block align-text-top"></a>
@@ -21,17 +25,20 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
         <ul class="nav">
+            <?php if( !isset($_SESSION['name']) ){?>
             <li class="nav-item">
-                <a class="nav-link text-dark" target="_self" href="view/particuliar/create_particular.php">Crée un compte</a>
+                <a class="nav-link text-dark" target="_self" href="view/particular/create_particular.php">Crée un compte</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-dark" target="_self" href="view/login.php">Connexions</a>
             </li>
+            <?php }else { ?>
             <li class="nav-item">
-                <a class="nav-link text-dark" target="_self" href="../controller/admin/logout.php">Déconnexions</a>
+                <a class="nav-link text-dark" target="_self" href="controller/admin/logout.php">Déconnexions</a>
             </li>
+            <?php } ?>
             <li class="nav-item">
-                <a class="nav-link text-dark" target="_self" href="view/particuliar/create_particular.php">Agences</a>
+                <a class="nav-link text-dark" target="_self" href="view/professional/create_professional.php">Agences</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-dark" target="_self" href="view/particuliar/faq.php">FAQ?</a>
