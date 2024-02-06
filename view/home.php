@@ -1,21 +1,3 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <!-- Meta tags nécessaires -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Bootstrap CSS local -->
-    <link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/style.css">
-
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
-    <title>Elitcar</title>
-</head>
-<body>
-<!-- navbar -->
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid ">
     <a class="navbar-brand" href="#"> Elit<span class="sub-navbar-brand">car</span> </a> 
@@ -72,7 +54,7 @@
                 </div>
             </div>
             <div class="col-md-6 img-col">
-              <img src="../images/phone.png" class="image-fluid" alt="">
+              <img src="../img/phone.png" class="image-fluid" alt="">
             </div>
       </div>
 </div>
@@ -90,7 +72,7 @@
     </div>
      <!-- Colonne pour l'image -->
      <div class="col-lg-7 intro-img">
-        <img src="../images/intro.png" class="img-fluid" alt=""style="transform: translateY(-50%);">
+        <img src="../img/intro.png" class="img-fluid" alt=""style="transform: translateY(-50%);">
      </div>
     <!-- Cartes -->
     <div class="cards row justify-content-center">
@@ -126,7 +108,7 @@
     <div class="row row-cols-1 row-cols-md-4 g-4">
           <div class="col">
                 <div class="card">
-                    <img src="../images/citadine.png" class="card-img-top" alt="Citadine">
+                    <img src="../img/citadine.png" class="card-img-top" alt="Citadine">
                     <div class="card-body-2">
                         <h5 class="card-title">Citadine</h5>
                     </div>
@@ -134,7 +116,7 @@
           </div>
           <div class="col">
                 <div class="card">
-                    <img src="../images/monospace.png" class="card-img-top" alt="Monospace">
+                    <img src="../img/monospace.png" class="card-img-top" alt="Monospace">
                     <div class="card-body-2">
                         <h5 class="card-title">Monospace</h5>
                     </div>
@@ -142,7 +124,7 @@
           </div>
           <div class="col">
                 <div class="card">
-                    <img src="../images/utilitaire.png" class="card-img-top" alt="Utilitaire">
+                    <img src="../img/utilitaire.png" class="card-img-top" alt="Utilitaire">
                     <div class="card-body-2">
                         <h5 class="card-title">Utilitaire</h5>
                     </div>
@@ -150,7 +132,7 @@
           </div>
           <div class="col">
                 <div class="card">
-                    <img src="../images/suv.png" class="card-img-top" alt="SUV">
+                    <img src="../img/suv.png" class="card-img-top" alt="SUV">
                     <div class="card-body-2">
                         <h5 class="card-title">SUV</h5>
                     </div>
@@ -288,7 +270,7 @@
     <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col">
             <div class="card2 h-100">
-                <img src="../images/forest.png" class="card-img-top2" alt="Forêt">
+                <img src="../img/forest.png" class="card-img-top2" alt="Forêt">
                 <div class="card-body2">
                     <h5 class="section-subtitle">Où se loger à Yaoundé ?</h5>
                     <p class="section-content">Pour les vacances, le travail, et de nombreuses <br> autres circonstances.</p>
@@ -297,7 +279,7 @@
         </div>
         <div class="col">
             <div class="card2 h-100">
-                <img src="../images/desert.png" class="card-img-top2" alt="Désert">
+                <img src="../img/desert.png" class="card-img-top2" alt="Désert">
                 <div class="card-body2">
                     <h5 class="section-subtitle">Conseils pour un road trip réussi</h5>
                     <p class="section-content">Pour la Saint-Valentin et bien d'autres occasions.</p>
@@ -306,7 +288,7 @@
         </div>
         <div class="col">
             <div class="card2 h-100">
-                <img src="../images/person.png" class="card-img-top2" alt="Personne">
+                <img src="../img/person.png" class="card-img-top2" alt="Personne">
                 <div class="card-body2">
                     <h5 class="section-subtitle">Conseils pour un road trip réussi</h5>
                     <p class="section-content">Pour la Saint-Valentin et bien d'autres occasions.</p>
@@ -545,7 +527,7 @@
             </div>
           </div>
           <div class="col-md-4">
-            <img src="../images/drive.png" class="img-fluid3" style="border-radius: 5px; height:100%" alt="Driving car">
+            <img src="../img/drive.png" class="img-fluid3" style="border-radius: 5px; height:100%" alt="Driving car">
           </div>
         </div>
       </div>
@@ -554,7 +536,5 @@
 </div>
 
 
-<!-- Bootstrap JS local -->
-<script src="../js/bootstrap/bootstrap.bundle.min.js"></script>
 </body>
 </html>
