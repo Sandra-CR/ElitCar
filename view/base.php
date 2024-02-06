@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Elitcar">
     <base href="http://localhost/ElitCar/" target="_blank">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script defer src="js/main.js"></script>
@@ -29,9 +29,15 @@
             <li class="nav-item">
                 <a class="nav-link text-dark" target="_self" href="view/particular/create_particular.php">Crée un compte</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link text-dark" target="_self" href="view/login.php">Connexions</a>
-            </li>
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-dark"  href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Connexion
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" target="_self"  href="view/particular/login_particular.php">Particulier</a></li>
+              <li><a class="dropdown-item" target="_self"  href="view/professional/login_professional.php">Professionel</a></li>
+            </ul>
+          </li>
             <?php }else { ?>
             <li class="nav-item">
                 <a class="nav-link text-dark" target="_self" href="controller/admin/logout.php">Déconnexions</a>
@@ -41,7 +47,7 @@
                 <a class="nav-link text-dark" target="_self" href="view/professional/create_professional.php">Agences</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-dark" target="_self" href="view/particuliar/faq.php">FAQ?</a>
+                <a class="nav-link text-dark" target="_self" href="view/index_car.php">Vehicule</a>
             </li>
         </ul>
     </div>

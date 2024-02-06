@@ -1,14 +1,17 @@
 <?php
 
-function sendMessage(string $message,string $status, string $location, int|null $page=null, bool $hasAIdBefore = false) :void{ //void = la fonction ne retourne rien
-    // S'il y a un id avant nous remplaceront le "?" de l'url par un &
+function sendMessage(string $message, string $status, string $location, int|null $page = null, bool $hasAIdBefore = false): void {
+    // S'il y a un ID avant, nous remplaçons le "?" de l'URL par un "&"
     $replace = !$hasAIdBefore ? "?" : "&";
+
+    // Vérification si $page est null
     if ($page == null) {
-        header("Location:$location" . $replace ."message=$message&status=$status");
+        // Redirection vers l'emplacement avec les paramètres de message et de statut
+        header("Location:$location" . $replace . "message=$message&status=$status");
         exit;
-    }else{
-        header("Location:$location" . $replace ."page=$page&message=$message&status=$status");
+    } else {
+        // Redirection vers l'emplacement avec les paramètres de page, message et statut
+        header("Location:$location" . $replace . "page=$page&message=$message&status=$status");
         exit;
     }
-    
 }
