@@ -5,7 +5,7 @@ include_once "tools.php"; // Inclusion du fichier contenant des fonctions utilit
 
 // Fonction pour vérifier le mot de passe
 function verif_mdp($mdp) {
-    $regex = '^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$'; // Expression régulière pour vérifier les critères du mot de passe
+    $regex = '#^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$#'; // Expression régulière pour vérifier les critères du mot de passe
     return preg_match($regex , $mdp); // Vérification du mot de passe selon l'expression régulière
 }
 

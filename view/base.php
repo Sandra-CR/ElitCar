@@ -26,7 +26,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <?php if( !isset($_SESSION['token']) ){?>
+        <?php if( !isset($_SESSION['name']) ){?>
           <li class="nav-item">
             <a class="nav-link" href="view/particular/create_particular.php">Crée un compte</a>
           </li>
@@ -48,7 +48,7 @@
           <a class="nav-link" href="view/professional/create_professional.php">Agences</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">FAQ ?</a>
+          <a class="nav-link" href="view/login.php">FAQ ?</a>
         </li>
       </ul>
     </div>

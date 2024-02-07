@@ -423,3 +423,79 @@ z-index: -1
 }
 */
 
+/* Partie Login */
+
+.container-main-login{
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff;
+    display: flex;
+}
+.container-login{
+    width: 45%;
+    height: 100%;
+    background-color: #ffffff;
+}
+.container-img-login{
+    width: 55%;
+    height: 100%;
+    background-image: url(../img/login-img.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.container-btn{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
+}
+.btn{
+    width: 347px;
+    height: 62px;
+}
+.container-title{
+    margin-top: 35px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.container-title-2{
+    margin-bottom: 35px;
+    display: flex;
+    justify-content: center;
+}
+.container-choose{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.border-color-orange{
+    border-color: #FFAA00;
+}
+.container-divider{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 50px;
+}
+.divider-switch1{
+    margin-left: 10%;
+    width: 40%;
+    height: 3px;
+    background-color: #CCCCCC;
+}
+.divider-switch2{
+    width: 40%;
+    height: 3px;
+    background-color: #FFAA00;
+}
+.divider-switch3{
+    margin-left: 10%;
+    width: 40%;
+    height: 3px;
+    background-color: #FFAA00;
+}
+.divider-switch4{
+    width: 40%;
+    height: 3px;
+    background-color: #CCCCCC;
+}
