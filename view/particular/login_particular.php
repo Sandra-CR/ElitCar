@@ -23,7 +23,7 @@ include_once "../../controller/admin/tools.php"; // Inclusion du fichier contena
 ?>
 <div class="container-main-login">
     <div class="container-login">
-        <div class="container-logo"><img src="img/elitcar-login.png" alt="Logo Elitcar" width="256px" height="64px"></div>
+        <div class="container-logo"><a target="_self" href="view/home"><img src="img/elitcar-login.png" alt="Logo Elitcar" width="256px" height="64px"></a></div>
         <div class="container-title">
             <h5 class="">SE CONNECTER</h5>
             <h5 class="">S'INSCRIRE</h5>
@@ -58,7 +58,7 @@ include_once "../../controller/admin/tools.php"; // Inclusion du fichier contena
             <input type="submit" class="form-control btn btn-light mt-3" value="Connexion">
         </form>
         <div class="container-title">
-            <p>Vous voulez créer un compte sur Elitcar? <a href="view/login.php" target="_self" class="mx-2"> S'inscrire</a></p>
+            <p>Vous voulez créer un compte sur Elitcar? <a href="view/login" target="_self" class="mx-2"> S'inscrire</a></p>
         </div>
     </div>
     <div class="container-img-login"></div>
@@ -74,17 +74,18 @@ if (!empty($_POST['mail']) && !empty($_POST['psw'])){
     if ($user) {
         // le compte existe
         if (password_verify($_POST['psw'], $user['psw'])) {
+            session_start();
             // le mot de passe est correct
             $_SESSION["name"] = $user['first_name'] . " " . $user['last_name']; // Attribution du nom complet de l'utilisateur à la session
             $_SESSION["role"] = $user['role']; // Attribution du rôle de l'utilisateur à la session
             $_SESSION["token"] = bin2hex(random_bytes(16)); // Génération d'un jeton de sécurité et attribution à la session
-            header('Location: ../home.php'); // Redirection vers la page d'accueil
+            header('Location: ../home'); // Redirection vers la page d'accueil
         } else {
-            sendMessage("Mots de passe incorrect", "failed", "login_particular.php"); // Redirection avec un message d'erreur si le mot de passe est incorrect
+            sendMessage("Mots de passe incorrect", "failed", "login_particular"); // Redirection avec un message d'erreur si le mot de passe est incorrect
         }
     } else {
         // le compte n'existe pas
-        sendMessage("le compte n'existe pas", "failed", "login_particular.php"); // Redirection avec un message d'erreur si le compte n'existe pas
+        sendMessage("le compte n'existe pas", "failed", "login_particular"); // Redirection avec un message d'erreur si le compte n'existe pas
     }
 } else {
     // Si les champs de formulaire sont vides, vous pouvez activer la ligne suivante pour afficher un message d'erreur.

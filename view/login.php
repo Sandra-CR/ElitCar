@@ -15,7 +15,7 @@
 <body>
 <div class="container-main-login">
     <div class="container-login">
-        <div class="container-logo"><img src="img/elitcar-login.png" alt="" width="256px" height="64px"></div>
+        <div class="container-logo"><a target="_self" href="view/home"><img src="img/elitcar-login.png" alt="" width="256px" height="64px"></a></div>
         <div class="container-title">
             <h5 class="">SE CONNECTER</h5>
             <h5 class="">S'INSCRIRE</h5>
@@ -36,10 +36,10 @@
             <p>ou</p>
         </div>
         <div class="container-btn mx-auto">
-            <a target="_self" href="view/particular/create_particular.php"><button class="btn btn-secondary my-1">Inscription par mail</button></a>
+            <a target="_self" href="view/particular/create_particular"><button class="btn btn-secondary my-1">Inscription par mail</button></a>
         </div>
         <div class="container-title">
-            <p>Vous avez un compte sur Elitcar? <a href="view/particular/login_particular.php" target="_self" class="mx-2"> Se connecter</a></p>
+            <p>Vous avez un compte sur Elitcar? <a href="view/particular/login_particular" target="_self" class="mx-2"> Se connecter</a></p>
         </div>
     </div>
     <div class="container-img-login"></div>

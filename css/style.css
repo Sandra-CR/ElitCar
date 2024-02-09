@@ -1,6 +1,20 @@
 /* Importation des polices Google */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
+/* 
+__    __                                   
+/  |  /  |                                  
+$$ |  $$ |  ______   _____  ____    ______  
+$$ |__$$ | /      \ /     \/    \  /      \ 
+$$    $$ |/$$$$$$  |$$$$$$ $$$$  |/$$$$$$  |
+$$$$$$$$ |$$ |  $$ |$$ | $$ | $$ |$$    $$ |
+$$ |  $$ |$$ \__$$ |$$ | $$ | $$ |$$$$$$$$/ 
+$$ |  $$ |$$    $$/ $$ | $$ | $$ |$$       |
+$$/   $$/  $$$$$$/  $$/  $$/  $$/  $$$$$$$/ 
+                                            
+                                            
+                                             */
+
 /*** Styles de base ***/
 body {
     font-family: 'Inter', sans-serif;
@@ -11,7 +25,7 @@ body {
 
 /* Style général de la barre de navigation */
 .navbar, .navbar * {
-    color: #000000;
+    color: #ffffff;
     font-weight: 600;
     font-family: 'Inter', sans-serif;
 }
@@ -423,7 +437,19 @@ z-index: -1
 }
 */
 
-/* Partie Login */
+/* __                            __           
+/  |                          /  |          
+$$ |        ______    ______  $$/  _______  
+$$ |       /      \  /      \ /  |/       \ 
+$$ |      /$$$$$$  |/$$$$$$  |$$ |$$$$$$$  |
+$$ |      $$ |  $$ |$$ |  $$ |$$ |$$ |  $$ |
+$$ |_____ $$ \__$$ |$$ \__$$ |$$ |$$ |  $$ |
+$$       |$$    $$/ $$    $$ |$$ |$$ |  $$ |
+$$$$$$$$/  $$$$$$/   $$$$$$$ |$$/ $$/   $$/ 
+                    /  \__$$ |              
+                    $$    $$/               
+                     $$$$$$/                
+ */
 
 .container-main-login{
     width: 100%;
@@ -498,4 +524,65 @@ z-index: -1
     width: 40%;
     height: 3px;
     background-color: #CCCCCC;
+}
+
+/* 
+
+________                        __                         
+/        |                      /  |                        
+$$$$$$$$/   ______    ______   _$$ |_     ______    ______  
+$$ |__     /      \  /      \ / $$   |   /      \  /      \ 
+$$    |   /$$$$$$  |/$$$$$$  |$$$$$$/   /$$$$$$  |/$$$$$$  |
+$$$$$/    $$ |  $$ |$$ |  $$ |  $$ | __ $$    $$ |$$ |  $$/ 
+$$ |      $$ \__$$ |$$ \__$$ |  $$ |/  |$$$$$$$$/ $$ |      
+$$ |      $$    $$/ $$    $$/   $$  $$/ $$       |$$ |      
+$$/        $$$$$$/   $$$$$$/     $$$$/   $$$$$$$/ $$/       
+                                                            
+                                                            
+                                                             */
+
+footer{
+    width: 100vw;
+    height: 456px;
+    background-color: #D9D9D9 ;
+}
+.container-main-footer{
+    display: flex;
+    justify-content: space-evenly;
+    height: 80%;
+    
+}
+.container-one-footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container-two-footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container-three-footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container-mention-leg{
+    display: flex;
+    height: 20%;
+    justify-content: center;
+
+}
+.mention{
+    display: flex;
+    flex-direction: row;
+}
+.ul-list{
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+}
+.a-list{
+    font-family: 'Inter', sans-serif;
+    font-weight: normal;
+    color: #000000;
 }
