@@ -18,34 +18,34 @@
     session_start(); 
 ?>
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-body-light">
   <div class="container-fluid ">
-    <a class="navbar-brand" href="#"> Elit<span class="sub-navbar-brand">car</span> </a> 
+    <a class="navbar-brand" target="_self" href="view/home"> Elit<span class="sub-navbar-brand">car</span> </a> 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <?php if( !isset($_SESSION['token']) ){?>
+        <?php if( !isset($_SESSION['name']) ){?>
           <li class="nav-item">
-            <a class="nav-link" href="view/particular/create_particular.php">Crée un compte</a>
+            <a class="nav-link" target="_self" href="view/login">Crée un compte</a>
           </li>
           <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle"  href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Connexion
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" target="_self"  href="view/particular/login_particular.php">Particulier</a></li>
-                <li><a class="dropdown-item" target="_self"  href="view/professional/login_professional.php">Professionel</a></li>
+                <li><a class="dropdown-item" target="_self"  href="view/particular/login_particular">Particulier</a></li>
+                <li><a class="dropdown-item" target="_self"  href="view/professional/login_professional">Professionel</a></li>
               </ul>
           </li>
         <?php }else { ?>
           <li class="nav-item">
-              <a class="nav-link" target="_self" href="controller/admin/logout.php">Déconnexions</a>
+              <a class="nav-link" target="_self" href="controller/admin/logout">Déconnexions</a>
           </li>
         <?php } ?>
         <li class="nav-item">
-          <a class="nav-link" href="view/professional/create_professional.php">Agences</a>
+          <a class="nav-link" href="view/professional/create_professional">Agences</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="view/read_car.php">FAQ ?</a>

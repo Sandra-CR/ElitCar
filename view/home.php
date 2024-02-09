@@ -3,7 +3,10 @@
 include_once "base.php";
 ?>
 
-
+<?php if ( isset($_SESSION['name'])) {?>
+ 
+          <p>Bonjour <?=  $_SESSION['name']?></p>
+      <?php }?>
 
 <!-- Section de recherche -->
 <div class="container mt-5">
@@ -520,6 +523,4 @@ include_once "base.php";
   </div>
 </div>
 
-
-</body>
-</html>
+<?php include_once "footer.php"; ?>
