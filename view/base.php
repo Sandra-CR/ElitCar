@@ -48,7 +48,7 @@
           <a class="nav-link" href="view/professional/create_professional.php">Agences</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">FAQ ?</a>
+          <a class="nav-link" href="view/read_car.php">FAQ ?</a>
         </li>
       </ul>
     </div>
