@@ -15,7 +15,7 @@
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a target="_self" href="index.php"><img src="img/Elitcar.png" alt="Logo" width="110px" height="27px" class="d-inline-block align-text-top"></a>
+    <a target="_self" href="index.php"><img src="../img/header/Elitcar.png" alt="Logo" width="110px" height="27px" class="d-inline-block align-text-top"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>

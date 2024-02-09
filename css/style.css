@@ -1,0 +1,127 @@
+   a{
+    color: black;
+   }
+   h2{
+    padding: 5px;
+   }
+   .readCar_section {
+    margin: 20px;
+   } 
+
+
+
+
+     .bloc_map {
+    width: 50%;
+    display: flex;
+
+   }
+
+   .loc-map {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    justify-content: space-evenly;
+   }
+
+   .map {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+   }
+
+
+   
+   .readCar_avis {
+        display: flex;
+        width: 40%;
+        justify-content: space-evenly;
+
+
+    }
+    .readCar_avis_droit {
+        margin-left: 30px;
+        
+        
+    }
+    .readCar_avis_haut{
+        display: flex;
+        justify-content: space-between;
+    }
+    .border{
+        width: 50%;
+        border-radius: 5px;
+        padding: 20px;
+    }
+
+    .elitcar2 {
+        display: flex;
+        align-items: center;
+        
+    }
+    .elitcar2 img {
+        height: 80%;
+    }
+    .readCar_avis_bas{
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.8em;
+    }
+
+
+
+
+
+      .bloc_point_jaune div{
+        display: flex;
+    }
+   
+
+    .point-jaune{
+        height: 30%;
+       
+    }
+
+    .testpipi {
+        display: flex;
+        align-items: first baseline;
+    }
+
+    .testcaca {
+        display: flex;
+        align-items: first baseline;
+    }
+
+    .point_noir {
+        display: flex;
+        align-items: first baseline;
+        margin-top: 3%;
+    }
+    
+    .card-text {
+      display: flex;
+      align-items: flex-end;
+      flex-direction: column;
+    }
+
+
+    @media screen and(min-width:1024px )and(max-width: 1550px) {
+        .readCar_section{
+            width: 100%;
+        }
+        .border{
+            width: 100%;
+        }
+    }
+    @media screen and(min-width:768px )and (max-width: 1023px) {
+
+    }
+    @media screen and(max-width: 767px) {
+
+    }
+
+ 
+  
+
+
+ 
