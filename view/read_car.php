@@ -11,23 +11,6 @@
     <script defer src="js/main.js"></script>
     <link rel="stylesheet" href="../css/style.css">
     <title>ElitCar</title>
-    <style>
-    #réservation_absolute div>p{
-        font-size:1.4em;
-        font-weight:bold;
-    }
-    #réservation_absolute {
-        height: 30%;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-        width: 20%;
-        font-size: 1.4em;
-    }
-    #réservation_absolute button {
-        /* width: 40%; */
-        font-size: 1.3em;
-    }
-
-    </style>
 </head>
 <body>
 
@@ -69,9 +52,7 @@
                 <img src="../img/voiture_caroussel5.jpg" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="../img/voiture_caroussel6
-
-.jpg" class="d-block w-100" alt="...">
+                <img src="../img/voiture_caroussel6.jpg" class="d-block w-100" alt="...">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"  data-bs-slide="prev">
