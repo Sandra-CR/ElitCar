@@ -1,0 +1,294 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+/* navbar */
+.navbar {
+  background: #ffffff;
+  width: 100%;
+  height: 5rem;
+  border: 1px solid #e7e7e7; /* bordure de la navbar */
+}
+.navbar-brand {
+  transform: translateY(-15px);
+}
+/* partie Elit de logo */
+.navbar-brand #logo-sub-0 {
+  padding-left: 45px;
+  color: #000000;
+  font-size: 2.3rem;
+  font-weight: 600;
+  line-height: 1.2125;
+  font-family: Inter, "Source Sans Pro";
+}
+/* partie car du logo */
+.navbar-brand #logo-sub-1 {
+  color: #ffaa00;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.2125;
+  font-family: Inter, "Source Sans Pro";
+}
+/* pour fait monter la navbar */
+#navbarNav {
+  transform: translateY(-15px);
+}
+/* gere les liens de la navbar */
+.navbar-nav .nav-item .nav-link {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000000;
+  font-family: Inter, "Source Sans Pro";
+  flex-shrink: 0;
+}
+
+.navbar-nav .nav-item {
+  margin-right: 90px;
+}
+.container {
+  padding: 20px;
+  width: 1000px;
+}
+.custom-container {
+  margin-bottom: 20px;
+  margin-right: 70px;
+  border: solid 0.1rem #000000;
+  height: 50px;
+  border-radius: 7px;
+  width: 30px;
+}
+.custom-img {
+  height: 20px;
+  margin: 15px;
+}
+.custom-img1 {
+  height: 8px;
+  margin-bottom: 19px;
+}
+.description {
+  font-weight: 400;
+  font-size: 14px;
+  font-family: Inter, "Source Sans Pro";
+  color: #000000;
+  margin-top: 10px;
+}
+
+@media (min-width: 768px) {
+  .description {
+    font-size: 16px;
+  }
+}
+.border-bottom {
+  /* 2 ligne qui sert de separante  */
+  transform: translateY(-20px);
+}
+.flex-row {
+  margin-right: 40px;
+  transform: translateY(-20px);
+  margin-bottom: 30px;
+}
+.flex-row .custom-container-left {
+  border: 2px solid #ffaa00;
+  margin: 20px;
+  border-radius: 6px;
+  height: 40px;
+  width: 20/00px;
+  transform: translateY(-20px);
+}
+.text {
+  margin: 30px;
+  padding: 30px;
+  font-weight: 400;
+  font-size: 14px;
+  font-family: Inter, "Source Sans Pro";
+  color: #ffaa00;
+  margin-top: 20px;
+}
+.custom-img2 {
+  height: 30px;
+}
+.border-bottom1 {
+  transform: translateY(-10px);
+}
+/* partie principale */
+.titl {
+  color: #000000;
+  font-family: Inter, "Source Sans Pro";
+  font-weight: 400;
+  font-size: 20px;
+  margin-left: 40px;
+}
+.container-elements1 {
+  padding: 3rem 1.5rem;
+  border-radius: 30px;
+}
+
+.car-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  height: 250px;
+  border-radius: 20px;
+  width: 100%;
+  overflow: hidden;
+}
+
+
+/* conteneur de description de chaque image */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+/* gere la marque des voitures */
+.brand2 {
+  font-size: 22px;
+  font-weight: 400;
+  color: #000000;
+  font-family: Inter, "Source Sans Pro";
+}
+/* debut de traitemenet des elements de descriptions de la voiture */
+.element1 {
+  height: 20px;
+  font-size: 10px;
+  font-weight: 400;
+  color: #000000;
+  font-family: Inter, "Source Sans Pro";
+  text-align: center;
+  font-size: 10px;
+  width: 150px;
+  border: 1px solid #e3e3e3;
+  /* padding: 0.25rem 0.75rem; */
+  border-radius: 0rem;
+}
+/* pour les images pour qu'elles s'adaptent au conteneur */
+.img-fluid {
+  width: 300px;
+  height: 250px;
+}
+
+.group1,
+.group2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+/* icone d'valuation */
+.star-1-4fm {
+  height: 1rem;
+}
+
+.element2 {
+  font-size: 10px;
+  font-weight: 400;
+  color: #000000;
+  font-family: Inter, "Source Sans Pro";
+}
+
+.icone7 {
+  height: 1.5rem;
+}
+.element3 {
+  font-size: 10px;
+  font-weight: 400;
+  color: #000000;
+  font-family: Inter, "Source Sans Pro";
+}
+/* prix et la duree pour la location */
+.group3 {
+  margin-left: 10.5rem;
+}
+.element4 {
+  width: 8.9rem;
+  height: 2rem;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000000;
+  font-family: Inter, "Source Sans Pro";
+  white-space: nowrap;
+}
+.element5 {
+  position: absolute;
+  left: 20;
+  top: 190px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #000000;
+  font-family: Inter, "Source Sans Pro";
+}
+
+/* Médias Queries pour la réactivité */
+
+/* @media (max-width: 768px) {
+  .car-container {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .car-container {
+    width: 50%;
+  }
+} */
+
+/*  footer */
+.main-footer {
+border: 1px solid black;
+  width: 100%;
+  display: flex;
+  background-color: #ecebeb;
+  color: #000000;
+  padding: 30px 0;
+}
+.text-footer {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: Inter, "Source Sans Pro";
+}
+/* pour tous les titres du footer */
+.footer-title {
+  text-transform: capitalize;
+  width: 8.9rem;
+  height: 2rem;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000000;
+  font-family: Inter, "Source Sans Pro";
+  white-space: nowrap;
+}
+/* liens du footer */
+.social-media-links {
+  list-style: none;
+  padding: 0;
+}
+/* liste ordonnees des element de la deuxiemme column sur le footer */
+.social-media-links li {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 20px;
+}
+/* couleur sur les lien */
+.social-media-links li a {
+  color: #ffffff;
+}
+/* couleur lorsque le cuiseur survol sur le lien */
+.social-media-links li a:hover {
+  color: #000000;
+}
+
+.copyright-bar {
+  margin-right: 10px;
+  background-color: #ffffff;
+  padding: 10px 0;
+}
+
+.copyright-bar p {
+  left: 20;
+  top: 20;
+  color: #000000;
+}
