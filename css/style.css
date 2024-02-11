@@ -1,12 +1,33 @@
 /* Importation des polices Google */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
+/* 
+__    __                                   
+/  |  /  |                                  
+$$ |  $$ |  ______   _____  ____    ______  
+$$ |__$$ | /      \ /     \/    \  /      \ 
+$$    $$ |/$$$$$$  |$$$$$$ $$$$  |/$$$$$$  |
+$$$$$$$$ |$$ |  $$ |$$ | $$ | $$ |$$    $$ |
+$$ |  $$ |$$ \__$$ |$$ | $$ | $$ |$$$$$$$$/ 
+$$ |  $$ |$$    $$/ $$ | $$ | $$ |$$       |
+$$/   $$/  $$$$$$/  $$/  $$/  $$/  $$$$$$$/ 
+                                            
+                                            
+*/
+
 /*** Styles de base ***/
 body {
     font-family: 'Inter', sans-serif;
     color: #000000;
     display: flex;
     flex-direction: column;
+}
+
+.nav-link {
+    color:#000000 !important;
+}
+.nav-link:hover{
+    color:#2AC4FE !important;
 }
 
 /* Style général de la barre de navigation */
@@ -84,7 +105,7 @@ body {
 /*** Styles spécifiques pour la section de filtre ***/
 /* Titre de la section de filtre */
 .search-title{
-    font-weight: 600;
+    font-weight: 600 !important;
     font-size: 42px;
 }
 
@@ -96,16 +117,23 @@ body {
 
 /* Style des contrôles de formulaire et du texte du groupe d'entrée */
 .form-control, .input-group-text {
-    margin-bottom: 20px;
-    background-color:#EDECEC;
-    padding: 15px;
-    border: 0px #ced4da;
-    height: 60px;
+    margin-bottom: 20px !important;
+    background-color:#EDECEC !important;
+    padding: 15px !important;
+    border: 0px #ced4da !important;
+    height: 60px !important;
+}
+
+/* Suppression de l'effet de focus pour les contrôles de formulaire */
+.form-control:focus {
+    background-color: #EDECEC !important; 
+    border: 0px #ced4da !important; 
+    box-shadow: none !important;
 }
 
 /* Style spécifique pour le groupe de texte d'entrée */
 .input-group-text {
-    border-radius: 0.25rem 0 0 0.25rem;
+    border-radius: 0.25rem 0 0 0.25rem !important;
 }
 
 /* Style pour le placeholder dans le formulaire */
@@ -410,16 +438,63 @@ textarea::placeholder {
     }
 }
 
-/* decoration
-.grey-decoration{
-position: absolute;
-width: 800px;
-height: 332.68px;
-right: 0px;
-top: 406.12px;
-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-background: #EDECEC;
-z-index: -1
-}
+/* 
+
+________                        __                         
+/        |                      /  |                        
+$$$$$$$$/   ______    ______   _$$ |_     ______    ______  
+$$ |__     /      \  /      \ / $$   |   /      \  /      \ 
+$$    |   /$$$$$$  |/$$$$$$  |$$$$$$/   /$$$$$$  |/$$$$$$  |
+$$$$$/    $$ |  $$ |$$ |  $$ |  $$ | __ $$    $$ |$$ |  $$/ 
+$$ |      $$ \__$$ |$$ \__$$ |  $$ |/  |$$$$$$$$/ $$ |      
+$$ |      $$    $$/ $$    $$/   $$  $$/ $$       |$$ |      
+$$/        $$$$$$/   $$$$$$/     $$$$/   $$$$$$$/ $$/       
+
 */
 
+footer{
+    width: 100vw;
+    height: 456px;
+    background-color: #D9D9D9 ;
+}
+.container-main-footer{
+    display: flex;
+    justify-content: space-evenly;
+    height: 80%;
+    
+}
+.container-one-footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container-two-footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container-three-footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container-mention-leg{
+    display: flex;
+    height: 20%;
+    justify-content: center;
+
+}
+.mention{
+    display: flex;
+    flex-direction: row;
+}
+.ul-list{
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+}
+.a-list{
+    font-family: 'Inter', sans-serif;
+    font-weight: normal;
+    color: #000000;
+}                                                          
+                                                            
