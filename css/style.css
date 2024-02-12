@@ -17,6 +17,9 @@ $$/   $$/  $$$$$$/  $$/  $$/  $$/  $$$$$$$/
                                              */
 
 /*** Styles de base ***/
+*{
+    font-family: 'Inter', sans-serif;
+}
 body {
     font-family: 'Inter', sans-serif;
     color: #000000;
@@ -26,7 +29,6 @@ body {
 
 /* Style général de la barre de navigation */
 .navbar, .navbar * {
-    color: #ffffff;
     font-weight: 600;
     font-family: 'Inter', sans-serif;
 }
@@ -670,7 +672,7 @@ $$ |      $$    $$/ $$    $$/   $$  $$/ $$       |$$ |
 $$/        $$$$$$/   $$$$$$/     $$$$/   $$$$$$$/ $$/       
                                                             
                                                             
-                                                             */
+ */
 
 footer{
     width: 100vw;
