@@ -595,6 +595,7 @@ $$$$$$$$/  $$$$$$/   $$$$$$$ |$$/ $$/   $$/
     height: 100%;
     background-color: #ffffff;
 }
+
 .container-img-login{
     width: 55%;
     height: 100%;
@@ -607,7 +608,16 @@ $$$$$$$$/  $$$$$$/   $$$$$$$ |$$/ $$/   $$/
     flex-direction: column !important;
     align-items: center;
 }
+.container-btn-mail{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
+}
 .btn{
+    width: 347px;
+    height: 62px;
+}
+.btn-mail{
     width: 347px;
     height: 62px;
 }
