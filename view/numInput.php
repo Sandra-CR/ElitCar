@@ -9,19 +9,38 @@ include_once "base.php";
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Formulaire de numéro de téléphone</title>
 
+
+
 <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f9f9f9;
+            height: 100%;
+            margin: 0;
+            padding: 0;
         }
-        .container {
+
+        p {
+            margin: 10px 0px 20px 1px;
+            box-shadow: 1px 2px 20px rgba(152, 141, 127);
+            padding: 15px;
+            background-color: #e8b464;
+            width: 100%;
+
+        }
+
+        .num-container {
             width: 626px;
-            height: 410px;
+            height: 750px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 1px 2px 20px rgba(217, 154, 73, 1);
+        }
+
+        .num-form {
+            margin: 30% auto;
+            border-radius: 15px;
+            box-shadow: 1px 2px 20px rgba(152, 141, 127);
+            padding: 25px;
         }
 
         
@@ -51,15 +70,56 @@ include_once "base.php";
             border: 1px solid;
             padding: 10px 40px;
             border-radius: 40px;
+            width: 340px;
         }
 
+        @media (max-width: 430px) and (max-height: 932px) {
+        .num-form {
+            padding: 10px;
+            width: 480px;
+            display: inline-block;
+            justify-content: center;
+            margin: 50px 0px 0px 0px;
+        }}
+
+        @media (max-width: 430px) and (max-height: 932px) {
+        #pays {
+            width: 300px;
+            margin: 5px;
+        }}
+
+        @media (max-width: 430px) and (max-height: 932px) {
+        #suivant {
+       margin: 15px;
+        }
+
+        @media (max-width: 430px) and (max-height: 932px) {
+        #telephone {
+       margin: 5px;
+        }
+
+        @media (max-width: 430px) and (max-height: 932px) {
+        body {
+    
+           height: 600px;
+           display: inline-block;
+            justify-content: center;
+            margin: 20px 0px 0px 25px;
+        }}
+
+
+
     </style>
+
+   
 
 
 </head>
 <body>
-    <div class="container">
+ 
+    <div class="num-container">
 
+    <form class="num-form">
     <h2>Quel est votre numéro de téléphone ?</h2>
     <label for="pays">Pays :</label>
     <select id="pays">
@@ -102,7 +162,7 @@ include_once "base.php";
     <option value="226">Burkina Faso +226</option>
     <option value="257">Burundi +257</option>
     <option value="855">Cambodia +855</option>
-    <option value="237">Cameroon +237</option>
+    <option value="237" selected>Cameroon +237</option>
     <option value="1">Canada +1</option>
     <option value="238">Cape Verde +238</option>
     <option value="1345">Cayman Islands +1345</option>
@@ -321,16 +381,14 @@ include_once "base.php";
  </select>
 
  <p>Seules les personnes auxquelles vous vous adressez auront accès à votre numéro. Un code de vérification par SMS vous sera envoyé.</p>
+
     <label for="telephone">Numéro de téléphone :</label>
     <input type="tel" id="telephone" placeholder="Entrez votre numéro de téléphone">
     <button id="suivant">Suivant</button>
 
+    </form>
+
 </div>
+
 </body>
 </html>
-
-
-<?php include_once "footer.php"; ?>
-
-
-
