@@ -36,17 +36,38 @@
                 <input type="text" name="first_name" class="form-control" id="floatingFname" placeholder="Prénom">
                 <label for="floatingFName">Prénom</label>
             </div>
+
             <div class="form-floating">
                 <input type="text" name="last_name" class="form-control" id="floatingName" placeholder="Nom">
                 <label for="floatingName">Nom</label>
             </div>
+
             <div class="form-floating mb-3">
                 <input type="mail" name="mail" class="form-control" id="floatingInput" placeholder="name@example.com">
                 <label for="floatingInput">Email</label>
             </div>
+            
             <div class="form-floating">
                 <input type="password" name="psw" class="form-control" id="floatingPassword" placeholder="Mots de passe">
                 <label for="floatingPassword">Mots de passe</label>
+            </div>
+
+            <div class="form-check my-1">
+                <input class="form-check-input" type="checkbox" value="" id="conditionGeneral">
+                <label class="form-check-label" for="conditionGeneral">
+                    <p class="text-label">
+                        J’accepte la <a target="_self" class="text-decoration-none text-dark" href=""><b>politique de confidentialité</b></a> et <a target="_self" class="text-decoration-none text-dark" href=""><b>les conditions générales d’utilisations</b></a>
+                    </p>
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="newletters" checked>
+                <label class="form-check-label" for="newletters">
+                    <p class="text-label">
+                    J'aimerais bénéficier des offres spéciales, promotions et nouvelles,
+                    </p>
+                </label>
             </div>
             
             <input class="form-control mt-3 btn btn-warning text-light" type="submit" value="Continuer">

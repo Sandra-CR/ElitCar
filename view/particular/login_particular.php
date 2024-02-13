@@ -55,13 +55,13 @@ include_once "../../controller/admin/tools.php"; // Inclusion du fichier contena
                 <input type="password" name="psw" class="form-control" id="floatingPassword" placeholder="Mots de passe">
                 <label for="floatingPassword">Mots de passe</label>
             </div>
+            <div class="container-title-3 mb-2">
+                <a href="view/login" target="_self" class="mx-2 fw-bold text-decoration-none text-dark">Mot de passe oublié?</a>
+            </div>
             <div class="container-btn-mail mx-auto">
-                <input type="submit" class="btn border border-3 my-1 col-12" value="Connexion">
+                <input type="submit" class="form-control mt-3 btn btn-warning text-light" value="Connexion">
             </div>
         </form>
-        <div class="container-title">
-            <p>Vous voulez créer un compte sur Elitcar? <a href="view/login" target="_self" class="mx-2 fw-bold text-decoration-none text-dark"> S'inscrire</a></p>
-        </div>
     </div>
     <div class="container-img-login d-none d-lg-block col-7"></div>
 </div>
