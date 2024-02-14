@@ -37,3 +37,4 @@
         </ul>
     </div>
 </footer>
+<script defer src="js/main.js"></script>
