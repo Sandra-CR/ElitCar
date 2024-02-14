@@ -45,7 +45,7 @@
           </li>
         <?php } ?>
         <li class="nav-item">
-          <a class="nav-link" href="view/professional/create_professional">Agences</a>
+          <a class="nav-link" href="view/professional/professional">Agences</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="view/read_car.php">FAQ ?</a>

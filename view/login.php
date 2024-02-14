@@ -28,15 +28,15 @@
             <h4 >Créez votre compte</h4>
         </div>
         <div class="container-btn">
-            <button class="btn btn-secondary my-1">Google</button>
-            <button class="btn btn-secondary my-1">Facebook</button>
-            <button class="btn btn-secondary my-1">Apple</button>
+            <button class="btn-log btn-secondary my-1">Google</button>
+            <button class="btn-log btn-secondary my-1">Facebook</button>
+            <button class="btn-log btn-secondary my-1">Apple</button>
         </div>
         <div class="container-choose">
             <p>ou</p>
         </div>
         <div class="container-btn-mail mx-auto">
-            <a target="_self" href="view/particular/create_particular"><button class="btn border border-3 my-1">Inscription par mail</button></a>
+            <a target="_self" href="view/particular/create_particular"><button class="btn-log border border-3 my-1">Inscription par mail</button></a>
         </div>
         <div class="container-title">
             <p>Vous avez un compte sur Elitcar? <a href="view/particular/login_particular" target="_self" class="mx-2 fw-bold text-decoration-none text-dark"> Se connecter</a></p>

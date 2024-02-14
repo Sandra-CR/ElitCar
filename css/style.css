@@ -439,6 +439,18 @@ background: #EDECEC;
 z-index: -1
 }
 */
+
+/* __                                       
+/  |                                      
+______    ______    ______    ____$$ |          _______   ______    ______  
+/      \  /      \  /      \  /    $$ |         /       | /      \  /      \ 
+/$$$$$$  |/$$$$$$  | $$$$$$  |/$$$$$$$ |        /$$$$$$$/  $$$$$$  |/$$$$$$  |
+$$ |  $$/ $$    $$ | /    $$ |$$ |  $$ |        $$ |       /    $$ |$$ |  $$/ 
+$$ |      $$$$$$$$/ /$$$$$$$ |$$ \__$$ |        $$ \_____ /$$$$$$$ |$$ |      
+$$ |      $$       |$$    $$ |$$    $$ | ______ $$       |$$    $$ |$$ |      
+$$/        $$$$$$$/  $$$$$$$/  $$$$$$$/ /      | $$$$$$$/  $$$$$$$/ $$/       
+    $$$$$$/                               
+*/
    a{
     color: black;
    }
@@ -613,9 +625,9 @@ $$$$$$$$/  $$$$$$/   $$$$$$$ |$$/ $$/   $$/
     flex-direction: column !important;
     align-items: center;
 }
-.btn{
-    width: 347px;
-    height: 62px;
+.btn-log{
+    width: 347px !important;
+    height: 62px !important;
 }
 .btn-mail{
     width: 347px;
@@ -737,3 +749,95 @@ footer{
     color: #000000;
 }
 
+/* 
+_______                        ______                       __                                __ 
+/       \                      /      \                     /  |                              /  |
+$$$$$$$  |  ______    ______  /$$$$$$  |  ______    _______ $$/   ______   _______    ______  $$ |
+$$ |__$$ | /      \  /      \ $$ |_ $$/  /      \  /       |/  | /      \ /       \  /      \ $$ |
+$$    $$/ /$$$$$$  |/$$$$$$  |$$   |    /$$$$$$  |/$$$$$$$/ $$ |/$$$$$$  |$$$$$$$  | $$$$$$  |$$ |
+$$$$$$$/  $$ |  $$/ $$ |  $$ |$$$$/     $$    $$ |$$      \ $$ |$$ |  $$ |$$ |  $$ | /    $$ |$$ |
+$$ |      $$ |      $$ \__$$ |$$ |      $$$$$$$$/  $$$$$$  |$$ |$$ \__$$ |$$ |  $$ |/$$$$$$$ |$$ |
+$$ |      $$ |      $$    $$/ $$ |      $$       |/     $$/ $$ |$$    $$/ $$ |  $$ |$$    $$ |$$ |
+$$/       $$/        $$$$$$/  $$/        $$$$$$$/ $$$$$$$/  $$/  $$$$$$/  $$/   $$/  $$$$$$$/ $$/ 
+                                                                                                  
+                                                                                                  
+ */
+
+.container-professional{
+    height: 60vh;
+}
+.container-pro-create{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.container-pro-img{
+    display: flex;
+}
+.container-btn-create{
+    display: flex;
+    align-items: flex-start;
+}
+.container-pro-img-1{
+    background-image: url(../img/pro-img.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.container-professional-2{
+    margin-top: 100px;
+    height: 60vh;
+    background-color: #CCCCCC;
+    align-items: center;
+}
+.container-main-choose-sub{
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container-main-choose-sub-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.container-main-choose-sub-card-1{
+    display: flex ;
+    flex-direction: column;
+    align-items: center;
+}
+.container-main-choose-sub-card-2{
+    display: flex ;
+    flex-direction: column;
+    align-items: center;
+}
+.container-main-choose-sub-card-3{
+    display: flex ;
+    flex-direction: column;
+    align-items: center;
+}
+.btn-warning-pro{
+   /* Style du bouton de recherche */
+
+    background-color: #FFAA00; 
+    border: none; 
+    height: 60px;
+    color: #ffffff;
+    margin-top: 15px;
+
+}
+/* l'effet de survol pour le bouton */
+.btn-warning-pro:hover {
+    background-color: #FFAA00; 
+    color: #000000;
+    border:4px solid #000000;
+    box-shadow: none;
+    font-weight: bold;
+}
+
+/* l'effet de focus */
+.btn-warning-pro:focus {
+    background-color: #FFAA00;
+    box-shadow: none !important; 
+    font-weight: bold;
+} 
