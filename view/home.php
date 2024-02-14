@@ -1,6 +1,6 @@
 
 <?php 
-include_once "base.php";
+include_once "include/base.php";
 ?>
 
 <?php if ( isset($_SESSION['name'])) {?>
@@ -321,6 +321,3 @@ include_once "base.php";
     </div>
   </div>
 </div>
-
-
-<?php include_once "footer.php"; ?><?php include_once "footer.php"; ?>
