@@ -18,20 +18,20 @@
     session_start(); 
 ?>
 
-<nav class="navbar navbar-expand-lg bg-body-light">
-  <div class="container-fluid ">
-    <a class="navbar-brand" target="_self" href="view/home" style="font-size: 250%; margin-top: 2px;"> Elit<span class="sub-navbar-brand">car</span> </a> 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+<nav class="navbar home-navbar navbar-expand-lg bg-body-light">
+  <div class="container-fluid home-container-fluid ">
+    <a class="navbar-brand home-navbar-brand" target="_self" href="view/home"> Elit<span class="sub-navbar-brand home-sub-navbar-brand">car</span> </a> 
+    <button class="navbar-toggler home-navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon home-navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
+    <div class="collapse navbar-collapse home-navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav home-navbar-nav">
         <?php if( !isset($_SESSION['name']) ){?>
           <li class="nav-item">
-            <a class="nav-link" target="_self" href="view/login">Crée un compte</a>
+            <a class="nav-link home-nav-link" target="_self" href="view/login">Crée un compte</a>
           </li>
           <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle"  href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link home-nav-link dropdown-toggle"  href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Connexion
               </a>
               <ul class="dropdown-menu">
@@ -41,14 +41,14 @@
           </li>
         <?php }else { ?>
           <li class="nav-item">
-              <a class="nav-link" target="_self" href="controller/admin/logout">Déconnexions</a>
+              <a class="nav-link home-nav-link" target="_self" href="controller/admin/logout">Déconnexions</a>
           </li>
         <?php } ?>
         <li class="nav-item">
-          <a class="nav-link" href="view/professional/create_professional">Agences</a>
+          <a class="nav-link home-nav-link" href="view/professional/create_professional">Agences</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="view/read_car.php">FAQ ?</a>
+          <a class="nav-link home-nav-link" href="view/read_car.php">FAQ ?</a>
         </li>
       </ul>
     </div>
