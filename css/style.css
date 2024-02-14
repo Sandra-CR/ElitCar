@@ -816,15 +816,21 @@ $$/       $$/        $$$$$$/  $$/        $$$$$$$/ $$$$$$$/  $$/  $$$$$$/  $$/   
     flex-direction: column;
     align-items: center;
 }
-.btn-warning-pro{
+.btn-warning-pro-1{
+    /* Style du bouton de recherche */
+     width: 277px;
+     height: 56px;
+     background-color: #FFAA00; 
+     border: none; 
+     color: #ffffff;
+ }
+.btn-warning-pro-2{
    /* Style du bouton de recherche */
-
+    width: 214px;
+    height: 44px;
     background-color: #FFAA00; 
     border: none; 
-    height: 60px;
     color: #ffffff;
-    margin-top: 15px;
-
 }
 /* l'effet de survol pour le bouton */
 .btn-warning-pro:hover {
