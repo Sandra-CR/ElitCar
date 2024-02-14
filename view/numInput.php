@@ -6,12 +6,13 @@ include_once "base.php";
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width", initial-scale=1>
 <title>Formulaire de numéro de téléphone</title>
 
 
 
 <style>
+
         body {
             font-family: Arial, sans-serif;
             background-color: #f9f9f9;
@@ -75,38 +76,47 @@ include_once "base.php";
 
         @media (max-width: 430px) and (max-height: 932px) {
         .num-form {
-            padding: 10px;
-            width: 480px;
-            display: inline-block;
-            justify-content: center;
-            margin: 50px 0px 0px 0px;
-        }}
+           margin-bottom: 0px;
+           margin-left: 0px;
+           width: 385px;
+        }
 
-        @media (max-width: 430px) and (max-height: 932px) {
+        .num-container {
+           margin-right: 400px;
+           margin-left: 0px;
+           padding-left: 0px;
+           width: 320px;
+           height: 550px;
+           border-right-width: 1000px;
+        }
+
         #pays {
             width: 300px;
             margin: 5px;
-        }}
+        }
 
-        @media (max-width: 430px) and (max-height: 932px) {
         #suivant {
        margin: 15px;
         }
 
-        @media (max-width: 430px) and (max-height: 932px) {
         #telephone {
        margin: 5px;
         }
 
-        @media (max-width: 430px) and (max-height: 932px) {
         body {
     
            height: 600px;
            display: inline-block;
             justify-content: center;
             margin: 20px 0px 0px 25px;
-        }}
+        }
 
+        @-ms-viewport{
+        width: device-width;
+}
+
+
+    }
 
 
     </style>
