@@ -26,7 +26,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <?php if( !isset($_SESSION['name']) ){?>
+        <?php if( !isset($_SESSION['token']) ){?>
           <li class="nav-item">
             <a class="nav-link" target="_self" href="view/login">Crée un compte</a>
           </li>
