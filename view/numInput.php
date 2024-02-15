@@ -13,7 +13,7 @@ include_once "base.php";
 
 <style>
 
-        body {
+        .num-body {
             font-family: Arial, sans-serif;
             background-color: #f9f9f9;
             height: 100%;
@@ -21,7 +21,7 @@ include_once "base.php";
             padding: 0;
         }
 
-        p {
+        .num-p {
             margin: 10px 0px 20px 1px;
             box-shadow: 1px 2px 20px rgba(152, 141, 127);
             padding: 15px;
@@ -30,9 +30,18 @@ include_once "base.php";
 
         }
 
+        #pays {
+            width: 285px;
+            margin: 5px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 40px;
+        }
+
         .num-container {
-            width: 626px;
-            height: 750px;
+            width: 100%;
+            max-width: 600px;
+            height: 50%;
             margin: 0 auto;
             padding: 20px;
         }
@@ -45,17 +54,12 @@ include_once "base.php";
         }
 
         
-        label {
+        .num-label {
             font-weight: bold;
         }
      
-        select {
-            width: 40%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 40px;
-        }
-        button {
+
+        #suivant {
             background-color: #ffc107;
             color: #ffffff;
             border: none;
@@ -63,7 +67,7 @@ include_once "base.php";
             border-radius: 4px;
             cursor: pointer;
         }
-        button:hover {
+        #suivant:hover {
             background-color: #ff9800;
         }
 
@@ -71,27 +75,32 @@ include_once "base.php";
             border: 1px solid;
             padding: 10px 40px;
             border-radius: 40px;
-            width: 340px;
+            width: 80%;
+            font-size: 13px;
         }
 
         @media (max-width: 430px) and (max-height: 932px) {
+
         .num-form {
-           margin-bottom: 0px;
-           margin-left: 0px;
-           width: 385px;
+           margin-bottom: -100px;
+           margin-left:-26px;
+           width: 345px;
+           height: 580px;
         }
 
         .num-container {
-           margin-right: 400px;
-           margin-left: 0px;
-           padding-left: 0px;
-           width: 320px;
-           height: 550px;
-           border-right-width: 1000px;
+           margin-right: 4px;
+           margin-left: 30px;
+           margin-top: -36px;
+           padding-left: 10px;
+           width: 90%;
+           height: 450px;
+           border-right-width: 100px;
+            max-width: 285px;
         }
 
         #pays {
-            width: 300px;
+            width: 285px;
             margin: 5px;
         }
 
@@ -101,37 +110,64 @@ include_once "base.php";
 
         #telephone {
        margin: 5px;
+       width: 100%;
+       font-size: 12.5px;
         }
 
-        body {
+        .num-body {
     
+        height: 100%;
+        display: inline-block;
+        justify-content: center;
+        margin: 20px 75px 0px 25px;
+        }
+    }
+     
+
+        @media (max-width: 376px) and (max-height: 668px) {
+            
+        .num-form {
+           margin-bottom: 70px;
+           margin-left: -10px;
+           width: 335px;
+           height: 520px;
+        }
+
+        .num-container {
+           margin-right: 10px;
+           margin-left: 0px;
+           margin-top: -20px;
+           padding-left: 10px;
+           width: 40%;
            height: 600px;
+           border-right-width: 100px;
+            max-width: 30px;
+        }
+
+        .num-body {
+            height: 70%;
            display: inline-block;
             justify-content: center;
-            margin: 20px 0px 0px 25px;
-        }
-
-        @-ms-viewport{
-        width: device-width;
-}
-
-
-    }
+            margin: 2px 15px 0px 25px;
+ }
+     }
 
 
     </style>
 
-   
-
-
 </head>
-<body>
+
+
+
+
+
+<body class="num-body">
  
     <div class="num-container">
 
     <form class="num-form">
     <h2>Quel est votre numéro de téléphone ?</h2>
-    <label for="pays">Pays :</label>
+    <label class="num-label" for="pays">Pays :</label>
     <select id="pays">
       
     <option value="93">Afghanistan +93</option>
@@ -390,7 +426,7 @@ include_once "base.php";
     
  </select>
 
- <p>Seules les personnes auxquelles vous vous adressez auront accès à votre numéro. Un code de vérification par SMS vous sera envoyé.</p>
+ <p class="num-p">Seules les personnes auxquelles vous vous adressez auront accès à votre numéro. Un code de vérification par SMS vous sera envoyé.</p>
 
     <label for="telephone">Numéro de téléphone :</label>
     <input type="tel" id="telephone" placeholder="Entrez votre numéro de téléphone">
@@ -402,3 +438,4 @@ include_once "base.php";
 
 </body>
 </html>
+
