@@ -15,26 +15,21 @@
 <div class="fluid-container dashboard-fluid-container mt-3">
   <ul class="nav nav-tabs dashboard-nav-tabs ">
     <li class="nav-item nav-tem-left">
-      <a class="nav-link dashboard-nav-link dashboard-nav-link-left" aria-current="page" href="update_profile.php">MES LOCATIONS</a>
+      <a class="nav-link dashboard-nav-link dashboard-nav-link-left 
+      <?php 
+        $current_file = basename($_SERVER['SCRIPT_NAME']);
+        echo ($current_file == 'locations.php') ? 'active-link' : ''; 
+      ?>" 
+      aria-current="page" href="locations.php" >MES LOCATIONS</a>
     </li>
     <li class="nav-item nav-item-right">
-      <a class="nav-link dashboard-nav-link dashboard-nav-link-right   <?php 
+      <a class="nav-link dashboard-nav-link dashboard-nav-link-right
+      <?php 
         $current_file = basename($_SERVER['SCRIPT_NAME']);
         echo ($current_file == 'update_profile.php' || $current_file == 'settings.php' || $current_file == 'payment_method.php') ? 'active-link' : ''; 
-    ?>" href="#">MON COMPTE</a>
+      ?>
+    " aria-current="page" href="update_profile.php">MON COMPTE</a>
     </li>
   </ul>
 </div> 
-<script>
-  let navLinks = document.querySelectorAll('.dashboard-nav-link');
-  function toggleActiveClass(event) {
-    event.preventDefault();
-    navLinks.forEach(function(link) {
-      link.classList.remove('active-link');
-    });
-    event.currentTarget.classList.add('active-link');
-  }
-  navLinks.forEach(function(link) {
-    link.addEventListener('click', toggleActiveClass);
-  });
-</script>
+
