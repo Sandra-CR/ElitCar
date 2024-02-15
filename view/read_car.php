@@ -3,6 +3,7 @@
 include_once "base.php";
 ?>
 
+
 <section class="readCar_section readCar_slider position-relative hidden">
     <div id="carouselExampleAutoplaying" class="carousel slide w-75 mx-auto my-4  " data-bs-ride="carousel">
         <div class="carousel-inner">
@@ -136,8 +137,6 @@ include_once "base.php";
         </div>
     </div>
   </section>
-
-
     <section class="readCar_section w-75 mx-auto">
         <h2>Propriétaire</h2>
         <div class="border">
@@ -164,12 +163,6 @@ include_once "base.php";
             </div>
         </div>
     </section>
-
-
-
-
-
-
     <section class="readCar_section w-75 mx-auto">
       <h2>Description du véhicule</h2>
       <div class="description-vehicule">
@@ -212,7 +205,7 @@ include_once "base.php";
       <div class="testcaca">
         <img class="point-bleu" src="img/pointbleu.png" alt="pont-bleu-texte">
          <p>Climatisation</p>  
-</div>
+      </div>
 
       <div class="testcaca">
       <img class="point-bleu" src="img/pointbleu.png" alt="pont-bleu-texte">
@@ -262,6 +255,7 @@ include_once "base.php";
 
     
 
+
 <section class="readCar_section w-75 mx-auto ">
     <h2>Caution</h2>
     <div class="border">
@@ -273,6 +267,7 @@ include_once "base.php";
     
     </div>
 </div>
+
 
 <section class="readCar_section d-flex flex-column align-items-center">
     <div  class="d-flex justify-content-between w-75 align-items-center">
@@ -294,8 +289,7 @@ include_once "base.php";
                         <img src="img/etoile_moitié.svg" alt="">
                         4.74(21)
             </span>
-                        
-                
+
             <div class="card-text">
             <p>75 650 CFA</p>
             <p>Pour 5 jours</p>
@@ -382,3 +376,4 @@ include_once "base.php";
 
 
 <?php include_once "footer.php"; ?>
+

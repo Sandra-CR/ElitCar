@@ -1,5 +1,4 @@
 <?php
-
 function sendMessage(string $message, string $status, string $location, int|null $page = null, bool $hasAIdBefore = false): void {
     // S'il y a un ID avant, nous remplaçons le "?" de l'URL par un "&"
     $replace = !$hasAIdBefore ? "?" : "&";

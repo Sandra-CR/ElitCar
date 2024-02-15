@@ -49,4 +49,6 @@
                 msgpro.innerHTML = data.message; // Affichage du message de la réponse
             });
     });
+
 </script>
+

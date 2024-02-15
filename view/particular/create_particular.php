@@ -13,6 +13,7 @@
     <title>ElitCar</title>
 </head>
 <body>
+
 <div class="container-main-login d-lg-flex">
     <div class="container-login mx-auto col-12 col-lg-5">
         <div class="container-logo"><a target="_self" href="view/home"><img src="img/elitcar-login.png" alt="" width="256px" height="64px"></a></div>
@@ -36,22 +37,18 @@
                 <input type="text" name="first_name" class="form-control" id="floatingFname" placeholder="Prénom">
                 <label for="floatingFName">Prénom</label>
             </div>
-
             <div class="form-floating">
                 <input type="text" name="last_name" class="form-control" id="floatingName" placeholder="Nom">
                 <label for="floatingName">Nom</label>
             </div>
-
             <div class="form-floating mb-3">
                 <input type="mail" name="mail" class="form-control" id="floatingInput" placeholder="name@example.com">
                 <label for="floatingInput">Email</label>
             </div>
-            
             <div class="form-floating">
                 <input type="password" name="psw" class="form-control" id="floatingPassword" placeholder="Mots de passe">
                 <label for="floatingPassword">Mots de passe</label>
             </div>
-
             <div class="form-check my-1">
                 <input class="form-check-input" type="checkbox" value="" id="conditionGeneral">
                 <label class="form-check-label" for="conditionGeneral">
@@ -76,6 +73,11 @@
         <!-- Fin du formulaire HTML -->
     </div>
     <div class="container-img-login d-none d-lg-block col-7"></div>
+        <div class="container-title">
+            <p>Vous avez un compte sur Elitcar? <a href="view/particular/login_particular" target="_self" class="mx-2"> Se connecter</a></p>
+        </div>
+    </div>
+    <div class="container-img-login"></div>
 </div>
 
 </body>
