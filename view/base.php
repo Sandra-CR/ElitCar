@@ -19,7 +19,7 @@
     session_start(); 
 ?>
 
-<nav class="navbar navbar-expand-lg bg-body-light">
+<nav class="base_navbar navbar navbar-expand-lg bg-body-light">
   <div class="container-fluid ">
     <a class="navbar-brand" target="_self" href="view/home"> Elit<span class="sub-navbar-brand">car</span> </a> 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

@@ -38,6 +38,7 @@ if(!empty($_POST["first_name"]) && !empty($_POST["last_name"]) && !empty($_POST[
                     "status" => "failed",
                     "message" => "Problème de base de données. Contactez immédiatement un administrateur !"
                 ];
+                // echo var_dump($error);
             }
 
         } else {

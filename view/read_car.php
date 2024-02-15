@@ -33,7 +33,7 @@ include_once "base.php";
         <p>1400 km inclus</p>
         <button type="button" class="btn btn-warning text-light mb-3 w-50 h-auto mx-auto ">Réserver</button></div>
     </div>
-    <div class="readCar_slider_descri w-75 mx-auto">
+    <div class="readCar_slider_descri w-75 mx-auto mt-2">
         <h3>Volkswagen Golf</h3>
         <div><p>2022<span> • </span>5 places</p></div>
         <div>
@@ -50,7 +50,7 @@ include_once "base.php";
 </section>
 
 
-  <section class="readCar_section readCar_caroussel w-75 mx-auto my-4 position-relative">
+  <section class="readCar_section readCar_caroussel w-75 mx-auto mt-4 position-relative">
     <div class="readCar_carousel-container ">
       <div class="readCar_carousel-btn-container">
          <button class="readCar_carousel-btn" id="prevBtn">&#x27E8;</button>
@@ -100,7 +100,7 @@ include_once "base.php";
           <button type="button" class="btn btn-warning text-light ">Réserver</button>
         </div>
     </div>
-    <div class="m-4 mx-auto">
+    <div class="mt-3 mx-auto">
         <h3>Volkswagen Golf</h3>
         <div><p>2022<span> • </span>5 places</p></div>
         <div>
