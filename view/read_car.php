@@ -1,6 +1,6 @@
 
 <?php 
-include_once "base.php";
+include_once "include/base.php";
 ?>
 
 

@@ -27,9 +27,6 @@
     <div class="collapse navbar-collapse home-navbar-collapse" id="navbarNav">
       <ul class="navbar-nav home-navbar-nav">
         <?php if( !isset($_SESSION['name']) ){?>
-          <li class="nav-item">
-            <a class="nav-link home-nav-link" target="_self" href="view/login">Crée un compte</a>
-          </li>
           <li class="nav-item dropdown">
               <a class="nav-link home-nav-link dropdown-toggle"  href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Connexion
@@ -45,11 +42,17 @@
           </li>
         <?php } ?>
         <li class="nav-item">
-          <a class="nav-link home-nav-link" href="view/professional/create_professional">Agences</a>
+          <a class="nav-link home-nav-link" target="_self" href="view/professional/create_professional">Agences</a>
         </li>
+        <?php if( !isset($_SESSION['name']) ){?>
         <li class="nav-item">
-          <a class="nav-link home-nav-link" href="view/read_car.php"> FAQ ? </a>
+          <a class="nav-link home-nav-link" target="_self" href="view/read_car"> FAQ ? </a>
         </li>
+        <?php }else{ ?>
+          <li class="nav-item">
+              <a class="nav-link home-nav-link" target="_self" href="view/settings"><?= $_SESSION['name'] ?></a>
+          </li>
+          <?php } ?>
       </ul>
     </div>
   </div>

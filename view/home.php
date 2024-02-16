@@ -3,10 +3,6 @@
 include_once "include/base.php";
 ?>
 
-<?php if ( isset($_SESSION['name'])) {?>
-          <p>Bonjour <?=  $_SESSION['name']?></p>
-<?php }?>
-
 <!-- Section de filtre -->
 <div class="container home-container mt-5 home-mt-5">
         <div class="row home-row">
