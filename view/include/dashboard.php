@@ -26,7 +26,7 @@
       <a class="nav-link dashboard-nav-link dashboard-nav-link-right
       <?php 
         $current_file = basename($_SERVER['SCRIPT_NAME']);
-        echo ($current_file == 'update_profile.php' || $current_file == 'settings.php' || $current_file == 'payment_method.php') ? 'active-link' : ''; 
+        echo ($current_file == 'update_profile.php' || $current_file == 'settings.php' || $current_file == 'payment_method.php' || $current_file == 'adress.php') ? 'active-link' : ''; 
       ?>
     " aria-current="page" href="update_profile.php">MON COMPTE</a>
     </li>
