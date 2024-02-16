@@ -13,3 +13,9 @@ include_once "base.php";
 </div>
 <?php include_once "footer.php"; ?>
 
+
+.myrentalsEmpty_section{
+        min-height: 100%;
+
+
+      }

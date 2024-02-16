@@ -9,3 +9,4 @@ if (isset($_GET["status"]) && isset($_GET["message"])){
     echo "<h3 class='$status animation1 text-center'>$message</h3>";
 }
 ?>
+
