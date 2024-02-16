@@ -1,0 +1,221 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+/* navbar */
+.navbar {
+  background: #ffffff;
+  width: 100%;
+  height: 5rem;
+  border: 1px solid #e7e7e7; /* bordure de la navbar */
+}
+.navbar-brand {
+  transform: translateY(-15px);
+}
+/* partie Elit de logo */
+.navbar-brand #logo-sub-0 {
+  padding-left: 45px;
+  color: #000000;
+  font-size: 2.3rem;
+  font-weight: 600;
+  line-height: 1.2125;
+  font-family: Inter, "Source Sans Pro";
+}
+/* partie car du logo */
+.navbar-brand #logo-sub-1 {
+  color: #ffaa00;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.2125;
+  font-family: Inter, "Source Sans Pro";
+}
+/* pour fait monter la navbar */
+#navbarNav {
+  transform: translateY(-15px);
+}
+/* gere les liens de la navbar */
+.navbar-nav .nav-item .nav-link {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000000;
+  font-family: Inter, "Source Sans Pro";
+  flex-shrink: 0;
+}
+
+.navbar-nav .nav-item {
+  margin-right: 90px;
+}
+.custom-container {
+  border-radius: 7px;
+  border: 2px solid #000000;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 2rem;
+  margin-left: -15px;
+}
+.first-container {
+  margin-right: auto;
+  margin-left: -25px;
+}
+.custom-img1 {
+  height: 10px;
+  width: auto;
+  margin-right: 10px;
+}
+.custom-img {
+  height: 18px;
+  width: auto;
+  margin-right: 10px;
+}
+.description {
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+  font-weight: 400;
+  font-size: 14px;
+  font-family: Inter, "Source Sans Pro";
+  color: #000000;
+}
+.custom-container1 {
+  border-radius: 7px;
+  border: 2px solid #ffaa00;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  margin-right: 33px;
+  margin-left: -20px;
+}
+.custom-img2 {
+  height: 30px; /* Adjust this value as needed */
+  width: auto;
+  margin-right: 10px; /* Adjust this value as needed */
+}
+.text {
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+  font-weight: 400;
+  font-size: 14px;
+  font-family: Inter, "Source Sans Pro";
+  color: #ffaa00;
+}
+.border-bottom {
+  border-bottom: 1px solid #e7e7e7;
+  margin: 20px;
+}
+.margin-bottom-20 {
+  margin-bottom: 90px;
+}
+
+/* partie principale */
+.titl {
+  color: #000000;
+  font-family: Inter, "Source Sans Pro";
+  font-weight: 400;
+  font-size: 20px;
+  margin-left: 40px;
+}
+
+.car-container {
+  width: 100%;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  border: 2px solid #e7e7e7; /* Ajout de la bordure autour du conteneur */
+  padding: 0px; /* Ajout de la marge intérieure pour plus d'espace */
+}
+
+/* conteneur de description de chaque image */
+.card-body {
+  padding: 1rem;
+  
+}
+.card {
+  height: 100%;
+}
+/* gere la marque des voitures */
+.brand2 {
+  font-size: 22px;
+  font-weight: 400;
+  color: #000000;
+  font-family: Inter, "Source Sans Pro";
+}
+/* debut de traitemenet des elements de descriptions de la voiture */
+.element1 {
+  height: 20px;
+  font-size: 10px;
+  font-weight: 400;
+  color: #000000;
+  font-family: Inter, "Source Sans Pro";
+  text-align: center;
+  font-size: 10px;
+  width: 150px;
+  border: 1px solid #e3e3e3;
+  border-radius: 0rem;
+}
+.group1,
+.group2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+/* icone d'valuation */
+.star-1-4fm {
+  height: 1rem;
+}
+.element2 {
+  padding: 10px;
+  font-size: 10px;
+  font-weight: 400;
+  color: #000000;
+  font-family: Inter, "Source Sans Pro";
+}
+.icone7 {
+  height: 1rem;
+}
+.element3 {
+  font-size: 10px;
+  font-weight: 400;
+  color: #000000;
+  font-family: Inter, "Source Sans Pro";
+}
+/* prix et la duree pour la location */
+.group3 {
+  margin-left: 6rem;
+  /* padding-left: 130px; */
+}
+.element4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000000;
+  font-family: Inter, "Source Sans Pro";
+}
+.element5 {
+  position: absolute;
+  left: 20;
+  top: 160px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #000000;
+  font-family: Inter, "Source Sans Pro";
+}
+/* Redimensionner l'image à la taille l'image */
+img.img-fluid.rounded-start {
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 10px; /* Coin supérieur gauche */
+  border-bottom-left-radius: 10px; /* Coin inférieur gauche */
+}
+
+.divider {
+  margin-bottom: 70px; /* Espace entre les paires de conteneurs */
+}
+
+@media (max-width: 767px) {
+  img.img-fluid.rounded-start {
+    width: 100%; /* Pour occuper la largeur du conteneur sur les petits écrans */
+    height: auto;
+  }
+}
