@@ -18,19 +18,12 @@
     session_start(); 
 ?>
 
-<<<<<<< HEAD:view/base.php
+
 <nav class="base_navbar navbar navbar-expand-lg bg-body-light">
   <div class="container-fluid ">
     <a class="navbar-brand" target="_self" href="view/home"> Elit<span class="sub-navbar-brand">car</span> </a> 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
-=======
-<nav class="navbar home-navbar navbar-expand-lg bg-body-light">
-  <div class="container-fluid home-container-fluid ">
-    <a class="navbar-brand home-navbar-brand" target="_self" href="view/home"> Elit<span class="sub-navbar-brand home-sub-navbar-brand">car</span> </a> 
-    <button class="navbar-toggler home-navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon home-navbar-toggler-icon"></span>
->>>>>>> ab6ce6f7ef8ab31bfefc9b0c3c61374ce25de9d7:view/include/base.php
     </button>
     <div class="collapse navbar-collapse home-navbar-collapse" id="navbarNav">
       <ul class="navbar-nav home-navbar-nav">
