@@ -17,7 +17,7 @@
                         <input type="email" class="form-control" id="new-email" placeholder="Votre nouveau email">
                     </div>
                     <div class="mb-3">
-                        <label for="password" class="form-label" style="font-weight:700;">Votre mot de passe Elicitar</label>
+                        <label for="password" class="form-label" style="font-weight:700;">Votre mot de passe Elitcar</label>
                         <input type="password" class="form-control" id="password" placeholder="Votre mot de passe">
                         <div class="form-text"><a style="color:black !important;" href="#">Mot de passe oublié ?</a></div>
                     </div>
