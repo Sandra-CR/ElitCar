@@ -1,5 +1,5 @@
 <?php 
-include_once"../base.php";
+include_once"../include/base.php";
 ?>
 
 <main class="col-12 g-0">
@@ -13,7 +13,7 @@ include_once"../base.php";
                     <p>Choisir le forfait qui correspond à la taille de votre agence est une étape cruciale pour garantir une connectivité efficace et une communication sans heurts.</p>
                 </div>
                 <div class="container-btn-create">
-                    <a target="_self" href="view/professional/create_professional"><button class="btn btn-warning-pro-1 my-2">S'inscrire</button></a>
+                    <a target="_self" href="view/professional/login_professional"><button class="btn btn-warning-pro-1 my-2">S'inscrire</button></a>
                 </div>
             </div>
         </div>
