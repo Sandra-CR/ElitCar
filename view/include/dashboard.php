@@ -20,7 +20,7 @@
         $current_file = basename($_SERVER['SCRIPT_NAME']);
         echo ($current_file == 'locations.php') ? 'active-link' : ''; 
       ?>" 
-      aria-current="page" href="locations.php" >MES LOCATIONS</a>
+      aria-current="page" href="view/locations.php" >MES LOCATIONS</a>
     </li>
     <li class="nav-item nav-item-right">
       <a class="nav-link dashboard-nav-link dashboard-nav-link-right
@@ -28,7 +28,7 @@
         $current_file = basename($_SERVER['SCRIPT_NAME']);
         echo ($current_file == 'update_profile.php' || $current_file == 'settings.php' || $current_file == 'payment_method.php') ? 'active-link' : ''; 
       ?>
-    " aria-current="page" href="update_profile.php">MON COMPTE</a>
+    " aria-current="page" href="view/update_profile.php">MON COMPTE</a>
     </li>
   </ul>
 </div> 
