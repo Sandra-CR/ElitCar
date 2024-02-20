@@ -12,12 +12,12 @@
             <div class="container col-md-8 mt-5 mb-5" style="border: 2px solid #D8D8D8 !important; padding: 50px!important;">
                 <!-- la photo -->
                 <div class="col-md-2">
-                    <div class="mb-3 mt-3">
-                        <h5 class="mb-4" style="font-weight:700 !important">Votre photo</h5>
+                    <div class="mb-3 mt-3 d-flex flex-column align-items-center text-center">
+                        <h5 class="mb-4" style="font-weight:700 !important">Photo de profil</h5>
                         <div class="border rounded d-flex justify-content-center align-items-center" style="width: 120px; height: 100px; background-color:#D9D9D9;">
                             <i class="fa fa-user" aria-hidden="true" style="font-size: 50px;"></i>  
                         </div>
-                        <a class="mb-4 " href="#"style="color:black;">Modifier votre photo</a>
+                        <a href="#"style="color:black;">Modifier</a>
                     </div>
                 </div>
                 <!-- les informations personnelles -->
