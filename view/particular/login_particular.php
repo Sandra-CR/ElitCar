@@ -22,7 +22,7 @@ include_once "../../controller/admin/tools.php"; // Inclusion du fichier contena
 
 ?>
 
-<div class="container-main-login d-lg-flex">
+<div class="container-main-login d-flex justify-content-center g-0 ">
     <div class="container-login col-12 col-lg-5">
         <div class="container-logo"><a target="_self" href="view/home"><img src="img/elitcar-login.png" alt="Logo Elitcar" width="256px" height="64px"></a></div>
         <div class="container-title">
@@ -47,7 +47,7 @@ include_once "../../controller/admin/tools.php"; // Inclusion du fichier contena
         </div>
         <?php include_once "../message.php" ?> <!-- Inclusion du fichier contenant le message -->
 
-        <form id="form" class="mx-auto col-6 mt-2" action="" method="post">
+        <form id="form" class="mx-auto col-8 mt-2" action="" method="post">
 
             <div class="form-floating mb-3">
                 <input type="mail" name="mail" class="form-control" id="floatingInput" placeholder="name@example.com">
@@ -66,7 +66,7 @@ include_once "../../controller/admin/tools.php"; // Inclusion du fichier contena
             </div>
         </form>
     </div>
-    <div class="container-img-login d-none d-lg-block col-7"></div>
+    <div class="container-img-login d-none d-xl-block col-7"></div>
 
 </div>
 <?php

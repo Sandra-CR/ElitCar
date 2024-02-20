@@ -8,6 +8,11 @@ function verif_mdp($mdp) {
     $regex = '^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$'; // Expression régulière pour vérifier les critères du mot de passe
     return preg_match($regex , $mdp); // Vérification du mot de passe selon l'expression régulière
 }
+// Fonction pour vérifier la validité de l'adresse email
+function verif_mail($email) {
+    $regex_mail = "/^(?=.{1,254}$)[a-zA-Z0-9!#$%&'*+=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+=?^_`{|}~-]+)*@(?!-)[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*(?<!-)(?:\.[a-zA-Z]{2,})$/";
+    return preg_match($regex_mail , $email);
+}
 
 // Vérification de la soumission des champs du formulaire
 if(!empty($_POST["name"]) && !empty($_POST["mail"]) && !empty($_POST["psw"])) {
@@ -18,26 +23,34 @@ if(!empty($_POST["name"]) && !empty($_POST["mail"]) && !empty($_POST["psw"])) {
     if(verif_mdp($psw)) {
         $psw = password_hash($psw, PASSWORD_ARGON2I); // Hachage sécurisé du mot de passe
         $role = "4"; // Attribution du rôle (ici 4 pour utilisateur professionnel)
-
-        try {
-            // Requête d'insertion des données dans la table "professional"
-            $sql = "INSERT INTO professional (name, mail, psw, profile_picture, role) VALUE (?,?,?,?,?) " ; 
-            $stmt = $pdo->prepare($sql); // Préparation de la requête SQL
-            $stmt->execute([$_POST["name"], $_POST["mail"], $psw, $pp, $role]); // Exécution de la requête avec les valeurs fournies
-            $response = [
-                "status" => "success",
-                "message" => "Utilisateur Créer"
-              ]; // Réponse en cas de succès
-        } catch (Exception $error) {
+        // Vérification de la validité de l'adresse email
+        if (verif_mail($mail)) {
+            try {
+                // Requête d'insertion des données dans la table "professional"
+                $sql = "INSERT INTO professional (name, mail, psw, profile_picture, role) VALUE (?,?,?,?,?) " ; 
+                $stmt = $pdo->prepare($sql); // Préparation de la requête SQL
+                $stmt->execute([$_POST["name"], $_POST["mail"], $psw, $pp, $role]); // Exécution de la requête avec les valeurs fournies
+                $response = [
+                    "status" => "success",
+                    "message" => "Utilisateur Créer"
+                ]; // Réponse en cas de succès
+            } catch (Exception $error) {
+                $response = [
+                    "status" => "failed",
+                    "message" => "Probleme de bdd Contactez immédiatement un Admin !"
+                ]; // Réponse en cas d'échec de l'insertion dans la base de données
+            }
+        } else {
+            // Si l'adresse email est invalide
             $response = [
                 "status" => "failed",
-                "message" => "Probleme de bdd Contactez immédiatement un Admin !"
-              ]; // Réponse en cas d'échec de l'insertion dans la base de données
+                "message" => "Email non valide"
+            ];
         }
     } else {
         $response = [
             "status" => "failed",
-            "message" => "Le mot de passe doit contenir au moins 8 caractères avec au moins une majuscule et au moins un chiffre."
+            "message" => "Le mot de passe doit contenir au moins 8 caractères avec au moins une majuscule, un  et au moins un chiffre."
           ]; // Réponse en cas de mot de passe invalide
     }
 } else {

@@ -891,7 +891,6 @@ $$$$$$$$/  $$$$$$/   $$$$$$$ |$$/ $$/   $$/
     display: flex;
 }
 .container-login{
-    width: 45%;
     height: 100%;
     background-color: #ffffff;
 }
@@ -1111,16 +1110,16 @@ $$/       $$/        $$$$$$/  $$/        $$$$$$$/ $$$$$$$/  $$/  $$$$$$/  $$/   
 }
 .btn-warning-pro-1{
     /* Style du bouton de recherche */
-     width: 277px;
-     height: 56px;
+    height: 40px;
+    width: 100%;
      background-color: #FFAA00; 
      border: none; 
      color: #ffffff;
  }
 .btn-warning-pro-2{
    /* Style du bouton de recherche */
-    width: 214px;
-    height: 44px;
+    height: 25%;
+    width: 100%;
     background-color: #FFAA00; 
     border: none; 
     color: #ffffff;
@@ -1140,7 +1139,20 @@ $$/       $$/        $$$$$$/  $$/        $$$$$$$/ $$$$$$$/  $$/  $$$$$$/  $$/   
     box-shadow: none !important; 
     font-weight: bold;
 } 
-
+@media screen and (max-width: 1200px){
+    .container-main-choose-sub-card{
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;   
+    }
+    .container-professional-2{
+        height: 100%;
+        margin-top: 100px;
+        background-color: #CCCCCC;
+        align-items: center;
+    }
+}
 /* __    __                         
 /  \  /  |                        
 $$  \ $$ | __    __  _____  ____  
