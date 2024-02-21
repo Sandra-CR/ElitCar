@@ -974,6 +974,13 @@ $$$$$$$$/  $$$$$$/   $$$$$$$ |$$/ $$/   $$/
 .text-label{
     font-size: 0.9em;
 }
+.failed {
+    color: red;
+}
+  
+.success {
+    color: green;
+}
 
 /* 
 

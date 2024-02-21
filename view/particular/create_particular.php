@@ -33,7 +33,7 @@
 
         <form id="form" class="mx-auto col-6">
 
-            <div class="form-floating mb-3">
+            <div class="form-floating my-3">
                 <input type="text" name="first_name" class="form-control" id="floatingFname" placeholder="Prénom">
                 <label for="floatingFName">Prénom</label>
             </div>
@@ -41,7 +41,7 @@
                 <input type="text" name="last_name" class="form-control" id="floatingName" placeholder="Nom">
                 <label for="floatingName">Nom</label>
             </div>
-            <div class="form-floating mb-3">
+            <div class="form-floating my-3">
                 <input type="mail" name="mail" class="form-control" id="floatingInput" placeholder="name@example.com">
                 <label for="floatingInput">Email</label>
             </div>
@@ -50,8 +50,8 @@
                 <label for="floatingPassword">Mots de passe</label>
             </div>
             <div class="form-check my-1">
-                <input class="form-check-input" type="checkbox" value="" id="conditionGeneral">
-                <label class="form-check-label" for="conditionGeneral">
+                <input class="form-check-input" type="checkbox" value="1" name="pol" id="politique">
+                <label class="form-check-label" name="pol" for="politique">
                     <p class="text-label">
                         J’accepte la <a target="_self" class="text-decoration-none text-dark" href=""><b>politique de confidentialité</b></a> et <a target="_self" class="text-decoration-none text-dark" href=""><b>les conditions générales d’utilisations</b></a>
                     </p>
@@ -59,8 +59,8 @@
             </div>
 
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="newletters" checked>
-                <label class="form-check-label" for="newletters">
+                <input class="form-check-input" type="checkbox" value="1" name="new" id="newsletters" checked>
+                <label class="form-check-label" name="new" for="newsletters">
                     <p class="text-label">
                     J'aimerais bénéficier des offres spéciales, promotions et nouvelles,
                     </p>

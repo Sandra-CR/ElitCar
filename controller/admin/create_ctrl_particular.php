@@ -53,7 +53,7 @@ if(!empty($_POST["first_name"]) && !empty($_POST["last_name"]) && !empty($_POST[
             "message" => "Le mot de passe doit contenir au moins 8 caractères avec au moins une majuscule et au moins un chiffre"
         ];
     }
-
+    
 } else {
     $response = [
         "status" => "failed",
