@@ -21,12 +21,14 @@ include_once "../../model/pdo.php"; // Inclusion du fichier contenant la connexi
 include_once "../../controller/admin/tools.php"; // Inclusion du fichier contenant des fonctions utilitaires pour l'administrateur
 
 ?>
-<div class="container-main-login">
-    <div class="container-login">
+
+<div class="container-main-login d-lg-flex">
+    <div class="container-login col-12 col-lg-5">
         <div class="container-logo"><a target="_self" href="view/home"><img src="img/elitcar-login.png" alt="Logo Elitcar" width="256px" height="64px"></a></div>
         <div class="container-title">
-            <h5 class="">SE CONNECTER</h5>
-            <h5 class="">S'INSCRIRE</h5>
+            <h5 class=""><a target="_self" class="text-decoration-none text-dark" href="view/particular/login_particular">SE CONNECTER</a></h5>
+            <h5 class=""><a target="_self" class="text-decoration-none text-dark" href="view/login">S'INSCRIRE</a></h5>
+
         </div>
         <div class="container-divider">
             <div class="divider-switch3 "></div>
@@ -36,9 +38,9 @@ include_once "../../controller/admin/tools.php"; // Inclusion du fichier contena
             <h4 >Nous sommes contents de vous revoir</h4>
         </div>
         <div class="container-btn">
-            <button class="btn btn-secondary my-1">Google</button>
-            <button class="btn btn-secondary my-1">Facebook</button>
-            <button class="btn btn-secondary my-1">Apple</button>
+            <button class="btn-log btn-secondary my-1">Google</button>
+            <button class="btn-log btn-secondary my-1">Facebook</button>
+            <button class="btn-log btn-secondary my-1">Apple</button>
         </div>
         <div class="container-choose mt-2">
             <p>ou</p>
@@ -55,13 +57,17 @@ include_once "../../controller/admin/tools.php"; // Inclusion du fichier contena
                 <input type="password" name="psw" class="form-control" id="floatingPassword" placeholder="Mots de passe">
                 <label for="floatingPassword">Mots de passe</label>
             </div>
-            <input type="submit" class="form-control btn btn-light mt-3" value="Connexion">
+
+            <div class="container-title-3 mb-2">
+                <a href="view/login" target="_self" class="mx-2 fw-bold text-decoration-none text-dark">Mot de passe oublié?</a>
+            </div>
+            <div class="container-btn-mail mx-auto">
+                <input type="submit" class="form-control mt-3 btn btn-warning text-light" value="Connexion">
+            </div>
         </form>
-        <div class="container-title">
-            <p>Vous voulez créer un compte sur Elitcar? <a href="view/login" target="_self" class="mx-2"> S'inscrire</a></p>
-        </div>
     </div>
-    <div class="container-img-login"></div>
+    <div class="container-img-login d-none d-lg-block col-7"></div>
+
 </div>
 <?php
 // Vérification si les champs de formulaire ne sont pas vides
@@ -92,3 +98,4 @@ if (!empty($_POST['mail']) && !empty($_POST['psw'])){
     //sendMessage("Veuillez remplir correctement le formulaire", "failed", "login_particular.php");
 }
 ?>
+

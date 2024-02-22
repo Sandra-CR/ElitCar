@@ -1,6 +1,9 @@
 
 /* Importation des polices Google */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+.hidden{
+    display: none;
+}
 
 /* 
 __    __                                   
@@ -14,7 +17,6 @@ $$ |  $$ |$$    $$/ $$ | $$ | $$ |$$       |
 $$/   $$/  $$$$$$/  $$/  $$/  $$/  $$$$$$$/ 
                                             
                                             
-                                             */
 
 /*** Styles de base ***/
 *{
@@ -27,14 +29,28 @@ body {
     flex-direction: column;
 }
 
+/*
+                                 __                           
+                               /  |                          
+ _______    ______   __     __ $$ |____    ______    ______  
+/       \  /      \ /  \   /  |$$      \  /      \  /      \ 
+$$$$$$$  | $$$$$$  |$$  \ /$$/ $$$$$$$  | $$$$$$  |/$$$$$$  |
+$$ |  $$ | /    $$ | $$  /$$/  $$ |  $$ | /    $$ |$$ |  $$/ 
+$$ |  $$ |/$$$$$$$ |  $$ $$/   $$ |__$$ |/$$$$$$$ |$$ |      
+$$ |  $$ |$$    $$ |   $$$/    $$    $$/ $$    $$ |$$ |      
+$$/   $$/  $$$$$$$/     $/     $$$$$$$/   $$$$$$$/ $$/       
+*/
+/*** Style de la navbar ***/
 /* Style général de la barre de navigation */
-.navbar, .navbar * {
+
+.home-navbar, .home-navbar * {
+    color: #000000;
     font-weight: 600;
     font-family: 'Inter', sans-serif;
 }
 
 /* Structure et mise en forme du conteneur de la barre de navigation */
-.container-fluid {
+.home-container-fluid {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -43,86 +59,107 @@ body {
 }
 
 /* Style du contenu déroulant pour la barre de navigation en vue mobile */
-.navbar-collapse {
+.home-navbar-collapse {
     display: flex;
     justify-content: flex-end;
 }
 
 /* Style de l'icône du menu déroulant (hamburger) */
-.navbar-toggler-icon {
+.home-navbar-toggler-icon {
     /* SVG intégré directement dans le CSS pour l'icône du menu */
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
 /* Style du bouton de menu déroulant */
-.navbar-toggler {
+.home-navbar-toggler {
     border-color: #000000;
     margin-right: 80px;
 }
 
 /* Style du logo de la barre de navigation */
-.navbar-brand {
-    font-size: 36px; 
+.home-navbar-brand {
+    font-size: 250% !important; 
     margin-left: 80px; 
 }
 
 /* Survol du logo de la barre de navigation */
-.navbar-brand:hover, .navbar-brand:focus {
+.home-navbar-brand:hover, .home-navbar-brand:focus {
     color: inherit; 
 }
 
 /* Couleur spécifique pour une partie du logo */
-.sub-navbar-brand {
+.home-sub-navbar-brand {
     color: #FFAA00;
 }
 
 /* Style des liens de la barre de navigation */
-.navbar-nav {
+.home-navbar-nav {
     align-items: center;
     font-size: 16px;
     margin-top: 9px;
 }
 
 /* Marge à droite pour chaque lien de la barre de navigation */
-.navbar-nav .nav-link {
+.home-navbar-nav .home-nav-link {
     margin-right: 150px; 
+    color: #000000 !important;
 }
 
 /* Couleur au survol des liens de la barre de navigation */
-.navbar-nav .nav-link:hover, .navbar-nav .nav-link:focus {
-    color: #2AC4FE;
+.home-navbar-nav .home-nav-link:hover, .home-navbar-nav .nav-link:focus {
+    color: #2AC4FE !important;
 }
 
 /* Couleur du lien actif dans la barre de navigation */
-.navbar-nav .nav-link.active {
+.home-navbar-nav .home-nav-link.active {
     color: #2AC4FE;
 }
 
+/* 
+__    __                                   
+/  |  /  |                                  
+$$ |  $$ |  ______   _____  ____    ______  
+$$ |__$$ | /      \ /     \/    \  /      \ 
+$$    $$ |/$$$$$$  |$$$$$$ $$$$  |/$$$$$$  |
+$$$$$$$$ |$$ |  $$ |$$ | $$ | $$ |$$    $$ |
+$$ |  $$ |$$ \__$$ |$$ | $$ | $$ |$$$$$$$$/ 
+$$ |  $$ |$$    $$/ $$ | $$ | $$ |$$       |
+$$/   $$/  $$$$$$/  $$/  $$/  $$/  $$$$$$$/ 
+                                                                                      
+*/
+
 /*** Styles spécifiques pour la section de filtre ***/
 /* Titre de la section de filtre */
-.search-title{
-    font-weight: 600;
+.home-search-title{
+    font-weight: 650!important;
     font-size: 42px;
 }
 
 /* Sous-titre de la section de filtre */
-.sub-search-title{
+.home-sub-search-title{
     color: #FFAA00;
     font-size: 32px;
 }
 
 /* Style des contrôles de formulaire et du texte du groupe d'entrée */
-.form-control, .input-group-text {
-    margin-bottom: 20px;
-    background-color:#EDECEC;
-    padding: 15px;
-    border: 0px #ced4da;
-    height: 60px;
+.home-form-control, .home-input-group-text {
+    margin-bottom: 20px !important;
+    background-color:#EDECEC !important;
+    padding: 15px !important;
+    border: 0px #ced4da !important;
+    height: 60px !important;
+}
+
+/* Suppression de l'effet de focus pour les contrôles de formulaire */
+.home-form-control:focus {
+    background-color: #EDECEC !important; 
+    border: 0px #ced4da !important; 
+    box-shadow: none !important;
 }
 
 /* Style spécifique pour le groupe de texte d'entrée */
-.input-group-text {
-    border-radius: 0.25rem 0 0 0.25rem;
+.home-input-group-text {
+    border-radius: 0.25rem 0 0 0.25rem !important;
 }
 
 /* Style pour le placeholder dans le formulaire */
@@ -131,7 +168,7 @@ textarea::placeholder {
 }
 
 /* Style du bouton de recherche */
-.btn-warning {
+.home-btn-warning {
     background-color: #FFAA00; 
     border: none; 
     height: 60px;
@@ -140,7 +177,7 @@ textarea::placeholder {
 }
 
 /* l'effet de survol pour le bouton */
-.btn-warning:hover {
+.home-btn-warning:hover {
     background-color: #FFAA00; 
     color: #000000;
     border:4px solid #000000;
@@ -149,47 +186,47 @@ textarea::placeholder {
 }
 
 /* l'effet de focus */
-.btn-warning:focus {
+.home-btn-warning:focus {
     background-color: #FFAA00;
     box-shadow: none !important; 
     font-weight: bold;
 }
 
 /* Style pour la zone de recherche */
-.search-area {
+.home-search-area {
     width: 80%;
     margin: auto;
 }
 
 /* Marge personnalisée pour les éléments du groupe d'entrée */
-.custom-margin {
+.home-custom-margin {
     margin-right: 30px;
 }
 
 /* Style pour le groupe d'entrée */
-.input-group{
+.home-input-group{
     margin-top: 15px;
 }
 
 /* Style pour le formulaire */
-.form{
+.home-form{
     margin-top: 15px ;
 }
 
 /* Suppression de l'effet de survol pour les contrôles de formulaire */
-.form-control:hover {
+.home-form-control:hover {
     background-color: #EDECEC;
     border: 0px #ced4
 }
  
 /* Suppression de l'effet de survol pour les contrôles de formulaire */
-.form-control:hover {
+.home-form-control:hover {
     background-color: #EDECEC;
     border: 0px #ced4da; 
 }
 
 /* Suppression de l'effet de focus pour les contrôles de formulaire */
-.form-control:focus {
+.home-form-control:focus {
     background-color: #EDECEC; 
     border: 0px #ced4da; 
     box-shadow: none;
@@ -197,26 +234,26 @@ textarea::placeholder {
 
 /*** Styles pour les images ***/
 /* Conteneur pour les images */
-.img-col {
+.home-img-col {
     display: flex;
     justify-content: center;
 }
 
 /* Style pour les images fluides (responsive) */
-.img-fluid {
+.home-img-fluid {
     max-height: 95%; 
     border-radius: 10px;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
-.image-fluid {
+.home-image-fluid {
     max-height: 95%; 
     border-radius: 5px;
 }
 
 /*** Styles pour la section d'introduction ***/
 /* Conteneur principal pour la section d'introduction */
-.containerfiltre {
+.home-containerfiltre {
     background: #ffffff;
     display: flex;
     flex-direction: column;
@@ -230,42 +267,43 @@ textarea::placeholder {
 }
 
 /* Styles pour les titres h2 et les paragraphes dans la section d'introduction */
-.col-md-12 h2 {
+.home-col-md-12 h2 {
     font-size: 32px;
 }
 
-.col-md-12 p {
+.home-col-md-12 p {
     font-size: 20.5px;  
 }
 
-/*** Styles pour les cartes ***/
+/*** Styles pour les cartes offres***/
 /* Conteneur principal pour les cartes */
-.card {
+.home-card {
     margin-top: 20px; 
     border-color: #BABABA;
+    min-width: 60%;
     width: 100%;
     height: 100%;
     
 }
 
 /* Styles pour les titres h5 et les paragraphes dans les cartes */
-.card-body h5 {
+.home-card-body h5 {
     font-size: 16px;
     font-weight: 600;
 }
 
-.card-body p {
+.home-card-body p {
     font-size: 16px;
     font-weight: 400;
 }
 
 /* Styles pour les icônes à l'intérieur des cartes */
-.card-body i {
+.home-card-body i {
     color: #FFAA00; 
 }
 
 /* Fond gris derrière la section d'introduction */
-.grey-background {
+.home-grey-background {
     background-color: #EDECEC; 
     padding-top: 20px; 
     padding-bottom: 20px; 
@@ -275,7 +313,7 @@ textarea::placeholder {
 }
 
 /* Style pour le fond des icônes */
-.icon-bg {
+.home-icon-bg {
     background-color: #2AC4FE80;
     width: 71px;
     height: 63px;
@@ -286,12 +324,12 @@ textarea::placeholder {
 }
 
 /* Style pour les icônes */
-.icon {
+.home-icon {
     font-size: 30px; 
 }
 
 /* Style pour les images en position absolue dans la section d'introduction */
-.img-fluid {
+.home-img-fluid {
     width: 20%;
     position: absolute;
     top: 50%;
@@ -300,14 +338,14 @@ textarea::placeholder {
 
 /*** Styles pour les cartes de vehicules***/
 /* Style pour centrer le titre de la carte et ajuster sa taille */
-.card-body-2 h5 {
+.home-card-body-2 h5 {
     text-align: center; 
     font-weight: 400;
     font-size: 24px;
 }
 
 /* Style pour centrer les images dans la carte et ajuster leur taille */
-.card-img-top {
+.home-card-img-top {
     width: 90%; 
     max-height: 190px; 
     display: block; 
@@ -317,42 +355,42 @@ textarea::placeholder {
 }
 
 /* Style pour centrer le texte du corps de la carte */
-.card-body-2 {
+.home-card-body-2 {
     text-align: center; 
 }
 
 /* style pour le titre principale */
-.h2-vehicules {
+.home-h2-vehicules {
     font-weight: 400;
     font-size: 36px;
 }
 
 /* ajuster le padding des cartes */
-.card{
+.home-card{
     padding-bottom: 0%;
 }
 
 /*** Style pour la section des villes ***/
 /* Pour supprimer la bordure autour de l'élément d'accordéon entier */
-.accordion-item {
+.home-accordion-item {
     border: none; 
     font-weight: 400;
     font-size: 16px;
 }
 
-.text-city{
+.home-text-city{
     margin-top: 60px;
     font-weight: 700;
     font-size: 24px;
 }
 
 /*** Style pour la section conseils ***/
-.card-img-top2{
+.home-card-img-top2{
     height: 70%;
     width: 90%;
     border-radius: 5px;
 }
-.section-title{
+.home-section-title{
     margin-top: -50px;
     font-weight: 700;
     font-size: 24px;
@@ -366,13 +404,13 @@ textarea::placeholder {
     height: 100%;
 }
 
-.section-subtitle{
+.home-section-subtitle{
     font-weight: 700;
     font-size: 20px;
     margin-top: 20px;
 }
 
-.section-content{
+.home-section-content{
     font-size: 16px;
     line-height: 19px;
     margin-top: 5px;
@@ -398,16 +436,18 @@ textarea::placeholder {
 /*** Media Queries pour la responsivité ***/
 /* Styles spécifiques pour les écrans */
 @media screen and (max-width: 1289px) {
-    .intro-img {
+    .home-intro-img {
         display: none; /* Cache l'image sur les petits écrans */
     }
-    .image-fluid {
+    .home-image-fluid {
         margin-top: 50px;
         max-height: 80%; 
         border-radius: 5px;
     }
-    .card {
+
+    .home-card {
         max-width: 90%; /* Ajuste la largeur maximale des cartes */
+
     }
     .containerfiltre {
         padding-left: 70px; 
@@ -416,43 +456,119 @@ textarea::placeholder {
         margin-right: 17%;
     }
 }
-
 @media screen and (max-width: 766px){
-    .image-fluid {
+    .home-image-fluid {
         display: none;
     }
-
-    .img-fluid3 {
+    .home-img-fluid3 {
         display: none;
     }
 }
+/*______                       __        __                                            __ 
+/       \                     /  |      /  |                                          /  |
+$$$$$$$  |  ______    _______ $$ |____  $$ |____    ______    ______    ______    ____$$ |
+$$ |  $$ | /      \  /       |$$      \ $$      \  /      \  /      \  /      \  /    $$ |
+$$ |  $$ | $$$$$$  |/$$$$$$$/ $$$$$$$  |$$$$$$$  |/$$$$$$  |/$$$$$$  | $$$$$$  |/$$$$$$$ |
+$$ |  $$ | /    $$ |$$      \ $$ |  $$ |$$ |  $$ |$$ |  $$ |$$ |  $$/  /    $$ |$$ |  $$ |
+$$ |__$$ |/$$$$$$$ | $$$$$$  |$$ |  $$ |$$ |__$$ |$$ \__$$ |$$ |      /$$$$$$$ |$$ \__$$ |
+$$    $$/ $$    $$ |/     $$/ $$ |  $$ |$$    $$/ $$    $$/ $$ |      $$    $$ |$$    $$ |
+$$$$$$$/   $$$$$$$/ $$$$$$$/  $$/   $$/ $$$$$$$/   $$$$$$/  $$/        $$$$$$$/  $$$$$$$/ 
+*/    
 
-/* decoration
-.grey-decoration{
-position: absolute;
-width: 800px;
-height: 332.68px;
-right: 0px;
-top: 406.12px;
-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-background: #EDECEC;
-z-index: -1
+.dashboard-nav-tabs .dashboard-nav-link.active-link{
+    color: #FFAA00 !important;
+    border-bottom: 3px solid #FFAA00 !important;
 }
+.dashboard-nav-tabs{
+    border-top: 1px solid #E3E3E3 !important;
+    padding-top: 10px;
+}
+
+.dashboard-nav-tabs .dashboard-nav-link {
+    border: none !important;
+    color: #000 !important;  
+}
+
+.dashboard-nav-link {
+    font-family: 'Inter';
+    font-weight: 700 !important;
+    font-size: 16px !important;
+    color: #000000;
+    padding-left:40px !important;
+    padding-right:40px !important;
+}
+
+.dashboard-nav-tabs .dashboard-nav-link:hover {
+    color:#FFAA00 !important; 
+}
+
+@media screen and (max-width:407px){ 
+    .dashboard-nav-link {
+        font-size: 10px !important;
+    }
+}
+/*
+                                                               __                                                         
+                                                              /  |                                                        
+  ______    _______   _______   ______   __    __  _______   _$$ |_            _____  ____    ______   _______   __    __ 
+ /      \  /       | /       | /      \ /  |  /  |/       \ / $$   |          /     \/    \  /      \ /       \ /  |  /  |
+ $$$$$$  |/$$$$$$$/ /$$$$$$$/ /$$$$$$  |$$ |  $$ |$$$$$$$  |$$$$$$/           $$$$$$ $$$$  |/$$$$$$  |$$$$$$$  |$$ |  $$ |
+ /    $$ |$$ |      $$ |      $$ |  $$ |$$ |  $$ |$$ |  $$ |  $$ | __         $$ | $$ | $$ |$$    $$ |$$ |  $$ |$$ |  $$ |
+/$$$$$$$ |$$ \_____ $$ \_____ $$ \__$$ |$$ \__$$ |$$ |  $$ |  $$ |/  |        $$ | $$ | $$ |$$$$$$$$/ $$ |  $$ |$$ \__$$ |
+$$    $$ |$$       |$$       |$$    $$/ $$    $$/ $$ |  $$ |  $$  $$/  ______ $$ | $$ | $$ |$$       |$$ |  $$ |$$    $$/ 
+ $$$$$$$/  $$$$$$$/  $$$$$$$/  $$$$$$/   $$$$$$/  $$/   $$/    $$$$/  /      |$$/  $$/  $$/  $$$$$$$/ $$/   $$/  $$$$$$/  
+                                                                      $$$$$$/                                             
 */
-   a{
-    color: black;
+.menu-compte-list-group-item{
+    border: none !important;
+    font-size: 14px !important;
+}
+.menu-compte-list-group-item:hover{
+    border: 3px solid #ffeabf !important;
+    border-radius: 30px !important;
+    border-color: #ffeabf !important;
+    background-color: #ffeabf;
+    color: #FFAA00 ;
+    font-weight: 500;
+}
+.menu-compte-list-group-item.active-item{
+    border: 3px solid #ffeabf !important;
+    border-radius: 30px !important;
+    background-color: #ffeabf;
+    color: #FFAA00;
+    font-weight: 500;
+}
+/***************************************************************************************************/
+/***************************************************************************************************/
+
+   .readCar_section {
+    margin-bottom: 20px;
+   } 
+   .readCar_section:last-child {
+    margin-bottom: 40px;
    }
-   h2{
+/* __                                       
+/  |                                      
+______    ______    ______    ____$$ |          _______   ______    ______  
+/      \  /      \  /      \  /    $$ |         /       | /      \  /      \ 
+/$$$$$$  |/$$$$$$  | $$$$$$  |/$$$$$$$ |        /$$$$$$$/  $$$$$$  |/$$$$$$  |
+$$ |  $$/ $$    $$ | /    $$ |$$ |  $$ |        $$ |       /    $$ |$$ |  $$/ 
+$$ |      $$$$$$$$/ /$$$$$$$ |$$ \__$$ |        $$ \_____ /$$$$$$$ |$$ |      
+$$ |      $$       |$$    $$ |$$    $$ | ______ $$       |$$    $$ |$$ |      
+$$/        $$$$$$$/  $$$$$$$/  $$$$$$$/ /      | $$$$$$$/  $$$$$$$/ $$/       
+    $$$$$$/                               
+*/
+   .readCar_section a{
+    color: black;
+    padding: 5px;
+   }
+   .readCar_section h2{
     padding: 5px;
    }
    .readCar_section {
     margin: 20px;
    } 
-
-
-
-
-     .bloc_map {
+    .bloc_map {
     width: 50%;
     display: flex;
 
@@ -470,9 +586,6 @@ z-index: -1
     justify-content: center;
     width: 50%;
    }
-
-
-   
    .readCar_avis {
         display: flex;
         width: 40%;
@@ -515,9 +628,12 @@ z-index: -1
 
     .point-jaune{
         height: 30%;
+        margin-right: 5px;
        
     }
-
+    .point-bleu{
+        margin-right: 5px;
+    }
     .testpipi {
         display: flex;
         align-items: first baseline;
@@ -531,7 +647,8 @@ z-index: -1
     .point_noir {
         display: flex;
         align-items: first baseline;
-        margin-top: 3%;
+        /* margin-top: 3%;
+        margin-right: 5px; */
     }
     
     .card-text {
@@ -539,36 +656,219 @@ z-index: -1
       align-items: flex-end;
       flex-direction: column;
     }
-
-    #réservation_absolute div>p{
+    .réservation_absolute_caroussel div p{
         font-size:1.4em;
         font-weight:bold;
     }
-    #réservation_absolute {
-        height: 30%;
+    .réservation_absolute_caroussel p{
+        margin: 0;
+    }
+    .réservation_absolute_caroussel {
+        margin-bottom:-30%;
+        height: 50%;
         box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
         width: 20%;
-        font-size: 1.4em;
+        /* font-size: 1.4em; */
     }
-    #réservation_absolute button {
-        /* width: 40%; */
-        font-size: 1.3em;
+    .réservation_absolute_caroussel button {
+        width: 50%;
+        height: auto;
+        margin-bottom: 10px;
+        font-size: 1.2em;
     }
 
-    @media screen and(min-width:1024px )and(max-width: 1550px) {
+    @media screen and (max-width: 1550px) {
         .readCar_section{
             width: 100%;
         }
         .border{
             width: 100%;
         }
+        .slider_absolute_title{
+            font-size:1.4em;
+            font-weight:bold;
+        }
+        .réservation_absolute_slider {
+            height: 35%;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+            width: 25%;
+            font-size: 1.4em;
+            margin-bottom:-5%;
+
+        }
+        .réservation_absolute_slider button {
+            font-size: 1em;
+            margin-bottom: 5%;
+            width: 50%;
+        }
+   
+        .readCar_caroussel{
+            display: none;
+
+        }   
+          .readCar_slider{
+            display: block;
+        }
+
+        }
+
+    @media screen and (min-width:801px ) and (max-width: 1250px) {
+        .réservation_absolute_slider {
+            height: 40%;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+            width: 30%;
+            font-size: 1.2em;
+            margin-bottom:-10%;
+            
+        }
     }
-    @media screen and(min-width:768px )and (max-width: 1023px) {
+
+    @media screen and (max-width: 800px) {
+        .bloc_map{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        .loc-map{
+            display: flex;
+            justify-content: space-between;
+            
+        }
+        .réservation_absolute_slider {
+            height: 40%;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+            width: 30%;
+            font-size: 1em;
+            margin-bottom:-10%;
+            
+        }
+        .texte-loc{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            display: flex;
+            justify-content: center;
+        }
+        .texte-loc p{
+            margin-right: 5px;
+            
+        }
+        .loc-map {
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap ;
+            
+        }
 
     }
-    @media screen and(max-width: 767px) {
 
+    @media screen and (max-width: 650px) {
+        .réservation_absolute_slider {
+            height: 40%;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+            width: 30%;
+            font-size: 0.8em;
+            
+        }
+        .readCar_avis {
+            display: flex;
+            width: 40%;
+            justify-content: space-between;
+    
+    
+        }
     }
+    
+    .readCar_carousel-container {
+        position: relative;
+        
+        overflow: hidden;
+        margin: auto;
+        height: 100%;
+      
+      }
+      .readCar_carousel-btn-container {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      }
+      
+      .readCar_carousel-btn {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      background-color: #33333332;
+      color: #ffffff1f;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 1;
+      width: 50px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease-in-out;
+      font-size: 2em;
+      height:100%; 
+
+      }
+      
+      #prevBtn {
+      left: 0;
+      }
+      
+      #nextBtn {
+      right: 0;
+      }
+      
+      .readCar_carousel-btn:hover {
+      background-color: #5555557f;
+      color: white;
+      }
+      .readCar_carousel-track {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+      
+      .readCar_carousel-slide {
+        flex:  0 0 32.68% ;
+        box-sizing: border-box;
+       
+      }
+      
+      .readCar_carousel-slide img {
+        width: 100%;
+        height: 100%;
+        
+      }
+
+      /* rajout du gap entre les images decommenter et passer le flex a 0 0 32.7% */
+      .readCar_carousel-slide {
+      margin-right: 1%;
+      }
+      .nomargin{
+        margin: 0;
+      }
+
+
+      .myrentalsEmpty_section{
+        min-height: 100%;
+
+
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* __                            __           
 /  |                          /  |          
@@ -607,7 +907,16 @@ $$$$$$$$/  $$$$$$/   $$$$$$$ |$$/ $$/   $$/
     flex-direction: column !important;
     align-items: center;
 }
-.btn{
+.container-btn-mail{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
+}
+.btn-log{
+    width: 347px !important;
+    height: 62px !important;
+}
+.btn-mail{
     width: 347px;
     height: 62px;
 }
@@ -621,6 +930,11 @@ $$$$$$$$/  $$$$$$/   $$$$$$$ |$$/ $$/   $$/
     margin-bottom: 35px;
     display: flex;
     justify-content: center;
+}
+.container-title-3{
+    display: flex;
+    flex-direction: row;
+    font-size: 0.8em;
 }
 .container-choose{
     margin-top: 10px;
@@ -658,6 +972,9 @@ $$$$$$$$/  $$$$$$/   $$$$$$$ |$$/ $$/   $$/
     height: 3px;
     background-color: #CCCCCC;
 }
+.text-label{
+    font-size: 0.9em;
+}
 
 /* 
 
@@ -670,14 +987,13 @@ $$$$$/    $$ |  $$ |$$ |  $$ |  $$ | __ $$    $$ |$$ |  $$/
 $$ |      $$ \__$$ |$$ \__$$ |  $$ |/  |$$$$$$$$/ $$ |      
 $$ |      $$    $$/ $$    $$/   $$  $$/ $$       |$$ |      
 $$/        $$$$$$/   $$$$$$/     $$$$/   $$$$$$$/ $$/       
-                                                            
-                                                            
- */
+*/
 
 footer{
     width: 100vw;
     height: 456px;
     background-color: #D9D9D9 ;
+
 }
 .container-main-footer{
     display: flex;
@@ -720,3 +1036,260 @@ footer{
     color: #000000;
 }
 
+/* 
+_______                        ______                       __                                __ 
+/       \                      /      \                     /  |                              /  |
+$$$$$$$  |  ______    ______  /$$$$$$  |  ______    _______ $$/   ______   _______    ______  $$ |
+$$ |__$$ | /      \  /      \ $$ |_ $$/  /      \  /       |/  | /      \ /       \  /      \ $$ |
+$$    $$/ /$$$$$$  |/$$$$$$  |$$   |    /$$$$$$  |/$$$$$$$/ $$ |/$$$$$$  |$$$$$$$  | $$$$$$  |$$ |
+$$$$$$$/  $$ |  $$/ $$ |  $$ |$$$$/     $$    $$ |$$      \ $$ |$$ |  $$ |$$ |  $$ | /    $$ |$$ |
+$$ |      $$ |      $$ \__$$ |$$ |      $$$$$$$$/  $$$$$$  |$$ |$$ \__$$ |$$ |  $$ |/$$$$$$$ |$$ |
+$$ |      $$ |      $$    $$/ $$ |      $$       |/     $$/ $$ |$$    $$/ $$ |  $$ |$$    $$ |$$ |
+$$/       $$/        $$$$$$/  $$/        $$$$$$$/ $$$$$$$/  $$/  $$$$$$/  $$/   $$/  $$$$$$$/ $$/ 
+                                                                                                  
+                                                                                                  
+ */
+
+.container-professional{
+    height: 60vh;
+}
+.container-pro-create{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.container-pro-img{
+    display: flex;
+}
+.container-btn-create{
+    display: flex;
+    align-items: flex-start;
+}
+.container-pro-img-1{
+    background-image: url(../img/pro-img.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.container-professional-2{
+    margin-top: 100px;
+    height: 60vh;
+    background-color: #CCCCCC;
+    align-items: center;
+}
+.container-main-choose-sub{
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container-main-choose-sub-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.container-main-choose-sub-card-1{
+    margin-bottom:  75px ;
+    border: 3px solid #BFBFBF;
+    display: flex ;
+    flex-direction: column;
+    align-items: center;
+}
+.container-main-choose-sub-card-2{
+    margin-bottom:  75px ;
+    border: 3px solid #BFBFBF;
+    display: flex ;
+    flex-direction: column;
+    align-items: center;
+}
+.container-main-choose-sub-card-3{
+    margin-bottom:  75px ;
+    border: 3px solid #BFBFBF;
+    display: flex ;
+    flex-direction: column;
+    align-items: center;
+}
+.btn-warning-pro-1{
+    /* Style du bouton de recherche */
+     width: 277px;
+     height: 56px;
+     background-color: #FFAA00; 
+     border: none; 
+     color: #ffffff;
+ }
+.btn-warning-pro-2{
+   /* Style du bouton de recherche */
+    width: 214px;
+    height: 44px;
+    background-color: #FFAA00; 
+    border: none; 
+    color: #ffffff;
+}
+/* l'effet de survol pour le bouton */
+.btn-warning-pro:hover {
+    background-color: #FFAA00; 
+    color: #000000;
+    border:4px solid #000000;
+    box-shadow: none;
+    font-weight: bold;
+}
+
+/* l'effet de focus */
+.btn-warning-pro:focus {
+    background-color: #FFAA00;
+    box-shadow: none !important; 
+    font-weight: bold;
+} 
+
+/* __    __                         
+/  \  /  |                        
+$$  \ $$ | __    __  _____  ____  
+$$$  \$$ |/  |  /  |/     \/    \ 
+$$$$  $$ |$$ |  $$ |$$$$$$ $$$$  |
+$$ $$ $$ |$$ |  $$ |$$ | $$ | $$ |
+$$ |$$$$ |$$ \__$$ |$$ | $$ | $$ |
+$$ | $$$ |$$    $$/ $$ | $$ | $$ |
+$$/   $$/  $$$$$$/  $$/  $$/  $$/ 
+                                  
+                                  
+                                  */
+
+.num-body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.num-p {
+    margin: 10px 0px 20px 1px;
+    box-shadow: 1px 2px 20px rgba(152, 141, 127);
+    padding: 15px;
+    background-color: #e8b464;
+    width: 100%;
+
+}
+
+#pays {
+    width: 285px;
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 40px;
+}
+
+.num-container {
+    width: 100%;
+    max-width: 600px;
+    height: 50%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.num-form {
+    margin: 30% auto;
+    border-radius: 15px;
+    box-shadow: 1px 2px 20px rgba(152, 141, 127);
+    padding: 25px;
+}
+
+
+.num-label {
+    font-weight: bold;
+}
+
+
+#suivant {
+    background-color: #ffc107;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#suivant:hover {
+    background-color: #ff9800;
+}
+
+#telephone {
+    border: 1px solid;
+    padding: 10px 40px;
+    border-radius: 40px;
+    width: 80%;
+    font-size: 13px;
+}
+
+@media (max-width: 430px) and (max-height: 932px) {
+
+    .num-form {
+        margin-bottom: -100px;
+        margin-left: -26px;
+        width: 345px;
+        height: 580px;
+    }
+
+    .num-container {
+        margin-right: 4px;
+        margin-left: 30px;
+        margin-top: -36px;
+        padding-left: 10px;
+        width: 90%;
+        height: 450px;
+        border-right-width: 100px;
+        max-width: 285px;
+    }
+
+    #pays {
+        width: 285px;
+        margin: 5px;
+    }
+
+    #suivant {
+        margin: 15px;
+    }
+
+    #telephone {
+        margin: 5px;
+        width: 100%;
+        font-size: 12.5px;
+    }
+
+    .num-body {
+
+        height: 100%;
+        display: inline-block;
+        justify-content: center;
+        margin: 20px 75px 0px 25px;
+    }
+}
+
+
+@media (max-width: 376px) and (max-height: 668px) {
+
+    .num-form {
+        margin-bottom: 70px;
+        margin-left: -10px;
+        width: 335px;
+        height: 520px;
+    }
+
+    .num-container {
+        margin-right: 10px;
+        margin-left: 0px;
+        margin-top: -20px;
+        padding-left: 10px;
+        width: 40%;
+        height: 600px;
+        border-right-width: 100px;
+        max-width: 30px;
+    }
+
+    .num-body {
+        height: 70%;
+        display: inline-block;
+        justify-content: center;
+        margin: 2px 15px 0px 25px;
+    }
+}

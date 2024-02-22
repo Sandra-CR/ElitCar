@@ -13,12 +13,13 @@
     <title>ElitCar</title>
 </head>
 <body>
-<div class="container-main-login">
-    <div class="container-login">
+
+<div class="container-main-login d-lg-flex">
+    <div class="container-login mx-auto col-12 col-lg-5">
         <div class="container-logo"><a target="_self" href="view/home"><img src="img/elitcar-login.png" alt="" width="256px" height="64px"></a></div>
         <div class="container-title">
-            <h5 class="">SE CONNECTER</h5>
-            <h5 class="">S'INSCRIRE</h5>
+            <h5 class=""><a target="_self" class="text-decoration-none text-dark" href="view/particular/login_particular">SE CONNECTER</a></h5>
+            <h5 class=""><a target="_self" class="text-decoration-none text-dark" href="view/login">S'INSCRIRE</a></h5>
         </div>
         <div class="container-divider">
             <div class="divider-switch1 "></div>
@@ -48,11 +49,30 @@
                 <input type="password" name="psw" class="form-control" id="floatingPassword" placeholder="Mots de passe">
                 <label for="floatingPassword">Mots de passe</label>
             </div>
+            <div class="form-check my-1">
+                <input class="form-check-input" type="checkbox" value="" id="conditionGeneral">
+                <label class="form-check-label" for="conditionGeneral">
+                    <p class="text-label">
+                        J’accepte la <a target="_self" class="text-decoration-none text-dark" href=""><b>politique de confidentialité</b></a> et <a target="_self" class="text-decoration-none text-dark" href=""><b>les conditions générales d’utilisations</b></a>
+                    </p>
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="newletters" checked>
+                <label class="form-check-label" for="newletters">
+                    <p class="text-label">
+                    J'aimerais bénéficier des offres spéciales, promotions et nouvelles,
+                    </p>
+                </label>
+            </div>
             
             <input class="form-control mt-3 btn btn-warning text-light" type="submit" value="Continuer">
 
         </form>
         <!-- Fin du formulaire HTML -->
+    </div>
+    <div class="container-img-login d-none d-lg-block col-7"></div>
         <div class="container-title">
             <p>Vous avez un compte sur Elitcar? <a href="view/particular/login_particular" target="_self" class="mx-2"> Se connecter</a></p>
         </div>

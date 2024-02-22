@@ -1,11 +1,11 @@
 
 <?php 
-include_once "base.php";
+include_once "include/base.php";
 ?>
 
 
-<section class="position-relative">
-    <div id="carouselExampleAutoplaying" class="carousel slide mx-auto my-4 w-75 " data-bs-ride="carousel">
+<section class="readCar_section readCar_slider position-relative hidden">
+    <div id="carouselExampleAutoplaying" class="carousel slide w-75 mx-auto my-4  " data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="img/voiture_caroussel4.jpg" class="d-block w-100" alt="...">
@@ -26,15 +26,82 @@ include_once "base.php";
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-    <div id="réservation_absolute" class="text-center bg-light-subtle d-flex flex-column justify-content-between position-absolute translate-middle bottom-0 end-0 p-0">
+    <div class="réservation_absolute réservation_absolute_slider text-center bg-light-subtle d-flex flex-column  position-absolute translate-middle bottom-0 end-0 p-0">
+        <div class="bg-secondary-subtle h-25 d-flex justify-content-center align-items-center">
+            <p class="slider_absolute_title m-0">75 614 CFA</p>
+        </div>
+        <div class=" d-flex flex-column justify-content-between h-75"><p>Pour 9 jours</p>
+        <p>1400 km inclus</p>
+        <button type="button" class="btn btn-warning text-light mb-3 w-50 h-auto mx-auto ">Réserver</button></div>
+    </div>
+    <div class="readCar_slider_descri w-75 mx-auto mt-2">
+        <h3>Volkswagen Golf</h3>
+        <div><p>2022<span> • </span>5 places</p></div>
+        <div>
+            <span>
+            <img src="img/etoile.svg" alt="">
+            <img src="img/etoile.svg" alt="">
+            <img src="img/etoile.svg" alt="">
+            <img src="img/etoile.svg" alt="">
+            <img src="img/etoile_moitié.svg" alt="">
+            </span>
+            4.74(21)
+        </div>
+  </div> 
+</section>
+
+
+  <section class="readCar_section readCar_caroussel w-75 mx-auto mt-4 position-relative">
+    <div class="readCar_carousel-container ">
+      <div class="readCar_carousel-btn-container">
+         <button class="readCar_carousel-btn" id="prevBtn">&#x27E8;</button>
+         <button class="readCar_carousel-btn" id="nextBtn">&#12297;</button>
+      </div>
+
+      <div class="readCar_carousel-track" id="carouselTrack">
+        <div class="readCar_carousel-slide ">
+          <img src="img/voiture_caroussel4.jpg" alt="Image 1">
+        </div>
+        <div class="readCar_carousel-slide">
+          <img src="img/voiture_caroussel4.jpg" alt="Image 1">
+        </div>
+        <div class="readCar_carousel-slide nomargin">
+          <img src="img/voiture_caroussel4.jpg" alt="Image 1">
+        </div>
+        <div class="readCar_carousel-slide ">
+          <img src="img/voiture_caroussel5.jpg" alt="Image 1">
+        </div>
+        <div class="readCar_carousel-slide">
+          <img src="img/voiture_caroussel6.jpg" alt="Image 1">
+        </div>
+        <div class="readCar_carousel-slide nomargin">
+          <img src="img/voiture_caroussel4.jpg" alt="Image 1">
+        </div>
+        <div class="readCar_carousel-slide">
+          <img src="img/voiture_caroussel7.jpg" alt="Image 1">
+        </div>
+        <div class="readCar_carousel-slide">
+          <img src="img/voiture_caroussel8.jpg" alt="Image 1">
+        </div>
+        <div class="readCar_carousel-slide">
+          <img src="img/voiture_caroussel9.jpg" alt="Image 1">
+        </div>
+      </div>
+        
+    </div>
+
+    
+    <div class="réservation_absolute réservation_absolute_caroussel text-center bg-light-subtle d-flex flex-column justify-content-between position-absolute translate-middle  end-0 p-0">
         <div class="bg-secondary-subtle h-25 d-flex justify-content-center align-items-center">
             <p class="m-0">75 614 CFA</p>
         </div>
         <p>Pour 9 jours</p>
         <p>1400 km inclus</p>
-        <div><button type="button" class="btn btn-warning text-light mb-3 w-50">Réserver</button></div>
+        <div>
+          <button type="button" class="btn btn-warning text-light ">Réserver</button>
+        </div>
     </div>
-    <div class="w-75 mx-auto">
+    <div class="mt-3 mx-auto">
         <h3>Volkswagen Golf</h3>
         <div><p>2022<span> • </span>5 places</p></div>
         <div>
@@ -48,7 +115,12 @@ include_once "base.php";
             4.74(21)
         </div>
     </div>
-</section>
+ </section>
+
+
+
+
+
 
 <section class="readCar_section w-75 mx-auto">
     <h2>Adresse de départ et de retour</h2>
@@ -56,7 +128,7 @@ include_once "base.php";
         <div class="loc-map">
             <div><i class="fa-solid fa-location-dot fa-xl"></i></div>
             <div class="texte-loc">
-                <p>Gare de Douala - , Place</p>
+                <p>Gare de Douala , Place</p>
                 <p>Richard Bona, Douala, Cameroun</p>
             </div>
         </div>
@@ -91,7 +163,6 @@ include_once "base.php";
             </div>
         </div>
     </section>
-
     <section class="readCar_section w-75 mx-auto">
       <h2>Description du véhicule</h2>
       <div class="description-vehicule">
@@ -152,15 +223,15 @@ include_once "base.php";
       </div>
       
       <div class="point_noir">
-        <span>•</span> <p>Ce véhicule est disponible à Douala</p>
+        <span>•</span> <p>  Ce véhicule est disponible à Douala</p>
       </div>
 
       <div class="point_noir">
-        <span>•</span> <p>Le nettoyage est obligatoire, des pénalités seront appliquées en cas de non respect</p>
+        <span>•</span> <p>  Le nettoyage est obligatoire, des pénalités seront appliquées en cas de non respect</p>
       </div>
 
       <div class="point_noir">
-        <span>•</span> <p>Des sièges enfants payants sont disponibles (Merci de faire la demande 48H MINIMUM 
+        <span>•</span> <p>  Des sièges enfants payants sont disponibles (Merci de faire la demande 48H MINIMUM 
         avant le début de votre location.)</p>
       </div>
 
@@ -184,7 +255,8 @@ include_once "base.php";
 
     
 
-<section class="redCar_section w-75 mx-auto ">
+
+<section class="readCar_section w-75 mx-auto ">
     <h2>Caution</h2>
     <div class="border">
         <p> 196 739 CFA bloqués jusqu'au 10/03/24</p>
@@ -196,8 +268,9 @@ include_once "base.php";
     </div>
 </div>
 
-<section id="readCar_section" class="d-flex flex-column align-items-center">
-    <div id="titre_section6" class="d-flex justify-content-between w-75">
+
+<section class="readCar_section d-flex flex-column align-items-center">
+    <div  class="d-flex justify-content-between w-75 align-items-center">
         <h2>Les annonces de ce pro</h2>
         <a href="#">Voir plus d'annonces   <i class="fa-solid fa-arrow-right"></i></a>
     </div>
@@ -216,8 +289,7 @@ include_once "base.php";
                         <img src="img/etoile_moitié.svg" alt="">
                         4.74(21)
             </span>
-                        
-                
+
             <div class="card-text">
             <p>75 650 CFA</p>
             <p>Pour 5 jours</p>
@@ -304,3 +376,4 @@ include_once "base.php";
 
 
 <?php include_once "footer.php"; ?>
+

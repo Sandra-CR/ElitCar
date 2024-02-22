@@ -16,8 +16,8 @@ if (!empty($_POST['mail']) && !empty($_POST['psw'])){
         // le compte existe
         if (password_verify($_POST['psw'], $pro['psw'])) {
             // le mot de passe est correct
-            $_SESSION["name"] = $user['name']; // Attribution du nom de l'utilisateur à la session
-            $_SESSION["role"] = $user['role']; // Attribution du rôle de l'utilisateur à la session
+            $_SESSION["name"] = $pro['name']; // Attribution du nom de l'utilisateur à la session
+            $_SESSION["role"] = $pro['role']; // Attribution du rôle de l'utilisateur à la session
             $_SESSION["token"] = bin2hex(random_bytes(16)); // Génération d'un jeton de sécurité et attribution à la session
             header('Location: ../home.php'); // Redirection vers la page d'accueil
         } else {
@@ -51,3 +51,4 @@ if (!empty($_POST['mail']) && !empty($_POST['psw'])){
 
 </body>
 </html>
+
