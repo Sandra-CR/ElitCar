@@ -1,7 +1,6 @@
 <?php
 // Inclusion des fichiers nécessaires
 include_once "../../model/pdo.php";
-include_once "tools.php";
 
 // Fonction pour vérifier la validité du mot de passe
 function verif_mdp($mdp) {
