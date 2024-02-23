@@ -59,36 +59,36 @@ $$/   $$/  $$$$$$$/     $/     $$$$$$$/   $$$$$$$/ $$/
 }
 
 /* Style du contenu déroulant pour la barre de navigation en vue mobile */
-.home-navbar-collapse {
+.navbar-collapse {
     display: flex;
     justify-content: flex-end;
 }
 
 /* Style de l'icône du menu déroulant (hamburger) */
-.home-navbar-toggler-icon {
+.navbar-toggler-icon {
     /* SVG intégré directement dans le CSS pour l'icône du menu */
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
 /* Style du bouton de menu déroulant */
-.home-navbar-toggler {
+.navbar-toggler {
     border-color: #000000;
     margin-right: 80px;
 }
 
 /* Style du logo de la barre de navigation */
-.home-navbar-brand {
+.navbar-brand {
     font-size: 250% !important; 
     margin-left: 80px; 
 }
 
 /* Survol du logo de la barre de navigation */
-.home-navbar-brand:hover, .home-navbar-brand:focus {
+.navbar-brand:hover, .navbar-brand:focus {
     color: inherit; 
 }
 
 /* Couleur spécifique pour une partie du logo */
-.home-sub-navbar-brand {
+.sub-navbar-brand {
     color: #FFAA00;
 }
 
