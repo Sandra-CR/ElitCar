@@ -5,17 +5,17 @@
       <a class="nav-link dashboard-nav-link dashboard-nav-link-left 
       <?php 
         $current_file = basename($_SERVER['SCRIPT_NAME']);
-        echo ($current_file == 'locations.php') ? 'active-link' : ''; 
+        echo ($current_file == 'rentals_particular.php') ? 'active-link' : ''; 
       ?>" 
-      aria-current="page" href="view/locations.php" >MES LOCATIONS</a>
+      aria-current="page" href="view/particular/rentals_particular.php" >MES LOCATIONS</a>
     </li>
     <li class="nav-item nav-item-right">
       <a class="nav-link dashboard-nav-link dashboard-nav-link-right
       <?php 
         $current_file = basename($_SERVER['SCRIPT_NAME']);
-        echo ($current_file == 'update_profile.php' || $current_file == 'settings.php' || $current_file == 'payment_method.php' || $current_file == 'adress.php') ? 'active-link' : ''; 
+        echo ($current_file == 'update_profile_particular.php' || $current_file == 'settings_particular.php' || $current_file == 'payment_method_particular.php' || $current_file == 'adress_particular.php') ? 'active-link' : ''; 
       ?>
-    " aria-current="page" href="view/update_profile.php">MON COMPTE</a>
+    " aria-current="page" href="view/particular/update_profile_particular.php">MON COMPTE</a>
     </li>
   </ul>
 </div> 

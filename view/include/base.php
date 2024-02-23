@@ -43,7 +43,7 @@
           </li>
         <?php } ?>
         <li class="nav-item">
-          <a class="nav-link home-nav-link" target="_self" href="view/professional/professional">Agences</a>
+          <a class="nav-link home-nav-link" target="_self" href="view/professional/home.php">Agences</a>
         </li>
         <?php if( !isset($_SESSION['name']) ){?>
         <li class="nav-item">
@@ -51,7 +51,7 @@
         </li>
         <?php }else{ ?>
           <li class="nav-item">
-              <a class="nav-link home-nav-link" target="_self" href="view/settings"><?= $_SESSION['name'] ?></a>
+              <a class="nav-link home-nav-link" target="_self" href="view/particular/settings_particular.php"><?= $_SESSION['name'] ?></a>
           </li>
           <?php } ?>
       </ul>

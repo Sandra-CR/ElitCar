@@ -1,5 +1,5 @@
 <?php
-include_once "../model/pdo.php";
+include_once "../../model/pdo.php";
 
 // Fonction pour vérifier la complexité du mot de passe
 function verif_mdp($mdp) {

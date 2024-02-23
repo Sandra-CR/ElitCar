@@ -1,12 +1,12 @@
 <!-- dashboard -->
-<?php include_once "include/base.php";?>
-<?php include_once "include/dashboard.php";?>
+<?php include_once "../include/base.php";?>
+<?php include_once "../include/particular/dashboard_particular.php";?>
 
     <div class="container-fluid">
         <div class="row">
             <!-- Menu -->
             <div class="col-md-2">
-            <?php include_once "include/account_menu.php";?>
+            <?php include_once "../include/particular/account_menu_particular.php";?>
             </div>
             <!-- adresse postale --> 
             <div class="container col-md-8 mt-5 mb-5" style="border: 2px solid #D8D8D8 !important; padding: 50px!important;">

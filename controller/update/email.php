@@ -1,5 +1,5 @@
 <?php
-include_once "../model/pdo.php";
+include_once "../../model/pdo.php";
 
 if (!isset($_SESSION['id_user'])) {
     exit("Utilisateur non identifié.");

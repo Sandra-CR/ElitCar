@@ -1,20 +1,19 @@
 <!-- dashboard -->
-
-<?php include_once "include/base.php"; ?>
-<?php include_once "include/dashboard.php";?>
+<?php include_once "../include/base.php";?>
+<?php include_once "../include/professional/dashboard_professional.php";?>
 
     <div class="container-fluid">
         <div class="row">
             <!-- Menu -->
             <div class="col-md-2">
-            <?php include_once "include/account_menu.php";?>
+            <?php include_once "../include/professional/account_menu_professional.php";?>
             </div>
             <!-- settings --> 
             <div class="container col-md-8 mt-5 mb-5" style="border: 2px solid #D8D8D8 !important; padding: 50px!important;">
                <!-- Modifier le mail --> 
                 <div class="mb-5">
                     <h5 class="mb-4" style="font-weight:700 !important">Modifier mon mail</h5>
-                    <?php include_once "../controller/update/email.php";?>
+                    <?php include_once "../../controller/update/email.php";?>
                     <div class="mb-3">
                         <!-- email actuel -->
                         <label for="new-email" class="form-label" style="font-weight:700;">Email</label>
@@ -35,7 +34,7 @@
                 <!-- Modifier le mot de passe --> 
                 <div class="mb-4">
                     <h5 class="mb-4" style="font-weight:700 !important">Modifier mon mot de passe</h5>
-                    <?php include_once "../controller/update/psw.php";?>
+                    <?php include_once "../../controller/update/psw.php";?>
                     <form method="post" action="">
                         <div class="mb-3">
                             <label for="old-password" class="form-label" style="font-weight:700;">Ancien mot de passe</label>

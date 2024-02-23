@@ -1,12 +1,12 @@
 <!-- dashboard -->
-<?php include_once "include/base.php";?>
-<?php include_once "include/dashboard.php";?>
+<?php include_once "../include/base.php";?>
+<?php include_once "../include/professional/dashboard_professional.php";?>
 
     <div class="container-fluid">
         <div class="row">
             <!-- Menu -->
             <div class="col-md-2">
-            <?php include_once "include/account_menu.php";?>
+            <?php include_once "../include/professional/account_menu_professional.php";?>
             </div>
             <!-- Moyens de paiment --> 
             <div class="container col-md-8 mt-5 mb-5" >
