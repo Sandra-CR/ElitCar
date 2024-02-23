@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Elitcar">
-    <base href="http://localhost/ElitCar/" target="_blank">
+    <base href="http://localhost/ElitCar/" target="_self">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -57,8 +57,11 @@ include_once "../../controller/admin/tools.php"; // Inclusion du fichier contena
                 <input type="password" name="psw" class="form-control" id="floatingPassword" placeholder="Mots de passe">
                 <label for="floatingPassword">Mots de passe</label>
             </div>
-
-            <div class="container-title-3 mb-2">
+            <div class="my-2">
+                <input type="checkbox" id="show_password" onclick="togglePasswordVisibility()">
+                <label for="show_password"><p class="text-label">Afficher le mot de passe</p></label>
+            </div>
+            <div class="container-title-3 my-2">
                 <a href="view/login" target="_self" class="mt-3 fw-bold text-decoration-none text-dark">Mot de passe oublié?</a>
             </div>
             <div class="container-btn-mail mx-auto">

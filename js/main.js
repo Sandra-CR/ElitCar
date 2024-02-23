@@ -26,3 +26,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
   showSlide(currentIndex);
 });
+
+// Ici on fait la fonction qui me permet d'afficher le mot de passe 
+function togglePasswordVisibility() {
+  const passwordInput = document.getElementById("floatingPassword");
+  const checkbox = document.getElementById("show_password");
+
+        if (checkbox.checked) {
+            passwordInput.type = "text";
+        } else {
+            passwordInput.type = "password";
+        }
+}
