@@ -88,6 +88,7 @@ if (!empty($_POST['mail']) && !empty($_POST['psw'])){
     if ($pro) {
         // le compte existe
         if (password_verify($_POST['psw'], $pro['psw'])) {
+            session_start();
             // le mot de passe est correct
             $_SESSION["name"] = $pro['name']; // Attribution du nom de l'utilisateur à la session
             $_SESSION["role"] = $pro['role']; // Attribution du rôle de l'utilisateur à la session

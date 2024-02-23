@@ -27,7 +27,7 @@
     </button>
     <div class="collapse navbar-collapse home-navbar-collapse" id="navbarNav">
       <ul class="navbar-nav home-navbar-nav">
-        <?php if( !isset($_SESSION['name']) ){?>
+        <?php if( !isset($_SESSION['name'])) {?>
           <li class="nav-item dropdown">
               <a class="nav-link home-nav-link dropdown-toggle"  href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Connexion
@@ -45,7 +45,7 @@
         <li class="nav-item">
           <a class="nav-link home-nav-link" target="_self" href="view/professional/professional">Agences</a>
         </li>
-        <?php if( !isset($_SESSION['name']) ){?>
+        <?php if( !isset($_SESSION['name'])){?>
         <li class="nav-item">
           <a class="nav-link home-nav-link" target="_self" href="view/read_car"> FAQ ? </a>
         </li>
