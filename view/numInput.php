@@ -2,12 +2,11 @@
 include_once "include/base.php";
 ?>
 
-
 <body class="num-body">
 
     <div class="num-container">
 
-        <form class="num-form">
+        <form id= "form-num" class="num-form">
             <h2>Quel est votre numéro de téléphone ?</h2>
             <label class="num-label" for="pays">Pays :</label>
             <select id="pays">
@@ -270,12 +269,52 @@ include_once "include/base.php";
 
             <p class="num-p">Seules les personnes auxquelles vous vous adressez auront accès à votre numéro. Un code de vérification par SMS vous sera envoyé.</p>
 
-            <label for="telephone">Numéro de téléphone :</label>
-            <input type="tel" id="telephone" placeholder="Entrez votre numéro de téléphone">
+            <label for="numero">Numéro de téléphone :</label>
+            <input name="numero" type="text" id="telephone" placeholder="Entrez votre numéro de téléphone">
             <button id="suivant">Suivant</button>
 
+            <input type="hidden" name="id_user" value="<?= $_SESSION["id"]?>">
+
         </form>
+
     </div>
+
+</body>
+
+
+<script>
+    // Récupération du formulaire et de l'élément d'affichage du message
+    const formNum = document.getElementById('form-num');
+    const msg = document.getElementById('message');
+
+    // Ajout d'un écouteur d'événement pour soumettre le formulaire
+    formNum.addEventListener("submit", function(e) {
+        e.preventDefault(); // Empêcher le comportement par défaut du formulaire
+
+        const formData = new FormData(e.target); // Récupération des données du formulaire
+
+        const data = {
+            method: "POST",
+            body: formData,
+        };
+
+        // Envoi des données du formulaire via une requête fetch
+        fetch("controller/admin/ajax_num.php", data)
+            .then(response => response.json()) // Conversion de la réponse en format JSON
+            .then(data => {
+                console.log(data); // Affichage des données reçues dans la console
+                msg.innerHTML = data.message; // Affichage du message de la réponse
+            });
+    });
+</script>
+
+
+
+</html>
+
+
+
+
 
 <?php
 include_once "include/footer.php";
