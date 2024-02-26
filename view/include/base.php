@@ -19,6 +19,7 @@
 ?>
 
 
+
 <nav class="base_navbar home-navbar navbar-expand-lg bg-body-light">
   <div class="home-container-fluid ">
     <a class="navbar-brand" target="_self" href="view/home"> Elit<span class="sub-navbar-brand">car</span> </a> 
@@ -59,3 +60,4 @@
   </div>
 </nav>
 <hr>
+</section>

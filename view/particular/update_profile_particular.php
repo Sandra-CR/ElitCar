@@ -1,6 +1,18 @@
+
 <!-- dashboard -->
+
 <?php include_once "../include/base.php";?>
 <?php include_once "../include/particular/dashboard_particular.php";?>
+
+<?php 
+    include_once "../model/pdo.php";
+    session_start();
+    $id = $_SESSION['id'];
+    $sql = "SELECT * FROM particular WHERE id_user='$id'"; 
+    $stmt = $pdo->query($sql); // Exécution de la requête SQL
+    $user = $stmt->fetch(PDO::FETCH_ASSOC); // Récupération des résultats de la requête sous forme de tableau associatif
+?>
+
 
     <div class="container-fluid">
         <div class="row">
@@ -23,31 +35,68 @@
                 <!-- les informations personnelles -->
                 <div class="col-md-8">
                     <h5 class="mb-4 mt-5" style="font-weight:700 !important">Informations personnelles</h5>
-                    <form>
+
+
+
+
+                    <h3 id="message"></h3>
+                    <form id="form-update-particular">
+                        
+                        <input type="hidden" name="id_user" value="<?= htmlentities($user["id_user"])?>">
                         <div class="mb-3">
                             <label for="nom" class="form-label" style="font-weight:700;">Nom</label>
-                            <input type="text" class="form-control" id="nom" placeholder="Votre nom">
+                            <input type="text" class="form-control" id="nom" placeholder="Votre nom" name="last_name" value="<?= htmlentities($user['last_name']) ?>">
                         </div>
                         <div class="mb-3">
                             <label for="prenom" class="form-label" style="font-weight:700;">Prénom</label>
-                            <input type="text" class="form-control" id="prenom" placeholder="Votre prenom">
+                            <input type="text" class="form-control" id="prenom" placeholder="Votre prenom" name="first_name" id="" value="<?= htmlentities($user['first_name']) ?>">
                         </div>
                         <div class="row g-3 mb-3">
                             <div class="col">
                                 <label for="dateNaissance" class="form-label" style="font-weight:700;">Date de naissance</label>
-                                <input type="date" class="form-control" id="dateNaissance" name="dateNaissance">
+                                <input type="date" class="form-control" id="dateNaissance" name="birthdate" value="<?= htmlentities($user['birthdate']) ?>">
                             </div>
                         </div>
                         <div class="row g-3 mb-3">
                             <div class="col">
                                 <label for="tel" class="form-label" style="font-weight:700;">Numéro de téléphone</label>
-                                <input type="tel" class="form-control" id="tel" name="tel" placeholder="Votre numéro de téléphone">
+                                <input type="tel" class="form-control" id="tel" name="num_mobile" placeholder="Votre numéro de téléphone" value="<?= htmlentities($user['num_mobile']) ?>" >
                             </div>
                         </div>
+                        <input type="submit" class="btn btn-warning mt-4" value="Sauvegarder les modifications" style="background-color:#FFAA00;color:white;font-weight:700;font-size:16px;height:50px;max-width:99%">
                     </form>
+
+
+
+
                 </div>
-                <button type="button" class="btn btn-warning mt-4" style="background-color:#FFAA00;color:white;font-weight:700;font-size:16px;height:50px;max-width:99%">Sauvegarder les modifications</button>
+                
             </div>
         </div>
     </div>
 </body>
+<script>
+    // Récupération du formulaire et de l'élément d'affichage du message
+    const formUpdate = document.getElementById('form-update-particular');
+    const msgUpdate = document.getElementById('message');
+
+    // Ajout d'un écouteur d'événement pour soumettre le formulaire
+    formUpdate.addEventListener("submit", function(e) {
+        e.preventDefault(); // Empêcher le comportement par défaut du formulaire
+
+        const formData = new FormData(e.target); // Récupération des données du formulaire
+
+        const data = {
+            method: "POST",
+            body: formData,
+        };
+
+        // Envoi des données du formulaire via une requête fetch
+        fetch("../controller/admin/ajax_update_ctrl_particular.php", data)
+            .then(response => response.json()) // Conversion de la réponse en format JSON
+            .then(data => {
+                console.log(data); // Affichage des données reçues dans la console
+                msgUpdate.innerHTML = data.message; // Affichage du message de la réponse
+            });
+    });
+</script>

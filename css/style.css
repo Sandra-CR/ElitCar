@@ -43,6 +43,11 @@ $$/   $$/  $$$$$$$/     $/     $$$$$$$/   $$$$$$$/ $$/
 /*** Style de la navbar ***/
 /* Style général de la barre de navigation */
 
+.section_navbar{
+    height: 5vh;
+}
+
+
 .home-navbar, .home-navbar * {
     color: #000000;
     font-weight: 600;
@@ -1004,7 +1009,8 @@ $$/        $$$$$$/   $$$$$$/     $$$$/   $$$$$$$/ $$/
 
 footer{
     width: 100vw;
-    height: 456px;
+    /* height: 456px; */
+    height: 30vh;
     background-color: #D9D9D9 ;
 
 }

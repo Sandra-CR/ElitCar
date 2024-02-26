@@ -1,6 +1,11 @@
 <?php 
-include_once "base.php";
+include_once "include/base.php";
 ?>
+<style>
+    .myrentalsEmpty_section{
+        height: 65vh;
+    }
+</style>
 <div>
 <section class="myrentalsEmpty_section d-flex justify-content-center my-auto">
     <div class="border w-25 my-auto ">
@@ -11,11 +16,8 @@ include_once "base.php";
     </div>
 </section>
 </div>
-<?php include_once "footer.php"; ?>
+<?php 
+include_once "footer.php"; 
+?>
 
 
-.myrentalsEmpty_section{
-        min-height: 100%;
-
-
-      }
