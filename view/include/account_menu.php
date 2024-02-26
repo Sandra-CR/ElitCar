@@ -3,7 +3,7 @@
       <!-- Menu List -->
       <ul class="list-group menu-compte-list-group list-group-flush mt-3 " >
         <li class="list-group-item menu-compte-list-group-item  <?php echo (basename($_SERVER['SCRIPT_NAME']) == 'update_profile.php') ? 'active-item' : ''; ?>">
-          <a class="nav-link" aria-current="page" href="update_profile.php">Modifier mon profile</a>
+          <a class="nav-link" aria-current="page" href="view/update_profile.php">Modifier mon profile</a>
         </li>
         <li class="list-group-item menu-compte-list-group-item mt-1 <?php echo (basename($_SERVER['SCRIPT_NAME']) == 'settings.php') ? 'active-item' : ''; ?>">
           <a class="nav-link" aria-current="page" href="settings.php"> Paramètres du compte</a>

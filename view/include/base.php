@@ -18,7 +18,7 @@
     session_start(); 
 ?>
 
-
+<section class="section_navbar">
 <nav class="base_navbar navbar navbar-expand-lg bg-body-light">
   <div class="container-fluid ">
     <a class="navbar-brand" target="_self" href="view/home"> Elit<span class="sub-navbar-brand">car</span> </a> 
@@ -59,3 +59,4 @@
   </div>
 </nav>
 <hr>
+</section>
