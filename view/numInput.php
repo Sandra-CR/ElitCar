@@ -273,6 +273,8 @@ include_once "include/base.php";
             <input name="numero" type="text" id="telephone" placeholder="Entrez votre numéro de téléphone">
             <button id="suivant">Suivant</button>
 
+            <input type="hidden" name="id_user" value="<?= $_SESSION["id"]?>">
+
         </form>
 
     </div>
