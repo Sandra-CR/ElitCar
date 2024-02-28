@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['old-password'], $_POS
                     $errors[] = "Le nouveau mot de passe doit comporter au moins 8 caractères, une lettre majuscule, un chiffre et un caractère spécial (@$!%*?&)";
                 } else {
                     // Vérification du mot de passe actuel
-                    $stmt = $pdo->prepare("SELECT psw FROM particular WHERE id_user = :id_user");
+                    $stmt = $pdo->prepare("SELECT psw FROM professional WHERE id_pro = :id_user");
                     $stmt->execute([':id_user' => $id_user]);
                     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['old-password'], $_POS
                         $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
 
                         // Mise à jour du mot de passe
-                        $updateStmt = $pdo->prepare("UPDATE particular SET psw = :hashedPassword WHERE id_user = :id_user");
+                        $updateStmt = $pdo->prepare("UPDATE professional SET psw = :hashedPassword WHERE id_pro = :id_user");
                         $updateStmt->execute([':hashedPassword' => $hashedPassword, ':id_user' => $id_user]);
 
                         echo '<h6 style="color:green;">Mot de passe mis à jour avec succès !</h6>';

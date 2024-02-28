@@ -1222,7 +1222,8 @@ $$/   $$/  $$$$$$/  $$/  $$/  $$/
 .num-form {
     margin: 30% auto;
     border-radius: 15px;
-    box-shadow: 1px 2px 20px rgba(152, 141, 127);
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    border: 3px solid #D4D4D4;
     padding: 25px;
 }
 

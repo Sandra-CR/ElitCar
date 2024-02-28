@@ -35,14 +35,14 @@ function is_valid_email($email) {
 
 // Fonction pour vérifier si l'e-mail existe déjà dans la base de données
 function email_exists($pdo, $email, $id_user) {
-    $stmt = $pdo->prepare("SELECT COUNT(*) FROM particular WHERE mail = :email AND id_user != :id_user");
+    $stmt = $pdo->prepare("SELECT COUNT(*) FROM professional WHERE mail = :email AND id_pro != :id_user");
     $stmt->execute([':email' => $email, ':id_user' => $id_user]);
     return $stmt->fetchColumn() > 0;
 }
 
 // Récupérer l'e-mail actuel de l'utilisateur
 $email_actuel = '';
-$query = "SELECT mail FROM particular WHERE id_user = :id_user";
+$query = "SELECT mail FROM professional WHERE id_pro = :id_user";
 try {
     $stmt = $pdo->prepare($query);
     $stmt->execute([':id_user' => $id_user]);
@@ -82,13 +82,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['new-email'], $_POST['
                     $errors[] = "Cette adresse e-mail est déjà utilisée !";
                 } else {
                     // Vérification du mot de passe
-                    $stmt = $pdo->prepare("SELECT psw FROM particular WHERE id_user = :id_user");
+                    $stmt = $pdo->prepare("SELECT psw FROM professional WHERE id_pro = :id_user");
                     $stmt->execute([':id_user' => $id_user]);
                     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
                     if ($user && password_verify($password, $user['psw'])) {
                         // Mise à jour de l'adresse e-mail
-                        $updateStmt = $pdo->prepare("UPDATE particular SET mail = :newEmail WHERE id_user = :id_user");
+                        $updateStmt = $pdo->prepare("UPDATE professional SET mail = :newEmail WHERE id_pro = :id_user");
                         $updateStmt->execute([':newEmail' => $newEmail, ':id_user' => $id_user]);
 
                         // Réexécuter la requête pour obtenir l'e-mail mis à jour

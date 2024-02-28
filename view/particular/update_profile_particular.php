@@ -1,12 +1,13 @@
 
 <!-- dashboard -->
 
-<?php include_once "../include/base.php";?>
-<?php include_once "../include/particular/dashboard_particular.php";?>
+<?php 
+ include_once "../../controller/admin/role.php";
+ include_once "../include/base.php";
+ include_once "../include/particular/dashboard_particular.php";?>
 
 <?php 
-    include_once "../model/pdo.php";
-    session_start();
+    include_once "../../model/pdo.php";
     $id = $_SESSION['id'];
     $sql = "SELECT * FROM particular WHERE id_user='$id'"; 
     $stmt = $pdo->query($sql); // Exécution de la requête SQL

@@ -1,6 +1,9 @@
 <!-- dashboard -->
-<?php include_once "../include/base.php";?>
-<?php include_once "../include/professional/dashboard_professional.php";?>
+<?php
+include_once "../../controller/admin/role.php";
+include_once "../include/base.php";
+include_once "../include/professional/dashboard_professional.php";
+?>
 
     <div class="container-fluid">
         <div class="row">
@@ -13,7 +16,7 @@
                <!-- Modifier le mail --> 
                 <div class="mb-5">
                     <h5 class="mb-4" style="font-weight:700 !important">Modifier mon mail</h5>
-                    <?php include_once "../../controller/update/email.php";?>
+                    <?php include_once "../../controller/update/email_pro.php";?>
                     <div class="mb-3">
                         <!-- email actuel -->
                         <label for="new-email" class="form-label" style="font-weight:700;">Email</label>
@@ -34,7 +37,7 @@
                 <!-- Modifier le mot de passe --> 
                 <div class="mb-4">
                     <h5 class="mb-4" style="font-weight:700 !important">Modifier mon mot de passe</h5>
-                    <?php include_once "../../controller/update/psw.php";?>
+                    <?php include_once "../../controller/update/psw_pro.php";?>
                     <form method="post" action="">
                         <div class="mb-3">
                             <label for="old-password" class="form-label" style="font-weight:700;">Ancien mot de passe</label>

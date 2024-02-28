@@ -16,8 +16,8 @@
 
 <?php
     session_start(); 
+    
 ?>
-
 
 
 <nav class="base_navbar home-navbar navbar-expand-lg bg-body-light">
@@ -44,20 +44,24 @@
           </li>
         <?php } ?>
         <li class="nav-item">
-          <a class="nav-link home-nav-link" target="_self" href="view/professional/home.php">Agences</a>
+          <a class="nav-link home-nav-link" target="_self" href="view/professional/professional.php">Agences</a>
         </li>
-        <?php if( !isset($_SESSION['name'])){?>
-        <li class="nav-item">
-          <a class="nav-link home-nav-link" target="_self" href="view/read_car"> FAQ ? </a>
-        </li>
-        <?php }else{ ?>
+        <?php  if(isset($_SESSION['role']) && $_SESSION['role'] <= Role::CUSTOMER->value) {?>
           <li class="nav-item">
-              <a class="nav-link home-nav-link" target="_self" href="view/particular/settings_particular.php"><?= $_SESSION['name'] ?></a>
+            <a class="nav-link home-nav-link" target="_self" href="view/particular/settings_particular.php"><?= $_SESSION['name'] ?></a>
           </li>
-          <?php } ?>
+        <?php }else if (isset($_SESSION['role']) && $_SESSION['role'] >= Role::OWNER->value){ ?>
+          <li class="nav-item">
+            <a class="nav-link home-nav-link" target="_self" href="view/professional/settings_professional.php"><?= $_SESSION['name'] ?></a>
+          </li>
+        <?php }else { ?>
+          <li class="nav-item">
+            <a class="nav-link home-nav-link" target="_self" href="view/read_car"> FAQ ? </a>
+          </li>
+        <?php } ?>
       </ul>
     </div>
   </div>
 </nav>
-<hr>
+
 </section>
