@@ -5,11 +5,11 @@ $errors = array();
 // Inclusion du fichier mail.php qui contient probablement des fonctions liées à l'envoi de courriels
 require "mail.php";
 // Inclusion du fichier constants.inc.php, probablement contenant des constantes utiles
-include_once ("inc/constant.php");
+include_once ("../model/pdo.php");
 try {
     // Tentative de connexion à la base de données MySQL avec des paramètres définis dans les constantes
-    $pdo = new PDO("mysql:host=$db_host;dbname=$db_name;charset=utf8", $db_user, $db_password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo = new PDO("mysql:host=localhost;dbname=elitcar", "root", "");
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     // Affiche un message d'erreur en cas d'échec de la connexion
 } catch (PDOException $e) {
     die("la connexion n'est pas etablie: " . $e->getMessage());
@@ -55,6 +55,7 @@ if (count($_POST) > 0) {
             } else {
                 // Ajout d'une erreur si le code saisi n'est pas correct
                 $errors[] = $result;
+                
             }
             break;
 
@@ -117,9 +118,9 @@ function save_password($pdo, $password) {
     // Utilisation de sha1 et md5 pour l'encodage du mot de passe (commenté ici)
     $password = sha1(md5($password) . md5($password)); // Fix: use $password instead of $pass
 
-    $query = "UPDATE users SET password = :password WHERE mail = :mail";
+    $query = "UPDATE particular SET password = :psw WHERE mail = :mail";
     $stmt = $pdo->prepare($query);
-    $stmt->bindParam(':password', $password);
+    $stmt->bindParam(':psw', $password);
     $stmt->bindParam(':mail', $email);
     $stmt->execute();
 }
@@ -127,7 +128,7 @@ function save_password($pdo, $password) {
 
 // Fonction de vérification de l'existence de l'adresse e-mail dans la base de données
 function valid_email($pdo, $email) {
-    $query = "SELECT * FROM users WHERE mail = :mail LIMIT 1";
+    $query = "SELECT * FROM particular WHERE mail = :mail LIMIT 1";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(':mail', $email);
     $stmt->execute();
@@ -178,98 +179,14 @@ function is_code_correct($pdo, $code) {
     <title>ElitCar</title>
 </head>
 <body>
-    <!-- <style>
-        * {
-            font-family: "Inter", sans-serif;
-            font-size: 14px;
-        }
-        body {
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-            width: 626px;
-            min-height: 416px;
-        }
-        h1 {
-            font-size: 30px;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            /* color: #FFAA00; */
-            /* text-align: center; */
-            margin: 0;
-            padding-bottom: 30px;
-        }
-        .error-message {
-            color: red;
-            font-size: 12px;
-        }
-        input[type="text"], input[type="email"], input[type="password"] {
-            width: 96%;
-            padding: 8px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-        }
-        input[type="submit"], input[type="button"] {
-            background-color: #FFAA00;
-            border: none;
-            color: #fff;
-            padding: 8px 15px;
-            cursor: pointer;
-            border-radius: 3px;
-        }
-        input[type="submit"]{
-            margin-bottom: 10px;
-        }
-        input[type="submit"]:hover, input[type="button"]:hover {
-            background-color: #FFAA0080;
-        }
-        a {
-            color: black;
-            text-decoration: none;
-        }
-        .divpourmes{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .mesforget{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 638px;
-            height: 73px;
-            background-color: #FFAA0080;
-            border-radius: 3px;
-        }
-        .mespar{
-            font-size: 12px;
-            font-family: "Inter", sans-serif;
-            font-style: normal;
-            padding: 5px;
-            width: 80%;
-        }
-    </style> -->
+   
 
     <?php
     switch ($mode) {
         case 'enter_email':
             // code...
             ?>
-        <form class="formpassword" method="post" action="forgot.php?mode=enter_email">
+        <form class="formpassword" method="post" action="view/forgot.php?mode=enter_email">
             <div class="container-main-login d-flex justify-content-center g-0 ">
             <div class="container-login col-12 col-lg-5">
             <div class="container-logo"><a target="_self" href="view/home"><img src="img/elitcar-login.png" alt="Logo Elitcar" width="256px" height="64px"></a></div>
@@ -303,7 +220,7 @@ function is_code_correct($pdo, $code) {
         case 'enter_code':
             // code...
             ?>
-            <form class="formpassword" method="post" action="forgot.php?mode=enter_code">
+            <form class="formpassword" method="post" action="view/forgot.php?mode=enter_code">
             <div class="container-main-login d-flex justify-content-center g-0 ">
     <div class="container-login col-12 col-lg-5">
         <div class="container-logo"><a target="_self" href="view/home"><img src="img/elitcar-login.png" alt="Logo Elitcar" width="256px" height="64px"></a></div>
@@ -349,7 +266,7 @@ function is_code_correct($pdo, $code) {
         case 'enter_password':
             // code...
             ?>
-            <form class="formpassword" method="post" action="forgot.php?mode=enter_password">
+            <form class="formpassword" method="post" action="view/forgot.php?mode=enter_password">
             <div class="container-main-login d-flex justify-content-center g-0 ">
             <div class="container-login col-12 col-lg-5">
             <div class="container-logo"><a target="_self" href="view/home"><img src="img/elitcar-login.png" alt="Logo Elitcar" width="256px" height="64px"></a></div>
