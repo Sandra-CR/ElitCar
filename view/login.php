@@ -1,3 +1,19 @@
+<?php
+include_once "../model/pdo.php";
+include_once "../controller/admin/tools.php";
+session_start();
+
+// Vérifie si l'utilisateur est déjà connecté
+if (isset($_SESSION['user_id'])) {
+    // Utilisateur déjà connecté
+    // Redirigez-le vers la page d'accueil ou toute autre page de votre application
+    header("Location: /home");
+    exit;
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +44,7 @@
             <h4 >Créez votre compte</h4>
         </div>
         <div class="container-btn">
-            <button class="btn-log btn-secondary my-1">Google</button>
+            <button class="btn-log btn-secondary my-1" onclick="redirectToGoogle()">Google</button>
             <button class="btn-log btn-secondary my-1">Facebook</button>
             <button class="btn-log btn-secondary my-1">Apple</button>
         </div>
@@ -44,3 +60,8 @@
     </div>
     <div class="container-img-login d-none d-xl-block col-7"></div>
 </div>
+<script>
+function redirectToGoogle() {
+    window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=940497895444-tb4oe307ftrctvr8vl4mrnkvgtegpa35.apps.googleusercontent.com&redirect_uri=http://localhost/ElitCar/view/home&response_type=code&scope=https://www.googleapis.com/auth/userinfo.profile+https://www.googleapis.com/auth/userinfo.email';
+}
+</script>

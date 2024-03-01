@@ -2,6 +2,123 @@
 <?php 
 include_once "../controller/admin/role.php";
 include_once "include/base.php";
+include_once "message.php";
+include_once "../model/pdo.php";
+include_once "../controller/admin/tools.php";
+
+if (isset($_GET['code'])) {
+  // Récupérer le code d'autorisation
+  $auth_code = $_GET['code'];
+
+  // Définir les informations d'authentification pour la requête d'échange de code
+  $client_id = '940497895444-tb4oe307ftrctvr8vl4mrnkvgtegpa35.apps.googleusercontent.com';
+  $client_secret = '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';
+  $redirect_uri = 'http://localhost/ElitCar/view/home';
+
+  // Construire les données de requête pour l'échange de code
+  $post_data = array(
+      'code' => $auth_code,
+      'client_id' => $client_id,
+      'client_secret' => $client_secret,
+      'redirect_uri' => $redirect_uri,
+      'grant_type' => 'authorization_code'
+  );
+
+      // Effectuer la requête POST pour échanger le code contre un jeton d'accès
+  $ch = curl_init('https://accounts.google.com/o/oauth2/token');
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data);
+  $response = curl_exec($ch);
+  if ($response === false) {
+      echo "Erreur cURL: " . curl_error($ch);
+  }
+  curl_close($ch);
+
+  // Vérifier si la réponse est valide
+  if ($response) {
+      // Convertir la réponse JSON en tableau associatif
+      $auth_info = json_decode($response, true);
+      if ($auth_info === null) {
+          echo "Erreur de décodage JSON: " . json_last_error_msg();
+      }
+
+      // Récupérer le jeton d'accès
+      $access_token = $auth_info['access_token'];
+
+      // Utiliser le jeton d'accès pour accéder aux informations de l'utilisateur via Google People API
+      $ch = curl_init('https://people.googleapis.com/v1/people/me?personFields=names,emailAddresses');
+      curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization: Bearer ' . $access_token));
+      curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+      $user_info = curl_exec($ch);
+      if ($user_info === false) {
+          echo "Erreur cURL: " . curl_error($ch);
+      }
+      curl_close($ch);
+
+      // Vérifie si la réponse est valide
+      if ($user_info) {
+          // Convertir la réponse JSON en tableau associatif
+          $user_data = json_decode($user_info, true);
+          if ($user_data === null) {
+              echo "Erreur de décodage JSON: " . json_last_error_msg();
+          }
+      
+          // Afficher les informations de l'utilisateur
+
+          foreach ($user_datas as $user_data) {
+            echo '<li>Informations sur lutilisateur: ' . $user_datas . '<li>' ;
+          }
+      
+          if (isset($user_data['resourceName'])) {
+              $google_id = $user_data['resourceName'];
+          } else {
+              echo "Pas de resourceName";
+          }
+      
+          if (isset($user_data['emailAddresses'][0]['value'])) {
+              $email = $user_data['emailAddresses'][0]['value'];
+          } else {
+              echo "Pas d'email";
+          }
+      
+          if (isset($user_data['names'][0]['givenName']) && !empty($user_data['names'][0]['givenName'])) {
+            $given_name = $user_data['names'][0]['givenName'];
+        } else {
+            echo "Pas de givenName";
+        }
+        
+      
+          if (isset($user_data['names'][0]['familyName'])) {
+              $family_name = $user_data['names'][0]['familyName'];
+          } else {
+            $family_name = "null";
+          }
+      
+          $pp = "img/no_picture_update.svg"; // Image de profil par défaut
+          $psw = "null";
+          $pol = 1;
+          $new = 0;
+          $role = "1"; // Définition du rôle de l'utilisateur
+      
+          try {
+              // Tentez d'insérer l'utilisateur
+              $sql = "INSERT INTO particular (first_name, last_name, mail, psw, profile_picture, isEntreprise, role, newsletters, politique, google_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+              $stmt = $pdo->prepare($sql);
+              $stmt->execute([$given_name, $family_name, $email, $psw, $pp, 0, $role, $new, $pol, $google_id]);
+          
+              // Vérifiez si l'utilisateur a été inséré avec succès
+              if ($stmt->rowCount() > 0) {
+                  sendMessage("Utilisateur inséré avec succès", "success", "home.php");
+              } else {
+                  sendMessage("Échec de l'insertion de l'utilisateur", "failed", "home.php");
+              }
+          } catch (PDOException $e) {
+              // Gérez l'exception
+              sendMessage("Une erreur s'est produite : " . $e->getMessage(), "failed", "home.php");
+          }
+      }
+  }
+}
 ?>
 
 <!-- Section de filtre -->

@@ -21,10 +21,12 @@ document.addEventListener("DOMContentLoaded", function() {
     showSlide(currentIndex);
   }
 
-  prevBtn.addEventListener('click', prevSlide);
-  nextBtn.addEventListener('click', nextSlide);
+  if(prevBtn){
+    prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', nextSlide);
+    showSlide(currentIndex);
+  }
 
-  showSlide(currentIndex);
 });
 
 // Ici on fait la fonction qui me permet d'afficher le mot de passe 
