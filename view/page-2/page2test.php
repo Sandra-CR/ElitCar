@@ -40,10 +40,12 @@ include_once "../include/base.php";
     
 
     <div class="container overflow-hidden text-left p-3">
+
     <div class="row gy-5">
+
         <div class="col-lg-6 mb-3">
             <div class="border-secondary card flex-row bg-light" style="max-width: 50rem">
-                <div class="p-3"><img src="view/page-2/img/1.jpg" alt="Image 1" class="card-img-top"></div>
+                <div><img src="view/page-2/img/1.jpg" alt="Image 1" class="card-img-top"></div>
                 <div class="card-body">
                     <h5 class="card-title text-danger">Renault</h5>
                     <h6 class="card-title">Prix /jour</h6>
