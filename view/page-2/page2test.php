@@ -4,6 +4,22 @@ include_once "../include/base.php";
 
 
 
+<input type="text" id="form-control home-form-control" placeholder="Rechercher...">
+
+<script>
+    // Récupère les informations de recherche stockées
+    const searchTerm = localStorage.getItem('input.form-control');
+    if (searchTerm) {
+        // Affiche les informations de recherche dans la barre de recherche de la deuxième page
+        document.getElementById('input.form-control').value = searchTerm;
+    }
+</script>
+
+
+
+
+
+
     <div class="container mx-6 my-3">
         <button type="button" class="btn btn-light rounded-pill dropdown-toggle" data-bs-toggle="dropdown"
             data-bs-auto-close="true" aria-expanded="false">
@@ -43,10 +59,11 @@ include_once "../include/base.php";
 
     <div class="row gy-5">
 
+
         <div class="col-lg-6 mb-3">
-            <div class="border-secondary card flex-row bg-light" style="max-width: 50rem">
+            <div class="border-secondary card flex-row bg-light">
                 <div><img src="view/page-2/img/1.jpg" alt="Image 1" class="card-img-top"></div>
-                <div class="card-body">
+                <div class="card-body" style="width: 250%;">
                     <h5 class="card-title text-danger">Renault</h5>
                     <h6 class="card-title">Prix /jour</h6>
                     <h6 class="card-title">Total</h6> 
@@ -54,10 +71,12 @@ include_once "../include/base.php";
                 </div>    
             </div>
         </div>
+
+
         <div class="col-lg-6 mb-3">
-            <div class="border-secondary card flex-row bg-light" style="max-width: 50rem">
-                <div class="p-3"><img src="view/page-2/img/2.jpg" alt="Image 2" class="card-img-top"></div>
-                <div class="card-body">
+            <div class="border-secondary card flex-row bg-light">
+                <div><img src="view/page-2/img/1.jpg" alt="Image 1" class="card-img-top"></div>
+                <div class="card-body" style="width: 250%;">
                     <h5 class="card-title text-danger">Renault</h5>
                     <h6 class="card-title">Prix /jour</h6>
                     <h6 class="card-title">Total</h6> 
@@ -65,10 +84,13 @@ include_once "../include/base.php";
                 </div>    
             </div>
         </div>
+
+
+
         <div class="col-lg-6 mb-3">
-            <div class="border-secondary card flex-row bg-light" style="max-width: 50rem">
-                <div class="p-3"><img src="view/page-2/img/3.jpg" alt="Image 3" class="card-img-top"></div>
-                <div class="card-body">
+            <div class="border-secondary card flex-row bg-light">
+                <div><img src="view/page-2/img/1.jpg" alt="Image 1" class="card-img-top"></div>
+                <div class="card-body" style="width: 250%;">
                     <h5 class="card-title text-danger">Renault</h5>
                     <h6 class="card-title">Prix /jour</h6>
                     <h6 class="card-title">Total</h6> 
@@ -76,10 +98,12 @@ include_once "../include/base.php";
                 </div>    
             </div>
         </div>
+
+
         <div class="col-lg-6 mb-3">
-            <div class="border-secondary card flex-row bg-light" style="max-width: 50rem">
-                <div class="p-3"><img src="view/page-2/img/4.jpg" alt="Image 4" class="card-img-top"></div>
-                <div class="card-body">
+            <div class="border-secondary card flex-row bg-light">
+                <div><img src="view/page-2/img/1.jpg" alt="Image 1" class="card-img-top"></div>
+                <div class="card-body" style="width: 250%;">
                     <h5 class="card-title text-danger">Renault</h5>
                     <h6 class="card-title">Prix /jour</h6>
                     <h6 class="card-title">Total</h6> 
@@ -87,10 +111,12 @@ include_once "../include/base.php";
                 </div>    
             </div>
         </div>
+
+
         <div class="col-lg-6 mb-3">
-            <div class="border-secondary card flex-row bg-light" style="max-width: 50rem">
-                <div class="p-3"><img src="view/page-2/img/5.jpg" alt="Image 5" class="card-img-top"></div>
-                <div class="card-body">
+            <div class="border-secondary card flex-row bg-light">
+                <div><img src="view/page-2/img/1.jpg" alt="Image 1" class="card-img-top"></div>
+                <div class="card-body" style="width: 250%;">
                     <h5 class="card-title text-danger">Renault</h5>
                     <h6 class="card-title">Prix /jour</h6>
                     <h6 class="card-title">Total</h6> 
@@ -98,10 +124,12 @@ include_once "../include/base.php";
                 </div>    
             </div>
         </div>
+
+
         <div class="col-lg-6 mb-3">
-            <div class="border-secondary card flex-row bg-light" style="max-width: 50rem">
-                <div class="p-3"><img src="view/page-2/img/6.jpg" alt="Image 6" class="card-img-top"></div>
-                <div class="card-body">
+            <div class="border-secondary card flex-row bg-light">
+                <div><img src="view/page-2/img/1.jpg" alt="Image 1" class="card-img-top"></div>
+                <div class="card-body" style="width: 250%;">
                     <h5 class="card-title text-danger">Renault</h5>
                     <h6 class="card-title">Prix /jour</h6>
                     <h6 class="card-title">Total</h6> 
@@ -109,10 +137,12 @@ include_once "../include/base.php";
                 </div>    
             </div>
         </div>
+
+
         <div class="col-lg-6 mb-3">
-            <div class="border-secondary card flex-row bg-light" style="max-width: 50rem">
-                <div class="p-3"><img src="view/page-2/img/7.jpg" alt="Image 7" class="card-img-top"></div>
-                <div class="card-body">
+            <div class="border-secondary card flex-row bg-light">
+                <div><img src="view/page-2/img/1.jpg" alt="Image 1" class="card-img-top"></div>
+                <div class="card-body" style="width: 250%;">
                     <h5 class="card-title text-danger">Renault</h5>
                     <h6 class="card-title">Prix /jour</h6>
                     <h6 class="card-title">Total</h6> 
@@ -120,10 +150,12 @@ include_once "../include/base.php";
                 </div>    
             </div>
         </div>
+
+
         <div class="col-lg-6 mb-3">
-            <div class="border-secondary card flex-row bg-light" style="max-width: 50rem">
-                <div class="p-3"><img src="view/page-2/img/8.jpg" alt="Image 8" class="card-img-top"></div>
-                <div class="card-body">
+            <div class="border-secondary card flex-row bg-light">
+                <div><img src="view/page-2/img/1.jpg" alt="Image 1" class="card-img-top"></div>
+                <div class="card-body" style="width: 250%;">
                     <h5 class="card-title text-danger">Renault</h5>
                     <h6 class="card-title">Prix /jour</h6>
                     <h6 class="card-title">Total</h6> 
