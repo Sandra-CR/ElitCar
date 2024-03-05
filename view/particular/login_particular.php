@@ -38,7 +38,7 @@ include_once "../../controller/admin/tools.php"; // Inclusion du fichier contena
             <h4 >Nous sommes contents de vous revoir</h4>
         </div>
         <div class="container-btn">
-            <button class="btn-log btn-secondary my-1">Google</button>
+            <button class="btn-log-google btn-secondary my-1" onclick="redirectToGoogle()"><img class="mx-1" src="img/google.jpg" width="23px" height="23px" alt=""> Continuer avec Google</button>
             <button class="btn-log btn-secondary my-1">Facebook</button>
             <button class="btn-log btn-secondary my-1">Apple</button>
         </div>

@@ -99,7 +99,7 @@ if (isset($_GET['code'])) {
           $_SESSION["name"] = $existing_user['first_name']; // Attribution du nom complet de l'utilisateur à la session
           $_SESSION["role"] = $existing_user['role']; // Attribution du rôle de l'utilisateur à la session
           $_SESSION["token"] = bin2hex(random_bytes(16)); // Génération d'un jeton de sécurité et attribution à la session
-          sendMessage("Bon retour Parmit nous", "success", "home.php");
+          sendMessage("Bon retour Parmi nous", "success", "home.php");
         } else {
           // Insérez l'utilisateur dans la base de données
           $sql = "INSERT INTO particular (first_name, last_name, mail, psw, profile_picture, isEntreprise, role, newsletters, politique ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -108,7 +108,22 @@ if (isset($_GET['code'])) {
           
           // Vérifiez si l'utilisateur a été inséré avec succès
           if ($stmt->rowCount() > 0) {
-            sendMessage("Utilisateur inséré avec succès", "success", "home.php");
+            // Vérifiez si l'utilisateur existe déjà dans la base de données
+            $sql_google_2 = "SELECT * FROM particular WHERE mail = '$email' ";
+            $stmt_google_2 = $pdo->query($sql_google_2);
+            $existing_user_2 = $stmt_google_2->fetch(PDO::FETCH_ASSOC);
+            
+            // Si l'utilisateur existe déjà, ne l'insérez pas à nouveau
+            if ($existing_user_2) {
+              session_start();
+              $_SESSION["id"] = $existing_user_2['id_user']; 
+              $_SESSION["name"] = $existing_user_2['first_name']; // Attribution du nom complet de l'utilisateur à la session
+              $_SESSION["role"] = $existing_user_2['role']; // Attribution du rôle de l'utilisateur à la session
+              $_SESSION["token"] = bin2hex(random_bytes(16)); // Génération d'un jeton de sécurité et attribution à la session
+              sendMessage("Compte crée", "success", "home.php");
+            } else {
+              sendMessage("Échec de l'insertion de l'utilisateur", "failed", "home.php");
+            }
           } else {
             sendMessage("Échec de l'insertion de l'utilisateur", "failed", "home.php");
           }
