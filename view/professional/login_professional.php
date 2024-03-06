@@ -96,11 +96,11 @@ if (!empty($_POST['mail']) && !empty($_POST['psw'])){
             $_SESSION["token"] = bin2hex(random_bytes(16)); // Génération d'un jeton de sécurité et attribution à la session
             header('Location: ../home.php'); // Redirection vers la page d'accueil
         } else {
-            sendMessage("Mots de passe incorrect", "failed", "login_particular.php"); // Redirection avec un message d'erreur si le mot de passe est incorrect
+            sendMessage("Mots de passe incorrect", "failed", "login_professional.php"); // Redirection avec un message d'erreur si le mot de passe est incorrect
         }
     } else {
         // le compte n'existe pas
-        sendMessage("le compte n'existe pas", "failed", "login_particular.php"); // Redirection avec un message d'erreur si le compte n'existe pas
+        sendMessage("le compte n'existe pas", "failed", "login_professional.php"); // Redirection avec un message d'erreur si le compte n'existe pas
     }
 } else {
     // Attention bug.
