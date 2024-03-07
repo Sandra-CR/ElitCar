@@ -1,10 +1,12 @@
 <?php
 include_once "../model/pdo.php";
 require_once('../vendor/autoload.php');
-// récuperer l'email de l'utilisateur
+
 session_start();
 $userEmail = $_SESSION['email']; 
 var_dump($userEmail);
+$userID = $_SESSION['id']; 
+var_dump($userID);
 
 \Stripe\Stripe::setApiKey('sk_test_51Oqj2dAR8KMrJQF3YheNPGZRQ4sj8ndDMHGT9ocOgmpOcdGBp0y6sAdPnkw1vXEe6rQw7iI6DYceEus8627TShsb00Wcth9X4L');
 
@@ -13,44 +15,21 @@ if (!empty($_POST['stripeToken'])) {
     try {
         // Créer un client dans Stripe
         $customer = \Stripe\Customer::create([
-            'email' =>  $userEmail, 
+            'email' => $userEmail, 
             'source' => $token,
         ]);
-        
-        // Ici, vous pouvez également enregistrer le customer ID dans votre base de données
 
-        // Redirection vers la page de succès
+        // Stocker l'ID client Stripe dans la session pour une utilisation ultérieure
+        $_SESSION['stripe_customer_id'] = $customer->id;
+
+        // Redirection vers la page de gestion des moyens de paiement
         header('Location: ../view/professional/payment_method_professional.php'); 
         exit();
         
-    } catch (\Stripe\Exception\CardException $e) {
-        // La carte a été déclinée
-        $error = 'La carte a été déclinée.';
-    } catch (\Stripe\Exception\RateLimitException $e) {
-        // Trop de requêtes faites à l'API trop rapidement
-        $error = 'Trop de requêtes ont été faites à l\'API Stripe.';
-    } catch (\Stripe\Exception\InvalidRequestException $e) {
-        // Requête invalide
-        $error = 'Requête invalide pour Stripe.';
-    } catch (\Stripe\Exception\AuthenticationException $e) {
-        // Authentication avec l'API Stripe échouée
-        $error = 'L\'authentification avec l\'API Stripe a échoué.';
-    } catch (\Stripe\Exception\ApiConnectionException $e) {
-        // Communication réseau avec Stripe échouée
-        $error = 'La communication réseau avec Stripe a échoué.';
-    } catch (\Stripe\Exception\ApiErrorException $e) {
-        // Autres erreurs
-        $error = 'Une erreur est survenue avec l\'API Stripe.';
-    } catch (Exception $e) {
-        // Autres erreurs non liées à Stripe
-        $error = 'Une erreur est survenue.';
-    }
-    
-    if (isset($error)) {
+    } catch (\Exception $e) {
+        // erreur
+        $error = 'Une erreur est survenue : ' . $e->getMessage();
         echo htmlspecialchars($error);
     }
-} 
+}
 ?>
-
-
-

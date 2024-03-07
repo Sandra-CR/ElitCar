@@ -49,7 +49,7 @@ $afficherFormulaireAjout = isset($_GET['add-method']) && $_GET['add-method'] == 
                                         <img src="img/credit-card1.png" alt="Card Icon" class="icon-card mb-3 col-md-2">
                                         <h8 class="card-title mb-3" style="font-weight:700 !important">Vous n'avez enregistré aucun moyen de paiement.</h8>
                                         <p class="card-text mb-4">L'ajout d'un moyen de paiement est indispensable pour souscrire à un abonnement et ainsi mettre vos voitures à la location sur notre plateforme.</p>
-                                        <a href="https://localhost/view/professional/payment_method_professional.php?add-method=true" id="findVehicleBtn" class="btn" style="background-color:#FFAA00;color:white;font-weight:700;font-size:16px;max-width:99%;padding: 15px;font-size:14px;">Ajouter un moyen de paiement</a>
+                                        <a href="view/professional/payment_method_professional.php?add-method=true" id="findVehicleBtn" class="btn" style="background-color:#FFAA00;color:white;font-weight:700;font-size:16px;max-width:99%;padding: 15px;font-size:14px;">Ajouter un moyen de paiement</a>
                                     </div>
                                 </div>
                             </div>
@@ -58,7 +58,7 @@ $afficherFormulaireAjout = isset($_GET['add-method']) && $_GET['add-method'] == 
                     <!-- Affichage des moyens de paiement existants -->
                     <div class="container col-md-8 mt-5 mb-5" style="border: 2px solid #D8D8D8 !important; padding: 50px!important;">
                     <p>Vos moyens de paiement.</p>
-                    <a href="https://localhost/view/professional/payment_method_professional.php?add-method=true" class="btn" style="background-color:#FFAA00;color:white;font-weight:700;font-size:16px;max-width:99%;padding: 15px;font-size:14px;">Ajouter un nouveau moyen de paiement</a>
+                    <a href="view/professional/payment_method_professional.php?add-method=true" class="btn" style="background-color:#FFAA00;color:white;font-weight:700;font-size:16px;max-width:99%;padding: 15px;font-size:14px;">Ajouter un nouveau moyen de paiement</a>
                     </div>
                 <?php endif; ?>
             <?php endif; ?>
