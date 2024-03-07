@@ -1,39 +1,47 @@
 <?php 
 
+// Démarrage de la session pour la gestion des variables de session
 session_start();
+
+// Initialisation du tableau d'erreurs
 $errors = array();
-// Inclusion du fichier mail.php qui contient probablement des fonctions liées à l'envoi de courriels
+
+// Inclusion du fichier mail.php pour les fonctionnalités liées à l'envoi de courriels
 require "mail.php";
-// Inclusion du fichier constants.inc.php, probablement contenant des constantes utiles
+
+// Inclusion du fichier constants.inc.php pour les constantes utiles
 include_once ("../model/pdo.php");
+
 try {
-    // Tentative de connexion à la base de données MySQL avec des paramètres définis dans les constantes
+    // Tentative de connexion à la base de données MySQL avec les paramètres définis dans les constantes
     $pdo = new PDO("mysql:host=localhost;dbname=elitcar", "root", "");
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    // Affiche un message d'erreur en cas d'échec de la connexion
+    // Configuration du mode d'affichage des erreurs de PDO
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
-    die("la connexion n'est pas etablie: " . $e->getMessage());
+    // Affichage d'un message d'erreur en cas d'échec de la connexion
+    die("La connexion n'a pas pu être établie : " . $e->getMessage());
 }
 
+// Initialisation du mode par défaut à 'enter_email' sauf si un mode est spécifié dans l'URL
 $mode = "enter_email";
 if (isset($_GET['mode'])) {
     $mode = $_GET['mode'];
 }
 
+// Traitement des données postées
 if (count($_POST) > 0) {
     switch ($mode) {
         case 'enter_email':
-            // code...
+            // Récupération de l'adresse email postée
             $email = $_POST['mail'];
-            // Vérification de la validité de l'adresse e-mail et ajout d'une erreur si elle est invalide
+            // Vérification de la validité de l'adresse email
             if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                $errors[] = " veillez inserer un email valide";
-                // Vérification si l'adresse e-mail existe dans la base de données et ajout d'une erreur si non
+                $errors[] = "Veuillez insérer une adresse email valide";
             } elseif (!valid_email($pdo, $email)) {
-                $errors[] = "veillez inserer un email valide";
-
-                 // Envoi d'un courriel de réinitialisation
+                // Vérification de l'existence de l'adresse email dans la base de données
+                $errors[] = "Adresse email invalide";
             } else {
+                // Stockage de l'adresse email dans la session et envoi d'un courriel de réinitialisation
                 $_SESSION['forgot']['mail'] = $email;
                 send_email($pdo, $email);
                 // Redirection vers la page de saisie du code
@@ -43,30 +51,30 @@ if (count($_POST) > 0) {
             break;
 
         case 'enter_code':
-           
+            // Récupération du code posté
             $code = $_POST['code'];
+            // Vérification de la validité du code saisi
             $result = is_code_correct($pdo, $code);
-
-            if ($result === "le code est correcte") {
+            if ($result === "le code est correct") {
+                // Stockage du code dans la session et redirection vers la page de saisie du nouveau mot de passe
                 $_SESSION['forgot']['code'] = $code;
-                 // Redirection vers la page de saisie du nouveau mot de passe
                 header("Location: forgot.php?mode=enter_password");
                 die;
             } else {
-                // Ajout d'une erreur si le code saisi n'est pas correct
+                // Affichage d'une erreur si le code saisi n'est pas correct
                 $errors[] = $result;
-                
             }
             break;
 
         case 'enter_password':
-  
+            // Récupération des mots de passe postés
             $password = $_POST['password'];
             $password2 = $_POST['password2'];
-            // Vérification si les mots de passe saisis sont identiques
+            // Vérification de la correspondance entre les mots de passe
             if ($password !== $password2) {
-                $errors[] = "les mots de passes ne sont pas identiques";
+                $errors[] = "Les mots de passe ne correspondent pas";
             } elseif (!isset($_SESSION['forgot']['mail']) || !isset($_SESSION['forgot']['code'])) {
+                // Redirection vers la page de récupération de mot de passe si les informations nécessaires ne sont pas disponibles dans la session
                 header("Location: forgot.php");
                 die;
             } else {
@@ -74,7 +82,6 @@ if (count($_POST) > 0) {
                 save_password($pdo, $password);
                 // Suppression des informations de récupération de mot de passe de la session
                 if (isset($_SESSION['forgot'])) {
-
                     unset($_SESSION['forgot']);
                 }
                 // Redirection vers la page de connexion
@@ -84,85 +91,83 @@ if (count($_POST) > 0) {
             break;
 
         default:
-            // code...
+            // Traitement par défaut
             break;
     }
 }
 
 // Fonction d'envoi de courriel pour la réinitialisation de mot de passe
-
 function send_email($pdo, $email) {
     // Durée de validité du code (2 minutes)
     $expire = time() + (60 * 2);
-     // Génération d'un code aléatoire
+    // Génération d'un code aléatoire
     $code = rand(10000, 99999);
+    // Protection contre les injections SQL en utilisant des requêtes préparées
     $email = addslashes($email);
-
+    // Insertion du code dans la base de données
     $query = "INSERT INTO codes (mail, code, expire) VALUES (:mail, :code, :expire)";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(':mail', $email);
     $stmt->bindParam(':code', $code);
     $stmt->bindParam(':expire', $expire);
     $stmt->execute();
-// Envoi du courriel contenant le code
-    send_mail($email, 'réinitialisation de mot mot de passe', 'votre code est : '. $code);
+    // Envoi du courriel contenant le code
+    send_mail($email, 'Réinitialisation du mot de passe', 'Votre code est : '. $code);
 }
 
-
 // Fonction de sauvegarde du nouveau mot de passe dans la base de données
-
 function save_password($pdo, $password) {
+    // Récupération de l'adresse email stockée dans la session
     $email = addslashes($_SESSION['forgot']['mail']);
-     // Utilisation de la fonction password_hash pour sécuriser le mot de passe (commentée ici)
-    // $password = password_hash($password, PASSWORD_DEFAULT);
-    // Utilisation de sha1 et md5 pour l'encodage du mot de passe (commenté ici)
-    $password = sha1(md5($password) . md5($password)); // Fix: use $password instead of $pass
-
-    $query = "UPDATE particular SET password = :psw WHERE mail = :mail";
+    // Hachage du mot de passe pour des raisons de sécurité
+    $password = sha1(md5($password) . md5($password));
+    // Mise à jour du mot de passe dans la base de données
+    $query = "UPDATE particular SET psw = :psw WHERE mail = :mail";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(':psw', $password);
     $stmt->bindParam(':mail', $email);
     $stmt->execute();
 }
 
-
-// Fonction de vérification de l'existence de l'adresse e-mail dans la base de données
+// Fonction de vérification de l'existence de l'adresse email dans la base de données
 function valid_email($pdo, $email) {
+    // Requête SQL pour vérifier l'existence de l'adresse email
     $query = "SELECT * FROM particular WHERE mail = :mail LIMIT 1";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(':mail', $email);
     $stmt->execute();
-    
-    if ($stmt->rowCount() > 0) {
-        return true;
-    }
-
-    return false;
+    // Renvoie true si l'adresse email existe, sinon false
+    return $stmt->rowCount() > 0;
 }
 
 // Fonction de vérification de la validité du code saisi
 function is_code_correct($pdo, $code) {
+    // Récupération du temps actuel
     $expire = time();
+    // Récupération de l'adresse email stockée dans la session
     $email = addslashes($_SESSION['forgot']['mail']);
-
+    // Requête SQL pour vérifier le code
     $query = "SELECT * FROM codes WHERE code = :code AND mail = :mail ORDER BY id DESC LIMIT 1";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(':code', $code);
     $stmt->bindParam(':mail', $email);
     $stmt->execute();
-
+    // Si le code est trouvé dans la base de données
     if ($stmt->rowCount() > 0) {
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        // Si le code est toujours valide
         if ($row['expire'] > $expire) {
-            return "le code est correcte";
+            return "le code est correct";
         } else {
-            return "le code à expiré";
+            return "le code a expiré";
         }
     } else {
-        return "le code n'est pas correcte";
+        return "le code n'est pas correct";
     }
 }
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
