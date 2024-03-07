@@ -14,3 +14,9 @@ function sendMessage(string $message, string $status, string $location, int|null
         exit;
     }
 }
+function calculateAge($birthdate) {
+    $dob = new DateTime($birthdate);
+    $now = new DateTime();
+    $age = $now->diff($dob);
+    return $age->y;
+}

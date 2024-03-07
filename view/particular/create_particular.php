@@ -76,7 +76,7 @@
         </form>
         <!-- Fin du formulaire HTML -->
     </div>
-    <div class="container-img-login d-none d-xl-block col-7"></div>
+    <div class="container-img-login d-none d-xl-block col-7 h-100"></div>
 </div>
 
 </body>

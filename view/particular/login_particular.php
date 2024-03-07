@@ -69,7 +69,7 @@ include_once "../../controller/admin/tools.php"; // Inclusion du fichier contena
             </div>
         </form>
     </div>
-    <div class="container-img-login d-none d-xl-block col-7"></div>
+    <div class="container-img-login d-none d-xl-block col-7 h-100"></div>
 
 </div>
 <?php

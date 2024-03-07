@@ -37,14 +37,14 @@ include_once "../../controller/admin/tools.php"; // Inclusion du fichier contena
         <div class="container-title-2">
             <h4 >Nous sommes contents de vous revoir</h4>
         </div>
-        <div class="container-btn">
+        <!-- <div class="container-btn">
             <button class="btn-log btn-secondary my-1">Google</button>
             <button class="btn-log btn-secondary my-1">Facebook</button>
             <button class="btn-log btn-secondary my-1">Apple</button>
         </div>
         <div class="container-choose mt-2">
             <p>ou</p>
-        </div>
+        </div> -->
         <?php include_once "../message.php" ?> <!-- Inclusion du fichier contenant le message -->
 
         <form id="form" class="mx-auto col-8 mt-2" action="" method="post">
@@ -70,7 +70,7 @@ include_once "../../controller/admin/tools.php"; // Inclusion du fichier contena
             </div>
         </form>
     </div>
-    <div class="container-img-login-pro d-none d-xl-block col-7"></div>
+    <div class="container-img-login-pro d-none d-xl-block col-7 h-100"></div>
 
 </div>
 
