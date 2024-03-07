@@ -14,7 +14,7 @@ include_once "../include/professional/dashboard_professional.php";
             <!-- adresse postale --> 
             <div class="container col-md-8 mt-5 mb-5" style="border: 2px solid #D8D8D8 !important; padding: 50px!important;">
                <!-- Modifier l'adresse postale --> 
-            <div class="mb-4">
+            <form class="mb-4">
                 <h5 class="mb-4" style="font-weight:700 !important">Modifier mon adresse postale</h5>
                 <div class="mb-3">
                     <label for="street-name" class="form-label" style="font-weight:700;">Nom de la rue</label>
@@ -41,7 +41,7 @@ include_once "../include/professional/dashboard_professional.php";
                     <textarea class="form-control" id="additional-description" placeholder="Toute information supplémentaire"></textarea>
                 </div>
                 <button type="button" class="btn btn-warning col-md-3" style="background-color:#FFAA00;color:white;font-weight:700;font-size:16px;height:50px;max-width:99%">Changer mon adresse</button>
-            </div>
+            </form>
              
             </div>
         </div>
