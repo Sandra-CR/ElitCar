@@ -45,7 +45,7 @@ include_once "../include/base.php";
 
 
         <div class="col-lg-6 mb-3">
-            <div class="border-secondary card flex-row bg-light rounded-5 shadow">
+            <div class="border-light card flex-row bg-light rounded-5 shadow">
                 <div><img src="view/page-2/img/1.jpg" alt="Image 1" class="card-img-top rounded-5 rounded-end-3"></div>
                 <div class="card-body" style="width: 250%;">
                     <h5 class="card-title text-danger mb-5">Renault</h5>
@@ -57,7 +57,7 @@ include_once "../include/base.php";
 
 
         <div class="col-lg-6 mb-3">
-            <div class="border-secondary card flex-row bg-light rounded-5 shadow">
+            <div class="border-light card flex-row bg-light rounded-5 shadow">
                 <div><img src="view/page-2/img/2.jpg" alt="Image 2" class="card-img-top rounded-5 rounded-end-3"></div>
                 <div class="card-body" style="width: 250%;">
                     <h5 class="card-title text-danger mb-5">Renault</h5>
@@ -70,7 +70,7 @@ include_once "../include/base.php";
 
 
         <div class="col-lg-6 mb-3">
-            <div class="border-secondary card flex-row bg-light rounded-5 shadow">
+            <div class="border-light card flex-row bg-light rounded-5 shadow">
                 <div><img src="view/page-2/img/3.jpg" alt="Image 3" class="card-img-top rounded-5 rounded-end-3"></div>
                 <div class="card-body" style="width: 250%;">
                     <h5 class="card-title text-danger mb-5">Renault</h5>
@@ -84,7 +84,7 @@ include_once "../include/base.php";
 
        
         <div class="col-lg-6 mb-3">
-            <div class="border-secondary card flex-row bg-light rounded-5 shadow">
+            <div class="border-light card flex-row bg-light rounded-5 shadow">
                 <div><img src="view/page-2/img/4.jpg" alt="Image 4" class="card-img-top rounded-5 rounded-end-3"></div>
                 <div class="card-body" style="width: 250%;">
                     <h5 class="card-title text-danger mb-5">Renault</h5>
@@ -98,7 +98,7 @@ include_once "../include/base.php";
 
        
         <div class="col-lg-6 mb-3">
-            <div class="border-secondary card flex-row bg-light rounded-5 shadow">
+            <div class="border-light card flex-row bg-light rounded-5 shadow">
                 <div><img src="view/page-2/img/5.jpg" alt="Image 5" class="card-img-top rounded-5 rounded-end-3"></div>
                 <div class="card-body" style="width: 250%;">
                     <h5 class="card-title text-danger mb-5">Renault</h5>
@@ -113,7 +113,7 @@ include_once "../include/base.php";
 
        
         <div class="col-lg-6 mb-3">
-            <div class="border-secondary card flex-row bg-light rounded-5 shadow">
+            <div class="border-light card flex-row bg-light rounded-5 shadow">
                 <div><img src="view/page-2/img/6.jpg" alt="Image 6" class="card-img-top rounded-5 rounded-end-3"></div>
                 <div class="card-body" style="width: 250%;">
                     <h5 class="card-title text-danger mb-5">Renault</h5>
@@ -127,7 +127,7 @@ include_once "../include/base.php";
 
         
         <div class="col-lg-6 mb-3">
-            <div class="border-secondary card flex-row bg-light rounded-5 shadow">
+            <div class="border-light card flex-row bg-light rounded-5 shadow">
                 <div><img src="view/page-2/img/7.jpg" alt="Image 7" class="card-img-top rounded-5 rounded-end-3"></div>
                 <div class="card-body" style="width: 250%;">
                     <h5 class="card-title text-danger mb-5">Renault</h5>
@@ -141,7 +141,7 @@ include_once "../include/base.php";
 
 
         <div class="col-lg-6 mb-3">
-            <div class="border-secondary card flex-row bg-light rounded-5 shadow">
+            <div class="border-light card flex-row bg-light rounded-5 shadow">
                 <div><img src="view/page-2/img/8.jpg" alt="Image 8" class="card-img-top rounded-5 rounded-end-3"></div>
                 <div class="card-body" style="width: 250%;">
                     <h5 class="card-title text-danger mb-5">Renault</h5>
