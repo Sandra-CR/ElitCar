@@ -20,3 +20,18 @@ function calculateAge($birthdate) {
     $age = $now->diff($dob);
     return $age->y;
 }
+
+function verif_mail($email) {
+    $regex_mail = "/^(?=.{1,254}$)[a-zA-Z0-9!#$%&'*+=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+=?^_`{|}~-]+)*@(?!-)[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*(?<!-)(?:\.[a-zA-Z]{2,})$/";
+    // Vérification du domaine de l'e-mail
+    $domain = explode('@', $email)[1];
+    if (!checkdnsrr($domain, 'MX')) {
+        return false;
+    }
+    return preg_match($regex_mail , $email);
+}
+
+function verif_mdp($mdp) {
+    $regex = "#^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$#";
+    return preg_match($regex , $mdp);
+}

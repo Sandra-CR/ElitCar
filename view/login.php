@@ -44,7 +44,7 @@ if (isset($_SESSION['user_id'])) {
             <h4 >Créez votre compte</h4>
         </div>
         <div class="container-btn">
-            <button class="btn-log-google btn-secondary my-1" onclick="redirectToGoogle()"><img class="mx-1" src="img/google.jpg" width="23px" height="23px" alt=""> Continuer avec Google</button>
+            <button class="btn-log-google border border-2 my-1" onclick="redirectToGoogle()"><img class="mx-1" src="img/google.jpg" width="23px" height="23px" alt=""> Continuer avec Google</button>
             <button class="btn-log btn-secondary my-1">Facebook</button>
             <button class="btn-log btn-secondary my-1">Apple</button>
         </div>

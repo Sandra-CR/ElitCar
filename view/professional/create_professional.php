@@ -31,7 +31,7 @@
 
         <h3 class="text-center" id="messagePro"></h3>
 
-        <form id="formProfessional" class="mx-auto col-6">
+        <form id="formProfessional" action="controller/admin/create_ctrl_professional.php" method="post" class="mx-auto col-6">
 
             <div class="form-floating mt-3">
                 <input type="text" name="name" class="form-control" id="floatingFname" placeholder="Prénom">
@@ -79,30 +79,4 @@
 </body>
 </html>
 
-<script>
-    // Récupération du formulaire et de l'élément d'affichage du message
-    const formpro = document.getElementById('formProfessional');
-    const msgpro = document.getElementById('messagePro');
-
-    // Ajout d'un écouteur d'événement pour soumettre le formulaire
-    formpro.addEventListener("submit", function(e) {
-        e.preventDefault(); // Empêcher le comportement par défaut du formulaire
-
-        const formData = new FormData(e.target); // Récupération des données du formulaire
-
-        const data = {
-            method: "POST",
-            body: formData,
-        };
-
-        // Envoi des données du formulaire via une requête fetch
-        fetch("controller/admin/ajax_create_ctrl_professional.php", data)
-            .then(response => response.json()) // Conversion de la réponse en format JSON
-            .then(data => {
-                console.log(data); // Affichage des données reçues dans la console
-                msgpro.innerHTML = data.message; // Affichage du message de la réponse
-            });
-    });
-
-</script>
 

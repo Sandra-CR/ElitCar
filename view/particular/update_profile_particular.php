@@ -2,19 +2,19 @@
 <!-- dashboard -->
 
 <?php 
- include_once "../../controller/admin/role.php";
- include_once "../include/base.php";
- include_once "../include/particular/dashboard_particular.php";?>
+include_once "../../controller/admin/role.php";
+include_once "../include/base.php";
+if(isset($_SESSION['role']) && $_SESSION['role'] <= Role::CUSTOMER->value) {
+include_once "../include/particular/dashboard_particular.php";
+include_once "../../model/pdo.php";
+if (isset ($_SESSION['id'])) {
+    $id = $_SESSION['id'];
+    $sql = "SELECT * FROM particular WHERE id_user='$id'"; 
+    $stmt = $pdo->query($sql); // Exécution de la requête SQL
+    $user = $stmt->fetch(PDO::FETCH_ASSOC); // Récupération des résultats de la requête sous forme de tableau associatif
+    $d = new DateTime($user['birthdate']);
+}
 
-<?php 
-    include_once "../../model/pdo.php";
-    if (isset ($_SESSION['id'])) {
-        $id = $_SESSION['id'];
-        $sql = "SELECT * FROM particular WHERE id_user='$id'"; 
-        $stmt = $pdo->query($sql); // Exécution de la requête SQL
-        $user = $stmt->fetch(PDO::FETCH_ASSOC); // Récupération des résultats de la requête sous forme de tableau associatif
-        $d = new DateTime($user['birthdate']);
-    }
 ?>
 
 
@@ -73,6 +73,7 @@
         </div>
     </div>
 </body>
+<?php }?>
 <script>
     // Récupération du formulaire et de l'élément d'affichage du message
     const formUpdate = document.getElementById('form-update-particular');

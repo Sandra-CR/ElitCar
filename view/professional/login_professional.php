@@ -94,7 +94,7 @@ if (!empty($_POST['mail']) && !empty($_POST['psw'])){
             $_SESSION["name"] = $pro['name']; // Attribution du nom de l'utilisateur à la session
             $_SESSION["role"] = $pro['role']; // Attribution du rôle de l'utilisateur à la session
             $_SESSION["token"] = bin2hex(random_bytes(16)); // Génération d'un jeton de sécurité et attribution à la session
-            header('Location: ../home.php'); // Redirection vers la page d'accueil
+            sendMessage("Bon retour Parmi nous", "success", "../home.php"); // Redirection vers la page d'accueil
         } else {
             sendMessage("Mots de passe incorrect", "failed", "login_particular.php"); // Redirection avec un message d'erreur si le mot de passe est incorrect
         }
