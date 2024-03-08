@@ -3,7 +3,9 @@
 <?php 
  include_once "../../controller/admin/role.php";
  include_once "../include/base.php";
- include_once "../include/particular/dashboard_particular.php";?>
+ if(isset($_SESSION['role']) && $_SESSION['role'] <= Role::CUSTOMER->value) {
+ include_once "../include/particular/dashboard_particular.php";
+ ?>
 
     <div class="container-fluid">
         <div class="row">
@@ -30,3 +32,4 @@
         </div>
     </div>
 </body>
+<?php }?>
