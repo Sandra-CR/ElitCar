@@ -16,6 +16,8 @@ if(
     && !empty($_POST["psw"])
     && isset($_POST["pol"])
 ){
+    $fn = htmlspecialchars($_POST["first_name"]);
+    $ln = htmlspecialchars($_POST["last_name"]);
     $pp = "img/no_picture_update.svg"; // Image de profil par défaut
     $psw = $_POST["psw"];
     $pol = $_POST["pol"];
@@ -26,7 +28,7 @@ if(
     if (verif_mdp($psw)) {
         $psw = password_hash($psw, PASSWORD_ARGON2I); // Hashage du mot de passe
         $role = "1"; // Définition du rôle de l'utilisateur
-        $mail = $_POST["mail"];
+        $mail = htmlspecialchars($_POST["mail"]);
         // Vérification de la validité de l'adresse email
         if (verif_mail($mail)) {
             if ($pol == "1") {
@@ -34,7 +36,7 @@ if(
                     // Préparation et exécution de la requête SQL pour insérer les données dans la base de données
                     $sql = "INSERT INTO particular (first_name, last_name, mail, psw, profile_picture, isEntreprise, role, newsletters, politique) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
                     $stmt = $pdo->prepare($sql);
-                    $stmt->execute([$_POST["first_name"], $_POST["last_name"], $mail, $psw, $pp, 0, $role, $new, $pol]);
+                    $stmt->execute([$fn, $ln, $mail, $psw, $pp, 0, $role, $new, $pol]);
                     if($stmt->rowCount() > 0){
                         $sql2 = "SELECT * FROM particular WHERE mail='$mail'"; // Requête SQL pour sélectionner l'utilisateur particulier avec l'adresse e-mail fournie
                         $stmt2 = $pdo->query($sql2); // Exécution de la requête SQL

@@ -118,7 +118,7 @@ function save_password($pdo, $password) {
     // Récupération de l'adresse email stockée dans la session
     $email = addslashes($_SESSION['forgot']['mail']);
     // Hachage du mot de passe pour des raisons de sécurité
-    $password = sha1(md5($password) . md5($password));
+    $password = password_hash($password, PASSWORD_ARGON2I);
     // Mise à jour du mot de passe dans la base de données
     $query = "UPDATE particular SET psw = :psw WHERE mail = :mail";
     $stmt = $pdo->prepare($query);

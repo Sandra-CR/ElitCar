@@ -13,7 +13,8 @@ if(!empty($_POST["name"]) && !empty($_POST["mail"]) && !empty($_POST["psw"])  &&
     if(verif_mdp($psw)) {
         $psw = password_hash($psw, PASSWORD_ARGON2I); // Hachage sécurisé du mot de passe
         $role = "4"; // Attribution du rôle (ici 4 pour utilisateur professionnel)
-        $mail = $_POST["mail"];
+        $mail = htmlspecialchars($_POST["mail"]);
+        $name = htmlspecialchars($_POST["name"]);
         // Vérification de la validité de l'adresse email
         if (verif_mail($mail)) {
             if ($pol == "1") {
@@ -21,7 +22,7 @@ if(!empty($_POST["name"]) && !empty($_POST["mail"]) && !empty($_POST["psw"])  &&
                     // Requête d'insertion des données dans la table "professional"
                     $sql = "INSERT INTO professional (name, mail, psw, profile_picture, role, newsletters, politique) VALUE (?,?,?,?,?,?,?) " ; 
                     $stmt = $pdo->prepare($sql); // Préparation de la requête SQL
-                    $stmt->execute([$_POST["name"], $mail, $psw, $pp, $role, $new, $pol]);
+                    $stmt->execute([$name, $mail, $psw, $pp, $role, $new, $pol]);
                         if($stmt->rowCount() > 0){// Exécution de la requête avec les valeurs fournies
                         $sql2 = "SELECT * FROM professional WHERE mail='$mail'"; // Requête SQL pour sélectionner l'utilisateur particulier avec l'adresse e-mail fournie
                         $stmt2 = $pdo->query($sql2); // Exécution de la requête SQL
