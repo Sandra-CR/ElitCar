@@ -1,13 +1,17 @@
 
+
 <script src="https://js.stripe.com/v3/"></script>
 
 <?php
+//cartes de test 
+////Carte Visa: 4242 4242 4242 4242
+////Carte Mastercard: 5555 5555 5555 4444
+////Carte Discover: 6011 1111 1111 1117
+
 include_once "../../controller/admin/role.php";
 include_once "../include/base.php";
+include_once "../../controller/check_payment_method.php";
 include_once "../include/professional/dashboard_professional.php";
-
-// Simuler la vérification de l'existence des moyens de paiement
-$moyensDePaiementExistants = true; // Changez cette valeur en fonction de la logique de votre application
 
 // Vérifier si l'utilisateur a demandé d'afficher le formulaire d'ajout
 $afficherFormulaireAjout = isset($_GET['add-method']) && $_GET['add-method'] == 'true';
@@ -39,7 +43,7 @@ $afficherFormulaireAjout = isset($_GET['add-method']) && $_GET['add-method'] == 
                     </div>
                 </div>
             <?php else: ?>
-                <?php if (!$moyensDePaiementExistants): ?>
+                <?php if (!$payment_method): ?>
                     <!-- Message indiquant qu'aucun moyen de paiement n'est enregistré -->
                         <div class="row justify-content-center">
                             <div class="col-md-6">
@@ -57,8 +61,9 @@ $afficherFormulaireAjout = isset($_GET['add-method']) && $_GET['add-method'] == 
                 <?php else: ?>
                     <!-- Affichage des moyens de paiement existants -->
                     <div class="container col-md-8 mt-5 mb-5" style="border: 2px solid #D8D8D8 !important; padding: 50px!important;">
-                    <p>Vos moyens de paiement.</p>
-                    <a href="view/professional/payment_method_professional.php?add-method=true" class="btn" style="background-color:#FFAA00;color:white;font-weight:700;font-size:16px;max-width:99%;padding: 15px;font-size:14px;">Ajouter un nouveau moyen de paiement</a>
+                    <h5 class="mb-4" style="font-weight:700 !important">Moyen de paiement.</h5>
+                    <?php include_once "../../controller/get_payment_method.php";?> <br>
+                    <a href="view/professional/payment_method_professional.php?add-method=true"  style="color:green;font-weight:700;font-size:16px;max-width:99%;padding: 0px;font-size:14px;">Modifier votre moyen de paiment</a>
                     </div>
                 <?php endif; ?>
             <?php endif; ?>
