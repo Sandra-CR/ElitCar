@@ -3,17 +3,17 @@ include("../../model/pdo.php"); // Inclut le fichier de connexion à la base de 
 include("tools.php");
 
 // Vos variables récupérées du formulaire
-$votrerue = trim(filter_var($_POST['votrerue'], FILTER_SANITIZE_STRING)); // Récupère et nettoie la valeur de l'entrée "votrerue" du formulaire
+$votrerue = htmlspecialchars($_POST['votrerue']); // Récupère et nettoie la valeur de l'entrée "votrerue" du formulaire
 
-$quartier = trim(filter_var($_POST['quartier'], FILTER_SANITIZE_STRING)); // Récupère et nettoie la valeur de l'entrée "quartier" du formulaire
+$quartier = htmlspecialchars($_POST['quartier']); // Récupère et nettoie la valeur de l'entrée "quartier" du formulaire
 
-$ville = trim(filter_var($_POST['ville'], FILTER_SANITIZE_STRING)); // Récupère et nettoie la valeur de l'entrée "ville" du formulaire
+$ville = htmlspecialchars($_POST['ville']); // Récupère et nettoie la valeur de l'entrée "ville" du formulaire
 
-$region = trim(filter_var($_POST['region'], FILTER_SANITIZE_STRING)); // Récupère et nettoie la valeur de l'entrée "region" du formulaire
+$region = htmlspecialchars($_POST['region']); // Récupère et nettoie la valeur de l'entrée "region" du formulaire
 
-$codepostale = trim(filter_var($_POST['codepostale'], FILTER_SANITIZE_STRING)); // Récupère et nettoie la valeur de l'entrée "codepostale" du formulaire
+$codepostale = htmlspecialchars($_POST['codepostale']); // Récupère et nettoie la valeur de l'entrée "codepostale" du formulaire
 
-$descrisup = trim(filter_var($_POST['descrisup'], FILTER_SANITIZE_STRING)); // Récupère et nettoie la valeur de l'entrée "descrisup" du formulaire
+$descrisup = htmlspecialchars($_POST['descrisup']); // Récupère et nettoie la valeur de l'entrée "descrisup" du formulaire
 
 // Validation des valeurs non vides
 if (empty($votrerue) || empty($quartier) || empty($ville) || empty($region) || empty($codepostale) || empty($descrisup)) {
