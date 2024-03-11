@@ -10,11 +10,9 @@ $errors = array();
 require "mail.php";
 
 // Inclusion du fichier constants.inc.php pour les constantes utiles
-include_once ("../model/pdo.php");
+include_once "../model/pdo.php";
 
 try {
-    // Tentative de connexion à la base de données MySQL avec les paramètres définis dans les constantes
-    $pdo = new PDO("mysql:host=localhost;dbname=elitcar", "root", "");
     // Configuration du mode d'affichage des erreurs de PDO
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
@@ -191,7 +189,6 @@ function is_code_correct($pdo, $code) {
         case 'enter_email':
             // code...
             ?>
-        <form class="formpassword" method="post" action="view/forgot.php?mode=enter_email">
             <div class="container-main-login d-flex justify-content-center g-0 ">
             <div class="container-login col-12 col-lg-5">
             <div class="container-logo"><a target="_self" href="view/home"><img src="img/elitcar-login.png" alt="Logo Elitcar" width="256px" height="64px"></a></div>
@@ -206,17 +203,17 @@ function is_code_correct($pdo, $code) {
             <div class="container-title-2">
                 <h4 >Avez-vous perdu votre mot de passe ?</h4>
             </div>
-        <form id="form" class="mx-auto col-8 mt-2" action="" method="post">
-            <div class="form-floating mb-3">
-                <input type="mail" name="mail" class="form-control" id="floatingInput" placeholder="name@example.com">
-                <label for="floatingInput">Entrez votre Email ici</label>
+            <form id="formpassword" class="mx-auto col-8 mt-2" action="view/forgot.php?mode=enter_email" method="post">
+                <div class="form-floating mb-3">
+                    <input type="mail" name="mail" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Entrez votre Email ici</label>
+                </div>
+                <div class="container-btn-mail mx-auto">
+                    <input type="submit" class="form-control mt-3 btn btn-warning text-light" value="Envoyer">
+                </div>
+            </form>
             </div>
-            <div class="container-btn-mail mx-auto">
-                <input type="submit" class="form-control mt-3 btn btn-warning text-light" value="Envoyer">
-            </div>
-        </form>
-        </div>
-        <div class="container-img-login d-none d-xl-block col-7"></div>
+            <div class="container-img-login d-none d-xl-block col-7"></div>
 
         </div>  
             </form>

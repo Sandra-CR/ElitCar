@@ -63,7 +63,7 @@ include_once "../../controller/admin/tools.php"; // Inclusion du fichier contena
             </div>
 
             <div class="container-title-3 mb-2">
-                <a href="view/login" target="_self" class="mt-3 fw-bold text-decoration-none text-dark">Mot de passe oublié?</a>
+                <a href="view/forgot" target="_self" class="mt-3 fw-bold text-decoration-none text-dark">Mot de passe oublié?</a>
             </div>
             <div class="container-btn-mail mx-auto">
                 <input type="submit" class="form-control mt-3 btn btn-warning text-light" value="Connexion">
@@ -96,11 +96,11 @@ if (!empty($_POST['mail']) && !empty($_POST['psw'])){
             $_SESSION["token"] = bin2hex(random_bytes(16)); // Génération d'un jeton de sécurité et attribution à la session
             sendMessage("Bon retour Parmi nous", "success", "../home.php"); // Redirection vers la page d'accueil
         } else {
-            sendMessage("Mots de passe incorrect", "failed", "login_particular.php"); // Redirection avec un message d'erreur si le mot de passe est incorrect
+            sendMessage("Mots de passe incorrect", "failed", "login_professional.php"); // Redirection avec un message d'erreur si le mot de passe est incorrect
         }
     } else {
         // le compte n'existe pas
-        sendMessage("le compte n'existe pas", "failed", "login_particular.php"); // Redirection avec un message d'erreur si le compte n'existe pas
+        sendMessage("le compte n'existe pas", "failed", "login_professional.php"); // Redirection avec un message d'erreur si le compte n'existe pas
     }
 } else {
     // Attention bug.

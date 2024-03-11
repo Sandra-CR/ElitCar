@@ -34,7 +34,8 @@ if(
                     // Préparation et exécution de la requête SQL pour insérer les données dans la base de données
                     $sql = "INSERT INTO particular (first_name, last_name, mail, psw, profile_picture, isEntreprise, role, newsletters, politique) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
                     $stmt = $pdo->prepare($sql);
-                    if($stmt->execute([$_POST["first_name"], $_POST["last_name"], $mail, $psw, $pp, 0, $role, $new, $pol])){
+                    $stmt->execute([$_POST["first_name"], $_POST["last_name"], $mail, $psw, $pp, 0, $role, $new, $pol]);
+                    if($stmt->rowCount() > 0){
                         $sql2 = "SELECT * FROM particular WHERE mail='$mail'"; // Requête SQL pour sélectionner l'utilisateur particulier avec l'adresse e-mail fournie
                         $stmt2 = $pdo->query($sql2); // Exécution de la requête SQL
                         $user = $stmt2->fetch(PDO::FETCH_ASSOC); // Récupération des résultats de la requête sous forme de tableau associatif
@@ -47,7 +48,7 @@ if(
                                 $_SESSION["name"] = $user['first_name'] . " " . $user['last_name']; // Attribution du nom complet de l'utilisateur à la session
                                 $_SESSION["role"] = $user['role']; // Attribution du rôle de l'utilisateur à la session
                                 $_SESSION["token"] = bin2hex(random_bytes(16)); // Génération d'un jeton de sécurité et attribution à la session
-                                sendMessage("Bon retour Parmi nous", "success", "../../view/home.php"); // Redirection vers la page d'accueil
+                                sendMessage("Compte Crée", "success", "../../view/home.php"); // Redirection vers la page d'accueil
                             } else {
                                 sendMessage("Mots de passe incorrect", "failed", "../../view/particular/login_particular"); // Redirection avec un message d'erreur si le mot de passe est incorrect
                             }

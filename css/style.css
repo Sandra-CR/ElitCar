@@ -927,6 +927,11 @@ $$$$$$$$/  $$$$$$/   $$$$$$$ |$$/ $$/   $$/
     width: 347px !important;
     height: 62px !important;
 }
+.btn-log-mail{
+    width: 347px !important;
+    height: 62px !important;
+    background-color:  #ffffff ;
+}
 .btn-log-google{
     width: 347px !important;
     height: 62px !important;

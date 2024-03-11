@@ -62,7 +62,7 @@ include_once "../../controller/admin/tools.php"; // Inclusion du fichier contena
                 <label for="show_password"><p class="text-label">Afficher le mot de passe</p></label>
             </div>
             <div class="container-title-3 my-2">
-                <a href="view/login" target="_self" class="mt-3 fw-bold text-decoration-none text-dark">Mot de passe oublié?</a>
+                <a href="view/forgot" target="_self" class="mt-3 fw-bold text-decoration-none text-dark">Mot de passe oublié?</a>
             </div>
             <div class="container-btn-mail mx-auto">
                 <input type="submit" class="form-control mt-3 btn btn-warning text-light" value="Connexion">

@@ -52,10 +52,10 @@ if (isset($_SESSION['user_id'])) {
             <p>ou</p>
         </div>
         <div class="container-btn-mail mx-auto">
-            <a target="_self" href="view/particular/create_particular"><button class="btn-log border border-3 my-1">Inscription par mail</button></a>
+            <a target="_self" href="view/particular/create_particular"><button class="btn-log-mail border border-2 my-1">Inscription par mail</button></a>
         </div>
         <div class="container-title">
-            <p>Vous avez un compte sur Elitcar? <a href="view/particular/login_particular" target="_self" class="mx-2 fw-bold text-decoration-none text-dark"> Se connecter</a></p>
+            <p>Vous avez un compte sur Elitcar? <a href="view/forgot" target="_self" class="mx-2 fw-bold text-decoration-none text-dark"> Se connecter</a></p>
         </div>
     </div>
     <div class="container-img-login d-none d-xl-block col-7 h-100"></div>
