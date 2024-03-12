@@ -1,9 +1,9 @@
 <!-- dashboard -->
 <?php
- include_once "../../controller/admin/role.php";
- include_once "../include/base.php";
- if(isset($_SESSION['role']) && $_SESSION['role'] <= Role::CUSTOMER->value) {
- include_once "../include/particular/dashboard_particular.php";
+include_once "../../controller/admin/role.php";
+include_once "../include/base.php";
+if(isset($_SESSION['role']) && $_SESSION['role'] <= Role::CUSTOMER->value) {
+include_once "../include/particular/dashboard_particular.php";
  ?>
 
     <div class="container-fluid">
@@ -15,7 +15,8 @@
             <!-- adresse postale --> 
             <div class="container col-md-8 mt-5 mb-5" style="border: 2px solid #D8D8D8 !important; padding: 50px!important;">
                <!-- Modifier l'adresse postale --> 
-            <form action="controller/admin/add_adress_ctrl.php" method="post" class="mb-4">
+               <?php include_once "../message.php" ?>
+            <form action="controller/admin/add_ctrl_adress_particular" method="post" class="mb-4">
                 <h5 class="mb-4" style="font-weight:700 !important">Modifier mon adresse postale</h5>
                 <div class="mb-3">
                     <label for="street_name" class="form-label" style="font-weight:700;">Nom de la rue</label>
