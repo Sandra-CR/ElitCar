@@ -1,32 +1,22 @@
-
-<?php
-    // Informations de connexion à la base de données
+    <?php
+    // Connexion à la base de données
     include_once "../../model/pdo.php";
 
-    // Vérification de la soumission du formulaire
-    if (!empty($_POST['street_name']) && !empty($_POST['neighborhood']) && !empty($_POST['city']) && !empty($_POST['region']) && !empty($_POST['postal_code'])) {
-        // Récupération des données du formulaire
-        $nomRue = $_POST['street-name'];
-        $quartier = $_POST['neighborhood'];
-        $ville = $_POST['city'];
-        $region = $_POST['region'];
-        $codePostal = $_POST['postal-code'];
-        $descriptionSupp = $_POST['additional_description'];
+    // Récupération des valeurs saisies dans le formulaire
+    $street_name = $_POST['street_name'];
+    $neighborhood = $_POST['neighborhood'];
+    $city = $_POST['city'];
+    $region = $_POST['region'];
+    $postal_code = $_POST['postal_code'];
+    $additional_description = $_POST['additional_description'];
 
-        // Préparation de la requête SQL
-        $sql = "INSERT INTO address_particulier (street_name, neighborhood, city, region, postal_code, additional_description) VALUES (?, ?, ?, ?, ?, ?)";
+    // Insertion des valeurs dans la base de données
+    $sql = "INSERT INTO address_particulier (street_name, neighborhood, city, region, postal_code, additional_description) VALUES (?, ?, ?, ?, ?, ?)";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([$street_name, $neighborhood, $city, $region, $postal_code, $additional_description]);
 
-        // Préparation de la requête
-        $stmt = $pdo->prepare($sql);
+    // Affichage d'un message de succès
+    echo "L'adresse a bien été modifiée.";
 
-        // Exécution de la requête
-        try {
-            $stmt->execute([$nomRue, $quartier, $ville, $region, $codePostal, $descriptionSupp]);
-           sendMessage("Adresse postale ajoutee", "success", "../../view/particular/adress_particular");
-        } catch (PDOException $e) {
-            echo "Erreur lors de l'ajout de l'adresse postale : " . $e->getMessage();
-        }
-    } else{
-        echo "erreur input";
-    }
-?>
+    
+    
