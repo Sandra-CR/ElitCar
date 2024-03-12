@@ -24,16 +24,17 @@ $mail->Port       = 587;
 $mail->Host       = "smtp.gmail.com";
 //$mail->Host       = "smtp.mail.yahoo.com";
 // Configuration du nom d'utilisateur SMTP
-$mail->Username   = "saaifomar4@gmail.com";
+$mail->Username   = "mod01elitcar@gmail.com";
 // Configuration du mot de passe SMTP
-$mail->Password   = "qnkgdkqtvvhhbche";
+$mail->Password   = "defqwjfcejyvztcc";
 
 // Activation du format HTML pour le contenu du courriel
 $mail->IsHTML(true);
 // Ajout de l'adresse du destinataire et de son nom
 $mail->AddAddress($recipient, "esteemed customer");
 // Configuration de l'adresse expéditrice et de son nom
-$mail->SetFrom("saaifomar4@gmail.com", "groupe_g2");
+$mail->SetFrom("mod01elitcar@gmail.com", "Elitcar");
+
 
 // Configuration facultative de la réponse à l'adresse
 //$mail->AddReplyTo("reply-to-email", "reply-to-name");

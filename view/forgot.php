@@ -110,7 +110,22 @@ function send_email($pdo, $email) {
     $stmt->bindParam(':expire', $expire);
     $stmt->execute();
     // Envoi du courriel contenant le code
-    send_mail($email, 'Réinitialisation du mot de passe', 'Votre code est : '. $code);
+    $message = '
+<html>
+<head>
+    <title>Réinitialisation du mot de passe</title>
+</head>
+<body>
+    <p>Bonjour,</p>
+    <p>Vous avez demandé une réinitialisation de votre mot de passe. Voici votre code :</p>
+    <p style="font-size: 18px; font-weight: bold;">' . $code . '</p>
+    <p>Utilisez ce code pour réinitialiser votre mot de passe.</p>
+    <p>Merci,</p>
+    <p>Votre équipe de support</p>
+</body>
+</html>
+';
+    send_mail($email, 'Reinitialisation du mot de passe', $message. $code);
 }
 
 // Fonction de sauvegarde du nouveau mot de passe dans la base de données
@@ -182,8 +197,6 @@ function is_code_correct($pdo, $code) {
     <title>ElitCar</title>
 </head>
 <body>
-   
-
     <?php
     switch ($mode) {
         case 'enter_email':
@@ -216,7 +229,6 @@ function is_code_correct($pdo, $code) {
             <div class="container-img-login d-none d-xl-block col-7"></div>
 
         </div>  
-            </form>
             <?php
             break;
         case 'enter_code':
