@@ -14,7 +14,7 @@ include_once "../../controller/check_payment_method.php";
 include_once "../include/professional/dashboard_professional.php";
 
 // Vérifier si l'utilisateur a demandé d'afficher le formulaire d'ajout
-$afficherFormulaireAjout = isset($_GET['add-method']) && $_GET['add-method'] == 'true';
+$form= isset($_GET['add-method']) && $_GET['add-method'] == 'true';
 ?>
 
 <div class="container-fluid">
@@ -23,21 +23,25 @@ $afficherFormulaireAjout = isset($_GET['add-method']) && $_GET['add-method'] == 
             <?php include_once "../include/professional/account_menu_professional.php"; ?>
         </div>
         <div class="container col-md-10 mt-5 mb-5">
-            <?php if ($afficherFormulaireAjout): ?>
+            <?php if ($form): ?>
                 <!-- Formulaire d'ajout de moyen de paiement -->
                 <div class="row justify-content-center">
                     <div class="col-md-6">
-                        <div class="card text-center" style="padding: 40px;">
+                        <div class="text-center" style="padding: 40px;">
                             <div class="card-body">
-                                <h5 class="card-title "  style="font-weight:700 !important">Ajouter un moyen de paiement</h5>
-                                <form id="payment-form" class="mt-5" action="controller/add_payment_method.php" method="post">
-                                    <div class="mb-3" id="card-errors" style="color:red;" role="alert"></div>
-                                    <div id="card-element">
-                                        <!-- Un div vide où Stripe va insérer l'élément de carte. -->
-                                    </div>
-                                    <button type="submit" class="btn mt-5" style="background-color:#FFAA00;color:white;padding: 5px 25px 5px 25px;">Enregistrer</button>
-                                </form>
-                                <button type="button" class="btn" style="background-color:#d3d4d5;padding: 5px 25px 5px 25px;" onclick="history.back();">Retourner</button>
+                              <form id="payment-form" action="controller/add_payment_method.php" method="post" style="max-width: 500px; margin: auto; border: 1px solid #ccc; border-radius: 5px; padding: 20px; box-shadow: 0 2px 5px rgba(0,0,0,.1);">
+                                  <div id="card-errors" role="alert" style="color:red;"></div>
+
+                                  <label for="cardholder-name" style="display: block; margin-top: 20px; margin-bottom: 10px;">Nom du titulaire de la carte</label>
+                                  <input id="cardholder-name" type="text" class="form-control mb-3" style="border: 1px solid #ccc; border-radius: 4px; padding: 7px; width: 100%; box-sizing: border-box; margin-bottom: 16px;" onfocus="this.style.boxShadow='none';" onblur="this.style.boxShadow='';">
+
+                                  <label for="card-element" style="display: block; margin-top: 20px;">Détails de la carte</label>
+                                  <div id="card-element" class="form-control mb-3" style="border: 1px solid #ccc; border-radius: 4px; padding: 10px; margin-top: 10px;">
+                                      <!-- Un div vide où Stripe va insérer l'élément de carte. -->
+                                  </div>
+
+                                  <button type="submit" class="btn btn-primary" style="background-color: #FFAA00 !important; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 4px; font-size: 16px;margin-bottom: 20px;margin-top: 30px;">Enregistrer</button>
+                              </form>
                             </div>
                         </div>
                     </div>
@@ -59,12 +63,20 @@ $afficherFormulaireAjout = isset($_GET['add-method']) && $_GET['add-method'] == 
                             </div>
                         </div>
                 <?php else: ?>
-                    <!-- Affichage des moyens de paiement existants -->
-                    <div class="container col-md-8 mt-5 mb-5" style="border: 2px solid #D8D8D8 !important; padding: 50px!important;">
-                    <h5 class="mb-4" style="font-weight:700 !important">Moyen de paiement.</h5>
-                    <?php include_once "../../controller/get_payment_method.php";?> <br>
-                    <a href="view/professional/payment_method_professional.php?add-method=true"  style="color:green;font-weight:700;font-size:16px;max-width:99%;padding: 0px;font-size:14px;">Modifier votre moyen de paiment</a>
-                    </div>
+                  <div class="container col-md-4 mt-5 mb-5 d-flex flex-column align-items-center justify-content-center" style="border: 2px solid #D8D8D8; padding: 50px;box-shadow: 0 4px 6px rgba(0,0,0,.1);">
+                    <!-- Inclusion des détails de la méthode de paiement -->
+                    <div class="text text-danger mb-3"> <?php include_once "../../controller/payment_method_status.php"; ?></div>
+            
+                    <?php include_once "../../controller/get_payment_method.php"; ?>
+                    <p class="text-center mt-4" style="font-size: 14px; color: #6c757d;">
+                        Votre méthode de paiement sécurisée assure une transaction fluide et sans tracas. 
+                        Gardez vos informations à jour pour éviter toute interruption de service.
+                    </p>
+                    <a href="view/professional/payment_method_professional.php?add-method=true" class="btn" style="color:green;font-weight:700;font-size:16px;max-width:99%;padding: 0px;font-size:14px; margin-top:20px">Modifier votre moyen de paiement</a>
+                    <p class="text-center mt-3" style="font-size: 14px; color: #6c757d;">
+                        Des questions ? Notre <a href="#" style="color: #007bff;">équipe de support</a> est là pour aider.
+                    </p>
+                </div>
                 <?php endif; ?>
             <?php endif; ?>
         </div>
@@ -78,8 +90,8 @@ $afficherFormulaireAjout = isset($_GET['add-method']) && $_GET['add-method'] == 
     base: {
       fontSize: "16px",
       "::placeholder": {
-      color: "#aab7c4"
-    }
+        color: "#aab7c4"
+      }
     },
     invalid: {
       color: "#fa755a",
@@ -91,11 +103,19 @@ $afficherFormulaireAjout = isset($_GET['add-method']) && $_GET['add-method'] == 
   card.mount('#card-element');
 
   // Ajouter un gestionnaire d'événements pour le formulaire
-  let  form = document.getElementById('payment-form');
+  let form = document.getElementById('payment-form');
   form.addEventListener('submit', function(event) {
     event.preventDefault();
 
-    stripe.createToken(card).then(function(result) {
+    // Vérification du nom du titulaire de la carte
+    let cardholderName = document.getElementById('cardholder-name').value.trim();
+    if (!cardholderName) {
+      let errorElement = document.getElementById('card-errors');
+      errorElement.textContent = "Le nom du titulaire de la carte est obligatoire.";
+      return; // Stop la fonction ici si le nom est vide
+    }
+
+    stripe.createToken(card, {name: cardholderName}).then(function(result) {
       if (result.error) {
         // Informer l'utilisateur s'il y a une erreur
         let errorElement = document.getElementById('card-errors');
@@ -115,6 +135,9 @@ $afficherFormulaireAjout = isset($_GET['add-method']) && $_GET['add-method'] == 
     hiddenInput.setAttribute('name', 'stripeToken');
     hiddenInput.setAttribute('value', token.id);
     form.appendChild(hiddenInput);
+    
+
     form.submit();
   }
 </script>
+

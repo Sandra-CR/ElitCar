@@ -55,7 +55,7 @@ if (isset($_SESSION['id'])) {
                         break;
                 }
                 
-                echo '<div style="background-color: #1A1F71; padding: 20px; border-radius: 8px; color: white; font-family: Arial, sans-serif; position: relative; max-width: 210px; overflow: hidden;">'; 
+                echo '<div style="background-color: #1A1F71; padding: 20px; border-radius: 8px; color: white; font-family: Arial, sans-serif; position: relative; max-width: 210px; height:120px; overflow: hidden;">'; 
                 echo '<div style="position: absolute; right: -10px; top: 20px; background-color: #FFC107; color: black; padding: 5px 15px; font-size: 10px;">Par défaut</div>'; 
                 
                 if ($iconClass) {
@@ -64,9 +64,8 @@ if (isset($_SESSION['id'])) {
                     // Affiche le texte de la marque si l'icône n'est pas disponible
                     echo '<span style="font-size: 24px;">'.$brandText.'</span> ';
                 }
-                echo '<div style=" font-size: 16px;margin-top: 20px;">.... ' . $paymentMethod->card->last4;
-                echo ' <span style="float: right; font-size: 14px;margin-top: 2px;">Exp ' . sprintf('%02d/%d', $paymentMethod->card->exp_month, $paymentMethod->card->exp_year) . '</span></div>';
-                echo '<div style=" font-size: 16px; clear: both;">' . strtoupper($paymentMethod->billing_details->name) . '</div>';
+                echo '<div style=" font-size: 16px;margin-top: 33px;">.... ' . $paymentMethod->card->last4;
+                echo ' <span style="float: right; font-size: 14px;margin-top: 2px;margin-left:20px">Exp ' . sprintf('%02d/%d', $paymentMethod->card->exp_month, $paymentMethod->card->exp_year) . '</span></div>';
                 echo '</div>';
             }
         } else {
