@@ -1338,3 +1338,80 @@ $$/   $$/  $$$$$$/  $$/  $$/  $$/
         margin: 2px 15px 0px 25px;
     }
 }
+
+/* NOTIFICATIONS MESSAGE */
+.notifmessage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 203px;
+    width: 627px;
+    border: 1px solid rgb(168, 168, 168);
+}
+.fornotifmessage{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+/* Couleurs principales */
+.home-container {
+    background-color: #f5f5f5; /* Gris clair */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Ombre plus prononcée */
+    border-radius: 10px; /* Forme plus grande */
+    padding: 50px;
+  }
+  
+  .home-accordion-button {
+    background-color: #ffcc80; /* Orange légèrement atténué */
+    color: #333; /* Couleur du texte */
+    border-bottom: 2px solid #ff9800; /* Bordure inférieure orange */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère */
+  }
+  
+  /* Couleur de survol pour les boutons */
+  .home-accordion-button:hover {
+    background-color: #ffb74d; /* Orange plus clair au survol */
+  }
+  
+  /* Couleur de fond des éléments de texte */
+  .home-accordion-body {
+    background-color: #ffffff; /* Bleu ciel */
+    color: #333; /* Couleur du texte */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère */
+  }
+  
+  /* Espacement entre les éléments */
+  .home-my-5 {
+    margin-top: 5rem !important;
+    margin-bottom: 5rem !important;
+  }
+  
+  .home-mb-4 {
+    margin-bottom: 4rem !important;
+  }
+  
+  /* Polices */
+  .home-text-FAQ {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+  }
+  
+  /* Style pour les titres des accordéons */
+  .home-accordion-header {
+    background-color: #ffcc80; /* Orange légèrement atténué */
+    color: #333; /* Couleur du texte */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère */
+  }
+  
+  /* Style pour les titres des accordéons actifs */
+  .home-accordion-button[aria-expanded="true"] {
+    background-color: #ffb74d; /* Orange plus clair */
+  }
+  
+  /* Style pour les titres des accordéons survolés */
+  .home-accordion-button:hover {
+    background-color: #ffb74d; /* Orange plus clair au survol */
+  }
+  
+  
