@@ -15,13 +15,15 @@ $codepostale = htmlspecialchars($_POST['postal_code']); // Récupère et nettoie
     
 $descrisup = htmlspecialchars($_POST['additional_description']); // Récupère et nettoie la valeur de l'entrée "descrisup" du formulaire
     
+$id = $_POST["id_user"];
+
     // Validation des valeurs non vides
 if (!empty($quartier) || !empty($ville) || !empty($region) || !empty($codepostale)) {
     try {
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
         
             // Requête préparée pour l'insertion des données
-        $insertStmt = $pdo->prepare("INSERT INTO address_particulier (street_name, neighborhood, city, region, postal_code, additional_description) VALUES (:street_name, :neighborhood, :city, :region, :postal_code, :additional_description)");
+        $insertStmt = $pdo->prepare("INSERT INTO address_particulier (street_name, neighborhood, city, region, postal_code, additional_description, id_user) VALUES (:street_name, :neighborhood, :city, :region, :postal_code, :additional_description, :id_user)");
         
         // Liaison des paramètres
         $insertStmt->bindParam(':street_name', $votrerue); // Associe la variable $votrerue au paramètre :street_name de la requête
@@ -30,7 +32,7 @@ if (!empty($quartier) || !empty($ville) || !empty($region) || !empty($codepostal
         $insertStmt->bindParam(':region', $region); // Associe la variable $region au paramètre :region de la requête
         $insertStmt->bindParam(':postal_code', $codepostale); // Associe la variable $codepostale au paramètre :postal_code de la requête
         $insertStmt->bindParam(':additional_description', $descrisup); // Associe la variable $descrisup au paramètre :additional_description de la requête
-        
+        $insertStmt->bindParam(':id_user', $id);
         // Exécution de la requête
         $insertStmt->execute(); // Exécute la requête d'insertion des données dans la base de données
         sendMessage("Adresse postale ajoutee avec succes", "success", "../../view/particular/adress_particular"); // Affiche un message de succès après l'insertion des données

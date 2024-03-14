@@ -3,6 +3,7 @@
 include_once "../model/pdo.php";
 include_once "../controller/admin/tools.php";
 
+
 if (isset($_GET['code'])) {
   // Récupérer le code d'autorisation
   $auth_code = $_GET['code'];

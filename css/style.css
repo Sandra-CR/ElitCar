@@ -1338,3 +1338,53 @@ $$/   $$/  $$$$$$/  $$/  $$/  $$/
         margin: 2px 15px 0px 25px;
     }
 }
+
+.container-switch{
+    height: 75px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+}
+.container-round{
+    display: flex;
+    justify-content: space-around;
+    border: #ff9800 1px solid;
+}
+.container-href {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ff9800;
+}
+
+.container-href a {
+    color: #ffffff;
+    text-decoration: none;
+}
+.container-href-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-href-2 a {
+    color: #ff9800;
+    text-decoration: none;
+}
+.container-table{
+    border: #CCCCCC 1px solid;
+}
+.table-container {
+    max-height: 300px; /* Définir la hauteur maximale du conteneur du tableau */
+    overflow-y: auto; /* Activer le défilement vertical lorsque le contenu dépasse la hauteur */
+  }
+.none{
+    text-decoration: none;
+}
+.border-read-address{
+    border: #CCCCCC 1px solid;
+    width: 100%;
+}
+.container-btn-read{
+    display: flex;
+    flex-direction: column;
+}

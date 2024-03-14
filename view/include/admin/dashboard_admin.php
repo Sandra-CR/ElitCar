@@ -31,7 +31,7 @@
         $current_file = basename($_SERVER['SCRIPT_NAME']);
         echo ($current_file == 'users_table.php') ? 'active-link' : ''; 
       ?>
-    " aria-current="page" href="view/admin/users_table.php">TABLEAU DES UTILISATEURS</a>
+    " aria-current="page" href="view/admin/agency_table.php">TABLEAU DES UTILISATEURS</a>
     </li>
   </ul>
 </div> 

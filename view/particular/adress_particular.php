@@ -42,8 +42,8 @@ include_once "../include/particular/dashboard_particular.php";
                     <label for="additional_description" class="form-label" style="font-weight:700;">Description supplémentaire</label>
                     <textarea class="form-control" name="additional_description" placeholder="Toute information supplémentaire"></textarea>
                 </div>
-                <input type="hidden" name="Changer mon adresse" value="Changer mon adresse">
-                <button type="submit" class="btn btn-warning col-md-3" style="background-color:#FFAA00;color:white;font-weight:700;font-size:16px;height:50px;max-width:99%" name ="Changer mon adresse" value = "Changer mon adresse">Changer mon adresse</button>
+                <input type="hidden" name="id_user" value="<?= htmlentities($_SESSION["id"])?>">
+                <button type="submit" class="btn btn-warning col-md-3" style="background-color:#FFAA00;color:white;font-weight:700;font-size:16px;height:50px;max-width:99%" name ="Changer mon adresse" >Changer mon adresse</button>
             </form>
              
             </div>

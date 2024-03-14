@@ -45,8 +45,8 @@ if (isset($_SESSION['user_id'])) {
         </div>
         <div class="container-btn">
             <button class="btn-log-google border border-2 my-1" onclick="redirectToGoogle()"><img class="mx-1" src="img/google.jpg" width="23px" height="23px" alt=""> Continuer avec Google</button>
-            <button class="btn-log btn-secondary my-1">Facebook</button>
-            <button class="btn-log btn-secondary my-1">Apple</button>
+            <!-- <button class="btn-log btn-secondary my-1">Facebook</button>
+            <button class="btn-log btn-secondary my-1">Apple</button> -->
         </div>
         <div class="container-choose">
             <p>ou</p>
@@ -64,4 +64,9 @@ if (isset($_SESSION['user_id'])) {
 function redirectToGoogle() {
     window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=940497895444-tb4oe307ftrctvr8vl4mrnkvgtegpa35.apps.googleusercontent.com&redirect_uri=http://localhost/ElitCar/view/home&response_type=code&scope=https://www.googleapis.com/auth/userinfo.profile+https://www.googleapis.com/auth/userinfo.email';
 }
+// Fonction pour rediriger l'utilisateur vers la connexion via Apple
+// function redirectToApple() {
+//     // Rediriger l'utilisateur vers la page de connexion via Apple
+//     window.location.href = '/votre-page-de-connexion-via-apple'; // Remplacez '/votre-page-de-connexion-via-apple' par l'URL de votre page de connexion via Apple
+// }
 </script>
