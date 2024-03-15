@@ -6,18 +6,15 @@
  include_once "../../controller/admin/role.php";
  include_once "../include/base.php";
  if (isset($_SESSION['role']) && $_SESSION['role'] >= Role::OWNER->value){
- include_once "../include/professional/dashboard_professional.php";?>
+ include_once "../include/professional/dashboard_professional.php";
+ include_once "../../controller/check_payment_method.php";
+ include_once "../include/professional/dashboard_professional.php";
 
 //cartes de test 
 ////Carte Visa: 4242 4242 4242 4242
 ////Carte Mastercard: 5555 5555 5555 4444
 ////Carte Discover: 6011 1111 1111 1117
 
-
-include_once "../../controller/admin/role.php";
-include_once "../include/base.php";
-include_once "../../controller/check_payment_method.php";
-include_once "../include/professional/dashboard_professional.php";
 
 // Vérifier si l'utilisateur a demandé d'afficher le formulaire d'ajout
 $form= isset($_GET['add-method']) && $_GET['add-method'] == 'true';
