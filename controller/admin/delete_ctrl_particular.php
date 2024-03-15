@@ -5,12 +5,12 @@ include_once "tools.php"; // Inclusion du fichier contenant des fonctions utilit
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
-    $sql = "DELETE FROM professional WHERE id_pro = $id";
+    $sql = "DELETE FROM particular WHERE id_user = $id";
     $stmt = $pdo->prepare($sql);
     if ( $stmt->execute() ) {
-        sendMessage("Compte Supprimée avec succés", "success", "../../../view/admin/agency_table");
+        sendMessage("Compte Supprimée avec succés", "success", "../../../view/admin/particular_table");
     }else {
-        sendMessage("Problème de base de données. Contactez immédiatement un administrateur !", "failed", "../../../view/admin/agency_table");
+        sendMessage("Problème de base de données. Contactez immédiatement un administrateur !", "failed", "../../../view/admin/particular_table");
     }
 
 }

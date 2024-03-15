@@ -29,9 +29,17 @@
       <a class="nav-link dashboard-nav-link dashboard-nav-link-right
       <?php 
         $current_file = basename($_SERVER['SCRIPT_NAME']);
-        echo ($current_file == 'users_table.php') ? 'active-link' : ''; 
+        echo ($current_file == 'agency_table.php' || 'particular_table.php') ? 'active-link' : ''; 
       ?>
     " aria-current="page" href="view/admin/agency_table.php">TABLEAU DES UTILISATEURS</a>
+    </li>
+    <li class="nav-item nav-item-right">
+      <a class="nav-link dashboard-nav-link dashboard-nav-link-right
+      <?php 
+        $current_file = basename($_SERVER['SCRIPT_NAME']);
+        echo ($current_file == '#') ? 'active-link' : ''; 
+      ?>
+    " aria-current="page" href="view/admin/#.php">MODIFIER LES CONDITIONS D'UTILISATION</a>
     </li>
   </ul>
 </div> 

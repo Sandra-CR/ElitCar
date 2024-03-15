@@ -8,7 +8,6 @@
  if (isset($_SESSION['role']) && $_SESSION['role'] >= Role::OWNER->value){
  include_once "../include/professional/dashboard_professional.php";
  include_once "../../controller/check_payment_method.php";
- include_once "../include/professional/dashboard_professional.php";
 
 //cartes de test 
 ////Carte Visa: 4242 4242 4242 4242

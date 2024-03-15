@@ -51,7 +51,7 @@ if(isset($_SESSION['role']) && $_SESSION['role'] == Role::ADMIN->value) {
                       $table .="<td> <a class='none' data-toggle='tooltip' data-placement='top' title='Voir la fiche client' href='view/admin/read_admin_particular?id=$user[id_user]'>👁️</a> </td>"; 
                       $table .="<td> <a class='none' data-toggle='tooltip' data-placement='top' title='Modifier un utilisateur' href='view/admin/update_admin_particular?id=$user[id_user]'>🧬</a> </td>"; 
                       $table .="<td> <a class='none' data-toggle='tooltip' data-placement='top' title='Modifier un mots de passe' href='view/users/update_mdp.php?id=$user[id_user]'>🔒</a> </td>"; 
-                      $table .="<td> <a class='none bomb' data-bs-toggle='modal' data-bs-target='#validation_delete' data-link='controller//admin/delete_ctrl_particular.php?id=$user[id_user]' data-placement='top' href='' title='Supprimer un utilisateur'>❌</a> </td>"; 
+                      $table .="<td> <a class='none bomb' data-bs-toggle='modal' data-bs-target='#validation_delete' data-link='controller//admin/delete_ctrl_particular.php?id=$user[id_user]' data-placement='top' title='Supprimer un utilisateur'>❌</a> </td>"; 
                       $table .="<tr>";
                   }
                   echo $table;

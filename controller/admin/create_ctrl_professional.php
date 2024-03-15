@@ -32,7 +32,7 @@ if(!empty($_POST["name"]) && !empty($_POST["mail"]) && !empty($_POST["psw"])  &&
                             if (password_verify($_POST['psw'], $pro['psw'])) {
                                 session_start();
                                 // le mot de passe est correct
-                                $_SESSION["id"] = $pro['id_user']; 
+                                $_SESSION["id"] = $pro['id_pro']; 
                                 $_SESSION["name"] = $pro['name']; // Attribution du nom complet de l'utilisateur à la session
                                 $_SESSION["role"] = $pro['role']; // Attribution du rôle de l'utilisateur à la session
                                 $_SESSION["token"] = bin2hex(random_bytes(16)); // Génération d'un jeton de sécurité et attribution à la session

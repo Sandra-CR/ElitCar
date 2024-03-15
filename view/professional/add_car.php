@@ -1,6 +1,7 @@
 <?php 
 include_once "../../controller/admin/role.php";
 include_once "../include/base.php";
+include_once "../include/professional/dashboard_professional.php";
 ?>
 <section class="section_body"></section>
 <h1 class="mx-5 my-4">Formulaire de renseignement de la voiture</h1>
