@@ -91,6 +91,7 @@ if (!empty($_POST['mail']) && !empty($_POST['psw'])){
             session_start();
             // le mot de passe est correct
             $_SESSION["id"] = $pro['id_pro'];
+            $_SESSION["email"] = $pro['mail'];
             $_SESSION["name"] = $pro['name']; // Attribution du nom de l'utilisateur à la session
             $_SESSION["role"] = $pro['role']; // Attribution du rôle de l'utilisateur à la session
             $_SESSION["token"] = bin2hex(random_bytes(16)); // Génération d'un jeton de sécurité et attribution à la session

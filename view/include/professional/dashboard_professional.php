@@ -13,7 +13,7 @@
       <a class="nav-link dashboard-nav-link dashboard-nav-link-right
       <?php 
         $current_file = basename($_SERVER['SCRIPT_NAME']);
-        echo ($current_file == 'update_profile_professional.php' || $current_file == 'settings_professional.php' || $current_file == 'payment_method_professional.php' || $current_file == 'adress_professional.php') ? 'active-link' : ''; 
+        echo ($current_file == 'update_profile_professional.php' || $current_file == 'settings_professional.php' || $current_file == 'payment_method_professional.php' || $current_file == 'adress_professional.php' || $current_file == 'subscription.php') ? 'active-link' : ''; 
       ?>
     " aria-current="page" href="view/professional/update_profile_professional.php">MON COMPTE</a>
     </li>

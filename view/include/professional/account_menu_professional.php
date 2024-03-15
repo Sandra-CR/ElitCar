@@ -11,6 +11,9 @@
         <li class="list-group-item menu-compte-list-group-item mt-1 <?php echo (basename($_SERVER['SCRIPT_NAME']) == 'payment_method_professional.php') ? 'active-item' : ''; ?>">
           <a class="nav-link" aria-current="page" href="view/professional/payment_method_professional.php"> Moyens de paiement</a>
         </li>
+        <li class="list-group-item menu-compte-list-group-item mt-1 <?php echo (basename($_SERVER['SCRIPT_NAME']) == 'subscription.php') ? 'active-item' : ''; ?>">
+          <a class="nav-link" aria-current="page" href="view/professional/subscription.php"> Abonnement</a>
+        </li>
         <li class="list-group-item menu-compte-list-group-item mt-1 <?php echo (basename($_SERVER['SCRIPT_NAME']) == 'adress_professional.php') ? 'active-item' : ''; ?>">
           <a class="nav-link" aria-current="page" href="view/professional/adress_professional.php"> Adresse postale</a>
         </li>
