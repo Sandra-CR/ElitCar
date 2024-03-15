@@ -5,7 +5,7 @@ include_once "tools.php"; // Inclusion du fichier contenant des fonctions utilit
 
 // Vérification de la soumission des champs du formulaire
 if(!empty($_POST["name"]) && !empty($_POST["mail"]) && !empty($_POST["psw"])  && isset($_POST["pol"])) {
-    $pp = "../../img/no_picture_update.svg"; // Chemin de l'image de profil par défaut
+    $pp = "img/no_picture_update.svg"; // Chemin de l'image de profil par défaut
     $psw = $_POST["psw"]; // Récupération du mot de passe du formulaire
     $pol = $_POST["pol"];
     $new = $_POST["new"];

@@ -44,6 +44,12 @@
                             <label for="nom" class="form-label" style="font-weight:700;" >Nom de l'agence</label>
                             <input type="text" class="form-control" id="nom" name="name_pro" value="<?= htmlentities($user['name'])?>" >
                         </div>
+                        <div class="row g-3 mb-3">
+                            <div class="col">
+                                <label for="tel" class="form-label" style="font-weight:700;">Numéro de téléphone</label>
+                                <input type="tel" class="form-control" id="tel" name="num_mobile" placeholder="Votre numéro de téléphone" value="<?= htmlentities($user['num_mobile']) ?>" >
+                            </div>
+                        </div>
                         <input type="submit" class="btn btn-warning mt-4" style="background-color:#FFAA00;color:white;font-weight:700;font-size:16px;height:50px;max-width:99%" value="Sauvegarder les modifications"></button>
                     </form>
 

@@ -50,11 +50,11 @@
           <li class="nav-item">
             <a class="nav-link home-nav-link" target="_self" href="view/particular/settings_particular.php"><?= $_SESSION['name'] ?></a>
           </li>
-        <?php }else if (isset($_SESSION['role']) && $_SESSION['role'] = Role::ADMIN->value){ ?>
+        <?php }else if (isset($_SESSION['role']) && $_SESSION['role'] == Role::ADMIN->value){ ?>
           <li class="nav-item">
             <a class="nav-link home-nav-link" target="_self" href="view/admin/settings_admin.php"><?= $_SESSION['name'] ?></a>
           </li>
-        <?php }else  if(isset($_SESSION['role']) && $_SESSION['role'] >= Role::OWNER->value){ ?>
+        <?php }else if(isset($_SESSION['role']) && $_SESSION['role'] >= Role::OWNER->value){ ?>
           <li class="nav-item">
             <a class="nav-link home-nav-link" target="_self" href="view/professional/settings_professional.php"><?= $_SESSION['name'] ?></a>
           </li>

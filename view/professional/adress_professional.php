@@ -19,8 +19,8 @@ include_once "../include/professional/dashboard_professional.php";
             <form class="mb-4" action="controller/admin/add_ctrl_adress_pro" method="post">
                 <h5 class="mb-4" style="font-weight:700 !important">Modifier mon adresse postale</h5>
                 <div class="mb-3">
-                    <label for="street-name" class="form-label" style="font-weight:700;">Nom de la rue</label>
-                    <input type="text" class="form-control" name="street-name" placeholder="Votre nom de rue">
+                    <label for="street_name" class="form-label" style="font-weight:700;">Nom de la rue</label>
+                    <input type="text" class="form-control" name="street_name" placeholder="Votre nom de rue">
                 </div>
                 <div class="mb-3">
                     <label for="neighborhood" class="form-label" style="font-weight:700;">Quartier</label>
@@ -35,14 +35,15 @@ include_once "../include/professional/dashboard_professional.php";
                     <input type="text" class="form-control" name="region" placeholder="Votre région">
                 </div>
                 <div class="mb-3">
-                    <label for="postal-code" class="form-label" style="font-weight:700;">Code Postal</label>
-                    <input type="text" class="form-control" name="postal-code" placeholder="Votre code postal">
+                    <label for="postal_code" class="form-label" style="font-weight:700;">Code Postal</label>
+                    <input type="text" class="form-control" name="postal_code" placeholder="Votre code postal">
                 </div>
                 <div class="mb-3">
-                    <label for="additional-description" class="form-label" style="font-weight:700;">Description supplémentaire</label>
-                    <textarea class="form-control" name="additional-description" placeholder="Toute information supplémentaire"></textarea>
+                    <label for="additional_description" class="form-label" style="font-weight:700;">Description supplémentaire</label>
+                    <textarea class="form-control" name="additional_description" placeholder="Toute information supplémentaire"></textarea>
                 </div>
-                <input class="envoyer_contact" type="submit" value="Envoyer"  id="envoyermessage">
+                <input type="hidden" name="id_user" value="<?= htmlentities($_SESSION["id"])?>">
+                <button type="submit" class="btn btn-warning col-md-3" style="background-color:#FFAA00;color:white;font-weight:700;font-size:16px;height:50px;max-width:99%" name ="Changer mon adresse" >Changer mon adresse</button>
             </form>
              
             </div>
