@@ -2,18 +2,22 @@
 include_once "../../controller/admin/role.php";
 include_once "../include/base.php";
 ?>
-<main>
+<section class="section_body"></section>
+<h1 class="mx-5 my-4">Formulaire de renseignement de la voiture</h1>
+<section class="addCar_container d-flex">
+    
+<main class="w-50">
     
 
 
     
-    <h1 class="mx-5 my-4">Formulaire de renseignement de la voiture</h1>
+
     
     <form action="">
         <section class="addCar_section my-4 mx-auto">
-            <div class="border">
+            <div class="border ">
             <div>
-                    <h4>État</h4>
+                    <h4>État <span class="asterisk">*</span></h4>
                     <select class="form-select form-select-lg mb-3" >
                         <option value="">État du véhicule</option>
                         <option value="neuf">Neuf</option>
@@ -23,7 +27,7 @@ include_once "../include/base.php";
                     </select>
                 </div>
                 <div>
-                    <h4>Marque</h4>
+                    <h4>Marque <span class="asterisk">*</span></h4>
                     <select class="form-select form-select-lg mb-3" name="carBrand" id="carBrand">
                         <option value="">Marque de votre voiture</option>
                         <option value="ACURA">ACURA</option>
@@ -73,7 +77,7 @@ include_once "../include/base.php";
                     </select>
                 </div>
                 <div>
-                    <h4>Année de mise en circulation</h4>
+                    <h4>Année de mise en circulation <span class="asterisk">*</span></h4>
                     <select class="form-select form-select-lg mb-3">
                         <option value="">Année de mise en circulation</option>
                         <option value="2024">2024</option>
@@ -114,17 +118,17 @@ include_once "../include/base.php";
                     </select>
                 </div>
                 <div>
-                    <h4>Nombre de places</h4>
+                    <h4>Nombre de places <span class="asterisk">*</span></h4>
                     <select class="form-select form-select-lg mb-3" >
-                        <option value="">Nombres de places</option>
-                        <option value="5">5</option>
-                        <option value="4">4</option>
+                        <option value="">Nombres de places </option>
                         <option value="2">2</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
                         <option value="7">7</option>
                     </select>
                 </div>
                 <div class="adCar_kilometrage_radio fs-5">
-                    <h4>Choisissez votre type de kilométrage</h4>
+                    <h4>Choisissez votre type de kilométrage <span class="asterisk">*</span></h4>
 
                     <div class="">
                     <input type="radio" id="illimite" name="kilometrageRadio" class="form-check-input" />
@@ -140,7 +144,7 @@ include_once "../include/base.php";
                 <div class="adCar_kilometrage_select hidden mt-2">
                     <!-- <label for="kilometrageSelect">:</label> -->
                     <select class="form-select form-select-lg mb-3" name="kilometrageSelect" id="kilometrageSelect">
-                    <option value="">Choisissez une limite de kilométrage</option>
+                    <option value="">Choisissez une limite de kilométrage <span class="asterisk">*</span></option>
                     <option value="250">250 km</option>
                     <option value="500">500 km</option>
                     <option value="750">750 km</option>
@@ -158,10 +162,14 @@ include_once "../include/base.php";
         <section class="addCar_section my-4 mx-auto fs-5">
             <div class="border">
                 <div>
-                    <h4 for="">Adresse de départ et de retour</h4>
+                    <h4 for="">Adresse de départ et de retour </span></h4>
                         <ul>
                             <li class="d-flex justify-content-between m-3">
-                                <label for="">Pays</label>
+                                <label for="">Pays <span class="asterisk">*</span></label>
+                                <input type="text" class="form-control w-50 fs-5">
+                            </li>
+                            <li class="d-flex justify-content-between m-3">
+                                <label for="">Région <span class="asterisk">*</span></label>
                                 <input type="text" class="form-control w-50 fs-5">
                             </li>
                             <li class="d-flex justify-content-between m-3">
@@ -169,12 +177,17 @@ include_once "../include/base.php";
                                 <input type="number" class="form-control w-50 fs-5">
                             </li>
                             <li class="d-flex justify-content-between m-3">
-                                <label for="">Ville</label>
+                                <label for="">Ville <span class="asterisk">*</span></label>
                                 <input type="text" class="form-control w-50 fs-5">
                             </li>
                             <li class="d-flex justify-content-between m-3">
                                 <label for="">Adresse</label>
                                 <input type="text" class="form-control w-50 fs-5">
+                            </li>
+                            <li class="d-flex justify-content-between m-3">
+                                <label for="">Quartier <span class="asterisk">*</span></label>
+                                <input type="text" class="form-control w-50 fs-5">
+                                
                             </li>
                             <li class="d-flex justify-content-between mx-3 fs-5">
                                 <label for="">Complément d'adresse <br>(étage, n° d'appartements...)</label>
@@ -183,7 +196,7 @@ include_once "../include/base.php";
                         </ul>
                 </div>
                 <div>
-                <h4>Options du véhicule</h4>             
+                <h4>Options du véhicule </span></h4>             
                 
                 <!-- Option Bluetooth -->
                 <ul>
@@ -295,49 +308,52 @@ include_once "../include/base.php";
             <div class="border">
                 
                 <div>
-                    <h4>Règlement du véhicule</h4>
+                    <h4>Règlement du véhicule </span></h4>
                     <ul>
                         <li>
-                            <input type="checkbox" class="reglement form-check-input me-2">
+                            <input type="checkbox" value="Animaux acceptés" class="reglement form-check-input me-2" onchange="showRecap2()">
                             <label for="">Animaux acceptés</label>
                         </li>
                         <li>
-                            <input type="checkbox" class="reglement form-check-input me-2">
+                            <input type="checkbox" value="Règles sanitaires" class="reglement form-check-input me-2" onchange="showRecap2()">
                             <label for="">Prière de respecter les règles sanitaires</label>
                         </li>
                         <li>
-                            <input type="checkbox" class="reglement form-check-input me-2">
-                            <label for=""></label>
+                            <input type="checkbox" value="Etat de propreté et de fonctionnement" class="reglement form-check-input me-2" onchange="showRecap2()">
+                            <label for="">Véhicule à rendre dans le même état de propreté et de fonctionnement.</label>
                         </li>
                         <li>
-                            <input type="checkbox" class="reglement form-check-input me-2">
-                            <label for=""></label>
+                            <input type="checkbox" value="Conduite responsable" class="reglement form-check-input me-2" onchange="showRecap2()">
+                            <label for="">Conduite responsable</label>
                         </li>
                         <li>
-                            <input type="checkbox" class="reglement form-check-input me-2">
-                            <label for=""></label>
+                            <input type="checkbox" value="Permis Obligatoire" class="reglement form-check-input me-2" onchange="showRecap2()">
+                            <label for="">Permis Obligatoire</label>
                         </li>
                     </ul>
                     <p id="recap_reglement"></p>
                 </div>
                 <div>
-                    <h4>Déscriptions du véhicule </h4>
+                    <h4>Déscription du véhicule</span></h4>
                     <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
                 </div>
                 <div>
-                    <h4>Informations supplémentaires</h4>
+                    <h4>Informations supplémentaires </span></h4>
                     <textarea name="" id="" cols="30" rows="5" placeholder="Sièges supplémentaires..." class="form-control"></textarea>
                 </div>
 
                 <div class="casse-caution my-3">
-                    <h4>Caution</h4>
-                    <input type="number" placeholder="Caution en FCFA" class="form-control fs-5">
+                    <h4>Caution <span class="asterisk">*</span></h4>
+                    <input type="number" placeholder="Caution en FCFA" class="form-control form-control-lg fs-5">
                 </div>
 
 
-                <div class="casse-ajouter-une-photo my-4">
-                    <h4 for="">Ajouter des photos</h4>
-                    <a href="view/read_car.php"><input type="file" class="fs-5"></a>
+                <div class="casse-ajouter-une-photo my-4 fs-4">
+                <label for="formFileMultiple" class="form-label ">Ajoutez des images <span class="asterisk">*</span></label>
+                <input class="form-control form-control-lg" type="file" id="formFileMultiple"  multiple>
+                </div>
+                <div class="asterisk-container">
+                    <p><span class="asterisk">*</span> Champs obligatoires</p>
                 </div>
                 <div>
                     <input type="submit" class="btn btn-primary fs-5">
@@ -345,17 +361,139 @@ include_once "../include/base.php";
             </div>
         </section>
     </form>
-    
-
-
-
-
-
 
 </main>
 
+<!-- 
+ <aside class="w-50  me-4">
+<div class="row ">
+    <div class="col-lg-7 ">
+        <div class="row ">
+            <div class="col-lg-12">
+                <img src="img\grand.jpg" class="w-100" alt="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="img\paysage.jpg" class="w-100" alt="">
+            </div>
+            <div class="col-lg-6">
+                <img src="img\paysage.jpg" class="w-100" alt="">
+            </div>
+        </div>
+    </div>
 
+    <div class="col-lg-5">
+        <img src="img/image longue.jpg" class="w-100" alt="">
+    </div>
+</div> 
+    <div class="row">
+            <div class="col-lg-11">
+            <img src="img\grand.jpg" class="w-100" alt="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-5">
+            <img src="img\carré voiture.jpg" class="w-100" alt="">
+            </div>
+            <div class="col-lg-5">
+            <img src="img\carré voiture.jpg" class="w-100" alt="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-11">
+            <img src="img\paysage.jpg" class="w-100" alt="">
+            </div>
+        </div>
 
+        
+    </div>
+    <div class="row">
+        <div class="col-lg-5">
+            <img src="img/image longue.jpg" class="w-100" alt="">
+            </div>
+            <div class="col-lg-5">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <img src="img\paysage.jpg" class="w-100" alt="">
+                    </div>
+                </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <img src="img\paysage.jpg" class="w-100" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+
+</div>
+</div>
+</aside>  -->
+
+<aside class="w-50 me-4">
+    <div class="row">
+        <div class="col-lg-7">
+            <div class="row mb-4">
+                <div class="col-lg-12">
+                    <img src="img/grand.jpg" class="w-100" alt="">
+                </div>
+            </div>
+            <div class="row mb-4 ">
+                <div class="col-lg-6">
+                    <img src="img/paysage.jpg" class="w-100" alt="">
+                </div>
+                <div class="col-lg-6">
+                    <img src="img/paysage.jpg" class="w-100" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5 my-4">
+            <img src="img/image longue.jpg" class="w-100" alt="">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-11 mb-4 mx-auto">
+            <img src="img/grand.jpg" class="w-100" alt="">
+        </div>
+    </div>
+    <div class="row ">
+        <div class="col-lg-6 mb-4">
+            <img src="img/carré voiture.jpg" class="w-100" alt="">
+        </div>
+        <div class="col-lg-6 mb-4">
+            <img src="img/carré voiture.jpg" class="w-100" alt="">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-11 mb-4 mx-auto">
+            <img src="img/megane.jpg" class="w-100" alt="">
+        </div>
+    </div>
+
+    <!-- <div class="mx-auto"> -->
+        <div class="row ">
+            <div class="col-lg-6 mb-4 ">
+                <img src="img/image longue.jpg" class="w-100" alt="">
+            </div>
+            <div class="col-lg-6 my-4">
+                <div class="row ">
+                    <div class="col-lg-12 mb-4 ">
+                        <img src="img/grand.jpg" class="w-100" alt="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <img src="img/grand.jpg" class="w-100" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- </div> -->
+</aside>
+
+</section>
 
 
 <script>
@@ -365,6 +503,28 @@ function showRecap() {
     var checkboxes = document.querySelectorAll(".options");
     // Sélectionne l'élément pour afficher le récapitulatif
     var recapElement = document.getElementById("recap");
+    
+    // Initialise une liste pour stocker les options sélectionnées
+    var selectedOptions = [];
+
+    // Parcourt toutes les cases à cocher
+    checkboxes.forEach(function(checkbox) {
+        // Vérifie si la case à cocher est cochée
+        if (checkbox.checked) {
+            // Ajoute la valeur de la case à cocher à la liste des options sélectionnées
+            selectedOptions.push(checkbox.value);
+        }
+    });
+
+    // Affiche le récapitulatif
+    recapElement.innerText = "Options sélectionnées : " + selectedOptions.join(', ');
+}
+
+function showRecap2() {
+    // Sélectionne toutes les cases à cocher avec la classe "options form-check-input me-2"
+    var checkboxes = document.querySelectorAll(".reglement");
+    // Sélectionne l'élément pour afficher le récapitulatif
+    var recapElement = document.getElementById("recap_reglement");
     
     // Initialise une liste pour stocker les options sélectionnées
     var selectedOptions = [];
