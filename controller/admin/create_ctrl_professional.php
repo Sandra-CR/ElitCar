@@ -16,52 +16,68 @@ if(!empty($_POST["name"]) && !empty($_POST["mail"]) && !empty($_POST["psw"])  &&
         $mail = htmlspecialchars($_POST["mail"]);
         $name = htmlspecialchars($_POST["name"]);
         // Vérification de la validité de l'adresse email
-        if (verif_mail($mail)) {
-            if ($pol == "1") {
-                try {
-                    // Requête d'insertion des données dans la table "professional"
-                    $sql = "INSERT INTO professional (name, mail, psw, profile_picture, role, newsletters, politique) VALUE (?,?,?,?,?,?,?) " ; 
-                    $stmt = $pdo->prepare($sql); // Préparation de la requête SQL
-                    $stmt->execute([$name, $mail, $psw, $pp, $role, $new, $pol]);
-                        if($stmt->rowCount() > 0){// Exécution de la requête avec les valeurs fournies
-                        $sql2 = "SELECT * FROM professional WHERE mail='$mail'"; // Requête SQL pour sélectionner l'utilisateur particulier avec l'adresse e-mail fournie
-                        $stmt2 = $pdo->query($sql2); // Exécution de la requête SQL
-                        $pro = $stmt2->fetch(PDO::FETCH_ASSOC); // Récupération des résultats de la requête sous forme de tableau associatif
-                        if ($pro) {
-                            // le compte existe
-                            if (password_verify($_POST['psw'], $pro['psw'])) {
-                                session_start();
-                                // le mot de passe est correct
-                                $_SESSION["id"] = $pro['id_pro']; 
-                                $_SESSION["name"] = $pro['name']; // Attribution du nom complet de l'utilisateur à la session
-                                $_SESSION["role"] = $pro['role']; // Attribution du rôle de l'utilisateur à la session
-                                $_SESSION["token"] = bin2hex(random_bytes(16)); // Génération d'un jeton de sécurité et attribution à la session
-                                sendMessage("Compte Crée", "success", "../../view/home.php"); // Redirection vers la page d'accueil
-                            } else {
-                                sendMessage("Mots de passe incorrect", "failed", "../../view/particular/login_particular"); // Redirection avec un message d'erreur si le mot de passe est incorrect
-                            }
-                        } else {
-                            // le compte n'existe pas
-                            sendMessage("le compte n'existe pas", "failed", "../../view/particular/create_particular"); // Redirection avec un message d'erreur si le compte n'existe pas
-                        }
-                    }else {
-                        sendMessage("Probleme de bdd Contactez immédiatement un Admin !", "failed", "../../view/particular/create_particular");
-                    } 
-                } catch (Exception $error) {
-                    sendMessage("Probleme de bdd Contactez immédiatement un Admin !", "failed", "../../view/particular/create_particular"); // Réponse en cas d'échec de l'insertion dans la base de données
-                }
+        $sql3 = "SELECT COUNT(*) AS count FROM professional WHERE mail = '$mail'";
+
+        // Exécuter la requête SQL
+        $result = $pdo->query($sql3);
+        if ($result) {
+            // Récupérer le résultat de la requête
+            $row = $result->fetch(PDO::FETCH_ASSOC);
+            
+            // Vérifier si l'adresse e-mail existe déjà
+            if ($row['count'] > 0) {
+                sendMessage("Email non valide", "failed", "../../view/professional/create_professional");
             } else {
-                sendMessage("Politique d'utilisation non valide", "failed", "../../view/particular/create_particular");
+                if (verif_mail($mail)) {
+                    if ($pol == "1") {
+                        try {
+                            // Requête d'insertion des données dans la table "professional"
+                            $sql = "INSERT INTO professional (name, mail, psw, profile_picture, role, newsletters, politique) VALUE (?,?,?,?,?,?,?) " ; 
+                            $stmt = $pdo->prepare($sql); // Préparation de la requête SQL
+                            $stmt->execute([$name, $mail, $psw, $pp, $role, $new, $pol]);
+                                if($stmt->rowCount() > 0){// Exécution de la requête avec les valeurs fournies
+                                $sql2 = "SELECT * FROM professional WHERE mail='$mail'"; // Requête SQL pour sélectionner l'utilisateur particulier avec l'adresse e-mail fournie
+                                $stmt2 = $pdo->query($sql2); // Exécution de la requête SQL
+                                $pro = $stmt2->fetch(PDO::FETCH_ASSOC); // Récupération des résultats de la requête sous forme de tableau associatif
+                                if ($pro) {
+                                    // le compte existe
+                                    if (password_verify($_POST['psw'], $pro['psw'])) {
+                                        session_start();
+                                        // le mot de passe est correct
+                                        $_SESSION["id"] = $pro['id_pro']; 
+                                        $_SESSION["name"] = $pro['name']; // Attribution du nom complet de l'utilisateur à la session
+                                        $_SESSION["role"] = $pro['role']; // Attribution du rôle de l'utilisateur à la session
+                                        $_SESSION["token"] = bin2hex(random_bytes(16)); // Génération d'un jeton de sécurité et attribution à la session
+                                        sendMessage("Compte Crée", "success", "../../view/home.php"); // Redirection vers la page d'accueil
+                                    } else {
+                                        sendMessage("Mots de passe incorrect", "failed", "../../view/professional/login_professional"); // Redirection avec un message d'erreur si le mot de passe est incorrect
+                                    }
+                                } else {
+                                    // le compte n'existe pas
+                                    sendMessage("le compte n'existe pas", "failed", "../../view/professional/create_professional"); // Redirection avec un message d'erreur si le compte n'existe pas
+                                }
+                            }else {
+                                sendMessage("Probleme de bdd Contactez immédiatement un Admin !", "failed", "../../view/professional/create_professional");
+                            } 
+                        } catch (Exception $error) {
+                            sendMessage("Probleme de bdd Contactez immédiatement un Admin !", "failed", "../../view/professional/create_professional"); // Réponse en cas d'échec de l'insertion dans la base de données
+                        }
+                    } else {
+                        sendMessage("Politique d'utilisation non valide", "failed", "../../view/professional/create_professional");
+                    }
+                } else {
+                    // Si l'adresse email est invalide
+                    sendMessage("Email non valide", "failed", "../../view/professional/create_professional");
+                }
             }
         } else {
-            // Si l'adresse email est invalide
-            sendMessage("Politique d'utilisation non valide", "failed", "../../view/particular/create_particular");
+            sendMessage("Problème de base de données. Contactez immédiatement un administrateur !", "failed", "../../view/professional/create_professional");
         }
     } else {
-        sendMessage("Le mot de passe doit contenir au moins 8 caractères avec au moins une majuscule, un  et au moins un chiffre.", "failed", "../../view/particular/create_particular");
+        sendMessage("Le mot de passe doit contenir au moins 8 caractères avec au moins une majuscule, un  et au moins un chiffre.", "failed", "../../view/professional/create_professional");
     }
 } else {
-    sendMessage("Veuillez remplir correctement les champs", "failed", "../../view/particular/create_particular");
+    sendMessage("Veuillez remplir correctement les champs", "failed", "../../view/professional/create_professional");
 }
 
 ?>
