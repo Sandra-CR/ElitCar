@@ -87,17 +87,22 @@ if (!empty($_POST['mail']) && !empty($_POST['psw'])){
 
     if ($pro) {
         // le compte existe
-        if (password_verify($_POST['psw'], $pro['psw'])) {
-            session_start();
-            // le mot de passe est correct
-            $_SESSION["id"] = $pro['id_pro'];
-            $_SESSION["email"] = $pro['mail'];
-            $_SESSION["name"] = $pro['name']; // Attribution du nom de l'utilisateur à la session
-            $_SESSION["role"] = $pro['role']; // Attribution du rôle de l'utilisateur à la session
-            $_SESSION["token"] = bin2hex(random_bytes(16)); // Génération d'un jeton de sécurité et attribution à la session
-            sendMessage("Bon retour Parmi nous", "success", "../home.php"); // Redirection vers la page d'accueil
-        } else {
-            sendMessage("Mots de passe incorrect", "failed", "login_professional.php"); // Redirection avec un message d'erreur si le mot de passe est incorrect
+        $_SESSION["blocked"] = $pro['blocked']; // Attribution de l'état de l'utilisateur à la session
+        if($_SESSION["blocked"]== 0 ){
+            if (password_verify($_POST['psw'], $pro['psw'])) {
+                session_start();
+                // le mot de passe est correct
+                $_SESSION["id"] = $pro['id_pro'];
+                $_SESSION["email"] = $pro['mail'];
+                $_SESSION["name"] = $pro['name']; // Attribution du nom de l'utilisateur à la session
+                $_SESSION["role"] = $pro['role']; // Attribution du rôle de l'utilisateur à la session
+                $_SESSION["token"] = bin2hex(random_bytes(16)); // Génération d'un jeton de sécurité et attribution à la session
+                sendMessage("Bon retour Parmi nous", "success", "../home.php"); // Redirection vers la page d'accueil
+            } else {
+                sendMessage("Mots de passe incorrect", "failed", "login_professional.php"); // Redirection avec un message d'erreur si le mot de passe est incorrect
+            }
+        }else{
+            sendMessage("le compte est bloqué", "failed", "login_professional"); // Redirection avec un message d'erreur si le compten'existe pas
         }
     } else {
         // le compte n'existe pas

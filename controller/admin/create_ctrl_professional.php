@@ -35,6 +35,7 @@ if(!empty($_POST["name"]) && !empty($_POST["mail"]) && !empty($_POST["psw"])  &&
                                 $_SESSION["id"] = $pro['id_user']; 
                                 $_SESSION["name"] = $pro['name']; // Attribution du nom complet de l'utilisateur à la session
                                 $_SESSION["role"] = $pro['role']; // Attribution du rôle de l'utilisateur à la session
+                                $_SESSION["blocked"] = $pro['blocked']; // Attribution de l'état de l'utilisateur à la session
                                 $_SESSION["token"] = bin2hex(random_bytes(16)); // Génération d'un jeton de sécurité et attribution à la session
                                 sendMessage("Compte Crée", "success", "../../view/home.php"); // Redirection vers la page d'accueil
                             } else {

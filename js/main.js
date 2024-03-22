@@ -55,4 +55,28 @@ for (link of bombs) {
         let href = this.dataset.link;
         deleteBtn.href = href;
     })
-}
+  }
+
+
+// bouton blocked/deblocked
+
+const blockedBtn = document.getElementById('blocked');
+const bombs2 = document.querySelectorAll('.bomb2');
+
+for (link of bombs2) {
+    link.addEventListener('click', function(){
+        let href = this.dataset.link;
+        blockedBtn.href = href;
+    })
+  }
+
+
+const deblockedBtn = document.getElementById('deblocked');
+
+
+for (link of bombs2) {
+    link.addEventListener('click', function(){
+        let href = this.dataset.link;
+        deblockedBtn.href = href;
+    })
+  }

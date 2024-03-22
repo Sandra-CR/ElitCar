@@ -28,6 +28,7 @@ if(
     if (verif_mdp($psw)) {
         $psw = password_hash($psw, PASSWORD_ARGON2I); // Hashage du mot de passe
         $role = "1"; // Définition du rôle de l'utilisateur
+        // $blocked ="0";
         $mail = htmlspecialchars($_POST["mail"]);
         // Vérification de la validité de l'adresse email
         if (verif_mail($mail)) {
@@ -49,6 +50,7 @@ if(
                                 $_SESSION["id"] = $user['id_user']; 
                                 $_SESSION["name"] = $user['first_name'] . " " . $user['last_name']; // Attribution du nom complet de l'utilisateur à la session
                                 $_SESSION["role"] = $user['role']; // Attribution du rôle de l'utilisateur à la session
+                                $_SESSION["blocked"] = $user['blocked']; // Attribution de l'état de l'utilisateur à la session
                                 $_SESSION["token"] = bin2hex(random_bytes(16)); // Génération d'un jeton de sécurité et attribution à la session
                                 sendMessage("Compte Crée", "success", "../../view/home.php"); // Redirection vers la page d'accueil
                             } else {
