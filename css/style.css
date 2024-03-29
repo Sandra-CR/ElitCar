@@ -3,7 +3,9 @@
 .hidden {
   display: none;
 }
-
+.p-0 {
+    padding: 0 !important; /* Annule le padding imposé par Bootstrap */
+}
 
 /* 
 __    __                                   
@@ -1779,25 +1781,20 @@ $$$$$$$/  $$$$$$$/  $$$$$$$/ /      | $$$$$$$/  $$$$$$$/ $$/
     width: 90%;
 }
 
-
-  
-  .asterisk {
-    color: rgb(255, 0, 0);
-    font-size: 0.9em;
-  }
-  
-  .asterisk-container {
-    display: flex;
-    align-items: center;
-    font-size: 0.8em;
-        color: #333;
-  }
-
-
-
-                                                    
-                                                    
-
-.containerFAQ{
-    height: 60vh;
+.asterisk {
+color: rgb(255, 0, 0);
+font-size: 0.9em;
 }
+  
+.asterisk-container {
+ display: flex;
+align-items: center;
+font-size: 0.8em;
+color: #333;
+}
+
+.container-card-advertisements{
+    display: flex;
+    flex-direction: column;
+}
+                                                    

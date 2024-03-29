@@ -25,6 +25,7 @@
             <div class="divider-switch1 "></div>
             <div class="divider-switch2 off"></div>
         </div>
+        <?php include_once "../message.php" ?> <!-- Inclusion du fichier contenant le message -->
         <div class="container-title-2">
             <h4 >Inscription par mail</h4>
         </div>
