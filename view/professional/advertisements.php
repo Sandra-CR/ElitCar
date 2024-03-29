@@ -44,7 +44,7 @@
                             $carPicture = $stmt3->fetch(PDO::FETCH_ASSOC);
                             if (is_array($carAddress)) {
                                 $table .="<div class='modify'>";
-                                $table .="<a class='none' href=''>";
+                                $table .="<a class='none' href='view/read_car'>";
                                 $table .="<div class='card mb-3 p-0 mx-auto' style='max-width: 540px;'>";
                                 $table .=     "<div class='row g-0 '>"; 
                                 $table .=         "<div class='col-md-4'>"; 

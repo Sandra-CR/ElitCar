@@ -150,12 +150,12 @@ include_once "message.php";
       <div class="search-area home-search-area p-4 home-p-4">
         <h2 class="search-title home-search-title">Louez votre voiture en <br>afrique.<br><span class="sub-search-title home-sub-search-title">Où allez-vous ?</span></h2>
         <form class="form home-form">
-          <div class="form-group home-form-group">
+                        <div class="form-group home-form-group">
                             <div class="input-group home-input-group">
                               <div class="input-group-prepend home-input-group-prepend">
                                 <span class="input-group-text home-input-group-text"><i class="fas fa-car  fa-2x"></i></span>
                               </div>
-
+                              <input type="text" class="form-control home-form-control" placeholder="Ville">
                             </div>
                         </div>
                         <div class="form-group home-form-group d-flex home-d-flex">
@@ -163,25 +163,13 @@ include_once "message.php";
                             <div class="input-group-prepend home-input-group-prepend">
                               <span class="input-group-text home-input-group-text"><i class="fas fa-calendar-alt  fa-2x"></i></span>
                             </div>
-
-
-
                             <input type="text" class="form-control home-form-control" placeholder="Début">
                           </div>
-
-
-
                           <div class="input-group home-input-group">
                             <div class="input-group-prepend home-input-group-prepend">
                               <span class="input-group-text home-input-group-text"><i class="fas fa-calendar-alt  fa-2x"></i></span>
                             </div>
-
-
-
                             <input type="text" class="form-control home-form-control" placeholder="Fin">
-
-
-
                           </div>
                         </div>
                         <button type="submit" style="background-color:#FFAA00 !important; color:#ffffff" class="btn btn-warning home-btn-warning w-100">Recherche</button>
