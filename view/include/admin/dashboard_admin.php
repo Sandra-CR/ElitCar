@@ -29,7 +29,7 @@
       <a class="nav-link dashboard-nav-link dashboard-nav-link-right
       <?php 
         $current_file = basename($_SERVER['SCRIPT_NAME']);
-        echo ($current_file == 'agency_table.php' || 'particular_table.php') ? 'active-link' : ''; 
+        echo ($current_file == 'agency_table.php' || $current_file =='particular_table.php') ? 'active-link' : ''; 
       ?>
     " aria-current="page" href="view/admin/agency_table.php">TABLEAU DES UTILISATEURS</a>
     </li>
@@ -37,9 +37,9 @@
       <a class="nav-link dashboard-nav-link dashboard-nav-link-right
       <?php 
         $current_file = basename($_SERVER['SCRIPT_NAME']);
-        echo ($current_file == '#') ? 'active-link' : ''; 
+        echo ($current_file == 'settings_admin.php') ? 'active-link' : ''; 
       ?>
-    " aria-current="page" href="view/admin/#.php">MODIFIER LES CONDITIONS D'UTILISATION</a>
+    " aria-current="page" href="view/admin/settings_admin.php">MODIFIER LES CONDITIONS D'UTILISATION</a>
     </li>
   </ul>
 </div> 

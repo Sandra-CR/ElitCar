@@ -6,7 +6,7 @@ if (isset($_GET["status"]) && isset($_GET["message"])){
     $message = $_GET["message"];
 
     // Affiche le message avec la classe CSS correspondant au statut (success ou failed)
-    echo "<h3 class='$status animation1 text-center'>$message</h3>";
+    echo "<h3 class='$status animation1 mt-3 text-center'>$message</h3>";
 }
 ?>
 

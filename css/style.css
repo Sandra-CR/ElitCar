@@ -4,7 +4,9 @@
 .hidden{
     display: none;
 }
-
+.p-0 {
+    padding: 0 !important; /* Annule le padding imposé par Bootstrap */
+}
 
 /* 
 __    __                                   
@@ -1416,22 +1418,27 @@ $$$$$$$/  $$$$$$$/  $$$$$$$/ /      | $$$$$$$/  $$$$$$$/ $$/
     width: 90%;
 }
 
+.asterisk {
+color: rgb(255, 0, 0);
+font-size: 0.9em;
+}
+  
+.asterisk-container {
+ display: flex;
+align-items: center;
+font-size: 0.8em;
+color: #333;
+}
 
-  
-  .asterisk {
-    color: rgb(255, 0, 0);
-    font-size: 0.9em;
-  }
-  
-  .asterisk-container {
+.container-card-advertisements{
     display: flex;
-    align-items: center;
-    font-size: 0.8em;
-        color: #333;
-  }
-
-
-
+    flex-direction: column;
+}
                                                     
-                                                    
+/* .card-height{
+   height: 250px;
 
+}                                                    
+.card{
+    height: 250px;
+} */
