@@ -1,4 +1,3 @@
-
 <?php
 require '../vendor/autoload.php';
 include_once "../model/pdo.php";
@@ -7,26 +6,19 @@ include_once "../model/pdo.php";
 session_start();
 $userId = $_SESSION['id'];
 
-// Vérifiez si le formulaire a été soumis
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Récupérer l'ID du prix depuis le formulaire
     $priceId = $_POST['price_id'] ?? '';
-
-    // S'assurer que l'ID du prix n'est pas vide
     if (!empty($priceId)) {
-        // Récupérer l'ID client Stripe
         $stmt = $pdo->prepare("SELECT stripe_customer_id FROM stripe_customer WHERE id_pro = :userId");
         $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
         $stmt->execute();
         $stripeCustomer = $stmt->fetch(PDO::FETCH_ASSOC);
         $customerId = $stripeCustomer['stripe_customer_id'];
-        //var_dump($customerId);
 
-        if (!$customerId ) {
+        if (!$customerId) {
             exit('ID client Stripe non trouvé pour cet utilisateur.');
         }
 
-        // Récupérer l'ID de la table stripe_customer
         $stmt = $pdo->prepare("SELECT id_stripe_customer FROM stripe_customer WHERE stripe_customer_id = :stripeCustomerId");
         $stmt->bindParam(':stripeCustomerId', $customerId);
         $stmt->execute();
@@ -34,43 +26,42 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $id = $result['id_stripe_customer'];
 
         try {
-            // Créer l'abonnement
             $subscription = \Stripe\Subscription::create([
                 'customer' => $customerId,
                 'items' => [['price' => $priceId]],
             ]);
 
-            // Récupérer le nom du plan à partir de l'objet d'abonnement
+            if ($subscription->status !== 'active') {
+                // Gérer le cas où l'abonnement n'est pas actif
+                $_SESSION['error_message'] = "Échec de l'activation de l'abonnement. Statut actuel de l'abonnement : " . $subscription->status;
+                header('Location: ../view/professional/error.php'); 
+                exit;
+            }
+
             $plan = \Stripe\Plan::retrieve($subscription->items->data[0]->plan->id);
             $product = \Stripe\Product::retrieve($plan->product);
             $planName = $product->name;
 
-            // Insertion de l'abonnement dans la base de données, incluant le nom du plan
             $stmt = $pdo->prepare("INSERT INTO subscription (stripe_subscription_id, id_pro, id_stripe_customer, status, plan_name, created_at) VALUES (:stripe_subscription_id, :id_pro, :id_stripe_customer, :status, :plan_name, NOW())");
             $stmt->bindParam(':stripe_subscription_id', $subscription->id);
             $stmt->bindParam(':id_pro', $userId);
             $stmt->bindParam(':id_stripe_customer', $id);
             $stmt->bindParam(':status', $subscription->status);
-            $stmt->bindParam(':plan_name', $planName); // Ajout du nom du plan
+            $stmt->bindParam(':plan_name', $planName);
             $success = $stmt->execute();
 
             if ($success) {
-                echo "Abonnement enregistré avec succès dans la base de données.";
+                header('Location: ../view/professional/subscription.php');
+                exit();
             } else {
                 echo "Erreur lors de l'enregistrement de l'abonnement dans la base de données.";
             }
 
-            header('Location: ../view/professional/subscription.php');
-
-            exit();
-
         } catch (\Stripe\Exception\ApiErrorException $e) {
-            // Gestion des erreurs
             echo "Erreur lors de la création de l'abonnement : " . $e->getMessage();
         }
-    }else{
-        echo " priceId est vide ! ";
+    } else {
+        echo "Le prix ID est vide !";
     }
 }
 ?>
-

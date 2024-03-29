@@ -79,7 +79,7 @@ $sub= isset($_GET['add-subscription']) && $_GET['add-subscription'] == 'true';
                         <div class="container col-md-8 mt-5 mb-5" style="border: 2px solid #D8D8D8 !important; padding: 50px!important;">
                         <?php include_once "../../controller/get_subscription.php";?> <br>
                         <div class="d-flex flex-row justify-content-center">
-                        <a href="" class="btn" style="color:red;font-weight:700;font-size:16px;max-width:99%;padding: 0px;font-size:14px; margin-top:20px">Annuler votre abonnement</a>
+                        <a href="./controller/delete_subscription.php?subscription_id=" class="btn" style="color:red;font-weight:700;font-size:16px;max-width:99%;padding: 0px;font-size:14px; margin-top:20px">Annuler votre abonnement</a>
                         </div>
                     <?php endif; ?>
                 <?php endif; ?>
