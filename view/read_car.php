@@ -118,11 +118,6 @@ include_once "include/base.php";
     </div>
  </section>
 
-
-
-
-
-
 <section class="readCar_section w-75 mx-auto">
     <h2>Adresse de départ et de retour</h2>
     <div class="bloc_map border">

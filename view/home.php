@@ -459,12 +459,12 @@ include_once "message.php";
 </div>
 <?php 
 if(isset($_SESSION['name'])) {
-    include_once "messagerie/users.php"; // Inclure le fichier si un compte est connecté
+    include "messagerie/users.php"; // Inclure le fichier si un compte est connecté
 }
 ?>
 
 
 
 
-<?php include_once "footer.php"; ?>
+<?php include "footer.php"; ?>
 

@@ -31,7 +31,7 @@ if (isset ($_GET['id'])) {
         
         <form class="form" action="controller/admin/update_ctrl_advertisement.php" method="post" enctype="multipart/form-data">
             <section class="addCar_section my-4 mx-auto">
-                <div class="border ">
+                <div class="border-1 ">
                     <h2 class="my-3 ">Information sur le Véhicule</h2>
                     <div>
                         <h4>État <span class="asterisk">*</span></h4>
@@ -111,7 +111,7 @@ if (isset ($_GET['id'])) {
             </div>
         </section>
         <section class="addCar_section my-4 mx-auto fs-5">
-            <div class="border">
+            <div class="border-1">
                 <h2 class="my-3 ">Localitation du Véhicule et Option</h2>
                 <div>
                     <h4 for="">Adresse de la voiture/agence </span></h4>
@@ -172,7 +172,7 @@ if (isset ($_GET['id'])) {
         </div>
     </section>
     <section class="addCar_section my-4 mx-auto fs-5">
-        <div class="border">
+        <div class="border-1">
             <h2 class="my-3">Complément d'information</h2>
             <!-- <div>
                 <h4>Règlement du véhicule</h4>

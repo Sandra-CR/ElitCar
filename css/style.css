@@ -2342,3 +2342,8 @@ color: #333;
 .clickici{
   cursor: pointer;
 }
+.border-1 {
+  border: 1px #e6e6e6 solid;
+  border-radius: 5px;
+  padding: 20px;
+}
