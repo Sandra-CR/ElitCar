@@ -73,13 +73,15 @@ include_once "../../controller/admin/tools.php"; // Inclusion du fichier contena
 
 </div>
 <?php
+
 // Vérification si les champs de formulaire ne sont pas vides
 if (!empty($_POST['mail']) && !empty($_POST['psw'])){
+    $status = "Online";
     $mail = $_POST['mail']; // Récupération de l'adresse e-mail du formulaire
     $sql = "SELECT * FROM particular WHERE mail='$mail'"; // Requête SQL pour sélectionner l'utilisateur particulier avec l'adresse e-mail fournie
     $stmt = $pdo->query($sql); // Exécution de la requête SQL
     $user = $stmt->fetch(PDO::FETCH_ASSOC); // Récupération des résultats de la requête sous forme de tableau associatif
-
+    
     if ($user) {
         // le compte existe
         $_SESSION["blocked"] = $user['blocked']; // Attribution de l'état de l'utilisateur à la session
@@ -99,6 +101,7 @@ if (!empty($_POST['mail']) && !empty($_POST['psw'])){
             }
         }else{
             sendMessage("le compte est bloqué", "failed", "login_particular"); // Redirection avec un message d'erreur si le compten'existe pas
+
         }
     } else {
         // le compte n'existe pas
