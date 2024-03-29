@@ -82,22 +82,28 @@ if (!empty($_POST['mail']) && !empty($_POST['psw'])){
 
     if ($user) {
         // le compte existe
-        if (password_verify($_POST['psw'], $user['psw'])) {
-            session_start();
-            // le mot de passe est correct
-            $_SESSION["id"] = $user['id_user']; 
-            $_SESSION["email"] = $user['mail']; 
-            $_SESSION["name"] = $user['first_name'] . " " . $user['last_name']; // Attribution du nom complet de l'utilisateur à la session
-            $_SESSION["role"] = $user['role']; // Attribution du rôle de l'utilisateur à la session
-            $_SESSION["token"] = bin2hex(random_bytes(16)); // Génération d'un jeton de sécurité et attribution à la session
-            sendMessage("Bon retour Parmi nous", "success", "../home.php"); // Redirection vers la page d'accueil
-        } else {
-            sendMessage("Mots de passe incorrect", "failed", "login_particular"); // Redirection avec un message d'erreur si le mot de passe est incorrect
+        $_SESSION["blocked"] = $user['blocked']; // Attribution de l'état de l'utilisateur à la session
+        if($_SESSION["blocked"]== 0 ){
+            if (password_verify($_POST['psw'], $user['psw'])) {
+                session_start();
+                // le mot de passe est correct
+                $_SESSION["id"] = $user['id_user']; 
+                $_SESSION["email"] = $user['mail']; 
+                $_SESSION["name"] = $user['first_name'] . " " . $user['last_name']; // Attribution du nom complet de l'utilisateur à la session
+                $_SESSION["role"] = $user['role']; // Attribution du rôle de l'utilisateur à la session
+                
+                $_SESSION["token"] = bin2hex(random_bytes(16)); // Génération d'un jeton de sécurité et attribution à la session
+                sendMessage("Bon retour Parmi nous", "success", "../home.php"); // Redirection vers la page d'accueil
+            } else {
+                sendMessage("Mots de passe incorrect", "failed", "login_particular"); // Redirection avec un message d'erreur si le mot de passe est incorrect
+            }
+        }else{
+            sendMessage("le compte est bloqué", "failed", "login_particular"); // Redirection avec un message d'erreur si le compten'existe pas
         }
     } else {
         // le compte n'existe pas
-        sendMessage("le compte n'existe pas", "failed", "login_particular"); // Redirection avec un message d'erreur si le compte n'existe pas
-    }
+        sendMessage("le compte n'existe pas", "failed", "login_particular"); // Redirection avec un message d'erreur si le compten'existe pas
+        }
 } else {
     // Si les champs de formulaire sont vides, vous pouvez activer la ligne suivante pour afficher un message d'erreur.
     //sendMessage("Veuillez remplir correctement le formulaire", "failed", "login_particular.php");

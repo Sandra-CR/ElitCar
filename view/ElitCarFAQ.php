@@ -3,7 +3,7 @@
 include_once "include/base.php";
 ?>
 
-<div class="container home-container my-5 home-my-5">
+<div class="containerFAQ container home-container my-5 home-my-5">
   <h2 class="text-FAQ home-text-FAQ mb-4 home-mb-4">Foire aux questions</h2>
   <div class="row home-row">
     <!-- Première colonne d'accordéons -->
