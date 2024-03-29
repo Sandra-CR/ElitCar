@@ -22,10 +22,12 @@
 
 <nav class="base_navbar home-navbar navbar-expand-lg bg-body-light">
   <div class="home-container-fluid ">
-    <a class="navbar-brand" target="_self" href="view/home"> Elit<span class="sub-navbar-brand">car</span> </a> 
+    <div class="menuacote">
+      <a class="navbar-brand" target="_self" href="view/home"> Elit<span class="sub-navbar-brand">car</span> </a> 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    </div>
     <div class="collapse navbar-collapse home-navbar-collapse" id="navbarNav">
       <ul class="navbar-nav home-navbar-nav">
         <?php if( !isset($_SESSION['name'])) {?>

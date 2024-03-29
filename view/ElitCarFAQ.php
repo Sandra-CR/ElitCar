@@ -246,7 +246,11 @@ include_once "include/base.php";
   </div>
 </div>
 
-
+<?php 
+if(isset($_SESSION['name'])) {
+    include_once "messagerie/users.php"; // Inclure le fichier si un compte est connecté
+}
+?>
 <?php 
 include_once "footer.php";
  ?>

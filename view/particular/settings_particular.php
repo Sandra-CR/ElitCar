@@ -66,3 +66,8 @@
     </div>
 </body>
 <?php }?>
+<?php 
+if(isset($_SESSION['name'])) {
+    include_once "../messagerie/users.php"; // Inclure le fichier si un compte est connecté
+}
+?>

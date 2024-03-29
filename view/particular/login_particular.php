@@ -73,17 +73,23 @@ include_once "../../controller/admin/tools.php"; // Inclusion du fichier contena
 
 </div>
 <?php
+
 // Vérification si les champs de formulaire ne sont pas vides
 if (!empty($_POST['mail']) && !empty($_POST['psw'])){
+    $status = "Online";
     $mail = $_POST['mail']; // Récupération de l'adresse e-mail du formulaire
     $sql = "SELECT * FROM particular WHERE mail='$mail'"; // Requête SQL pour sélectionner l'utilisateur particulier avec l'adresse e-mail fournie
     $stmt = $pdo->query($sql); // Exécution de la requête SQL
     $user = $stmt->fetch(PDO::FETCH_ASSOC); // Récupération des résultats de la requête sous forme de tableau associatif
-
+    
     if ($user) {
         // le compte existe
         if (password_verify($_POST['psw'], $user['psw'])) {
             session_start();
+            $id = $user['id_user'];
+            $sql2 = "UPDATE particular SET status=? WHERE id_user=?";
+            $stmt2 = $pdo->prepare($sql2);
+            $stmt2->execute([ $status, $id]);
             // le mot de passe est correct
             $_SESSION["id"] = $user['id_user']; 
             $_SESSION["name"] = $user['first_name'] . " " . $user['last_name']; // Attribution du nom complet de l'utilisateur à la session
