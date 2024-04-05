@@ -4,6 +4,10 @@
  include_once "../../controller/admin/role.php";
  include_once "../include/base.php"; 
  include_once "../include/particular/dashboard_particular.php";
+ require_once "../../model/pdo.php"; 
+ require_once "../../model/UserModel.php";
+ require_once '../../controller/email/UpdateUserEmailController.php';
+
  ?>
 
     <div class="container-fluid">
@@ -17,11 +21,11 @@
                <!-- Modifier le mail --> 
                 <div class="mb-5">
                     <h5 class="mb-4" style="font-weight:700 !important">Modifier mon mail</h5>
-                    <?php include_once "../../controller/update/email.php";?>
+                    <?php include_once "../../controller/email/UpdateEmail.php";?>
                     <div class="mb-3">
                         <!-- email actuel -->
                         <label for="new-email" class="form-label" style="font-weight:700;">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="email" value="<?php echo htmlspecialchars($email_actuel); ?>" disabled>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="email" value="<?php echo htmlspecialchars( $_SESSION['email']); ?>" disabled>
                     </div>
                     <form method="post" action="">
                         <div class="mb-3">
@@ -32,8 +36,9 @@
                             <label for="password" class="form-label" style="font-weight:700;">Votre mot de passe actuel</label>
                             <input type="password" class="form-control" id="password" name="password" placeholder="Votre mot de passe actuel">
                         </div>
-                        <button type="submit" class="btn btn-warning" style="background-color:#FFAA00;color:white;font-weight:700;">Changer mon email</button>
+                        <button type="submit" name="submit" class="btn btn-warning" style="background-color:#FFAA00;color:white;font-weight:700;">Changer mon email</button>
                     </form>
+
                 </div>
                 <!-- Modifier le mot de passe --> 
                 <div class="mb-4">

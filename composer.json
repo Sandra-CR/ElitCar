@@ -1,5 +1,12 @@
 {
     "require": {
         "stripe/stripe-php": "^13.13"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.0"
+    },
+    "scripts": {
+        "test": "phpunit --colors=always"
     }
+    
 }

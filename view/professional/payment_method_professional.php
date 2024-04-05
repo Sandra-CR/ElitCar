@@ -29,14 +29,20 @@ $form= isset($_GET['add-method']) && $_GET['add-method'] == 'true';
                     <div class="col-md-6">
                         <div class="text-center" style="padding: 40px;">
                             <div class="card-body">
-                              <form id="payment-form" action="controller/add_payment_method.php" method="post" style="max-width: 500px; margin: auto; border: 1px solid #ccc; border-radius: 5px; padding: 20px; box-shadow: 0 2px 5px rgba(0,0,0,.1);">
+                              <form id="payment-form" action="controller/add_payment_method.php" method="post" 
+                              style="max-width: 500px; margin: auto; border: 1px solid #ccc; border-radius: 5px; 
+                              padding: 20px; box-shadow: 0 2px 5px rgba(0,0,0,.1);">
                                   <div id="card-errors" role="alert" style="color:red;"></div>
 
-                                  <label for="cardholder-name" style="display: block; margin-top: 20px; margin-bottom: 10px;">Nom du titulaire de la carte</label>
-                                  <input id="cardholder-name" type="text" class="form-control mb-3" style="border: 1px solid #ccc; border-radius: 4px; padding: 7px; width: 100%; box-sizing: border-box; margin-bottom: 16px;" onfocus="this.style.boxShadow='none';" onblur="this.style.boxShadow='';">
+                                  <label for="cardholder-name" 
+                                  style="display: block; margin-top: 20px; margin-bottom: 10px;">Nom du titulaire de la carte</label>
+                                  <input id="cardholder-name" type="text" class="form-control mb-3" 
+                                  style="border: 1px solid #ccc; border-radius: 4px; padding: 7px; width: 100%; box-sizing: border-box; 
+                                  margin-bottom: 16px;" onfocus="this.style.boxShadow='none';" onblur="this.style.boxShadow='';">
 
                                   <label for="card-element" style="display: block; margin-top: 20px;">Détails de la carte</label>
-                                  <div id="card-element" class="form-control mb-3" style="border: 1px solid #ccc; border-radius: 4px; padding: 10px; margin-top: 10px;">
+                                  <div id="card-element" class="form-control mb-3" 
+                                  style="border: 1px solid #ccc; border-radius: 4px; padding: 10px; margin-top: 10px;">
                                       <!-- Un div vide où Stripe va insérer l'élément de carte. -->
                                   </div>
 

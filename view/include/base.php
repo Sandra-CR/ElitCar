@@ -59,9 +59,10 @@
             <a class="nav-link home-nav-link" target="_self" href="view/read_car"> FAQ ? </a>
           </li>
         <?php } ?>
+        <?php    
+        ?>
       </ul>
     </div>
   </div>
 </nav>
 
-</section>
