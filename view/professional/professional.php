@@ -1,5 +1,6 @@
 <?php 
 include_once "../../controller/admin/role.php";
+include_once "../../model/pdo.php";
 include_once "../include/base.php";
 ?>
 
@@ -170,4 +171,9 @@ include_once "../include/base.php";
 </div>
     </div>
 </main>
+<?php 
+if(isset($_SESSION['name'])) {
+    include_once "../messagerie/users.php"; // Inclure le fichier si un compte est connecté
+}
+?>
 <?php include_once "../footer.php"; ?>

@@ -25,13 +25,14 @@
             <div class="divider-switch1 "></div>
             <div class="divider-switch2 off"></div>
         </div>
+        <?php include_once "../message.php" ?> <!-- Inclusion du fichier contenant le message -->
         <div class="container-title-2">
             <h4 >Inscription par mail</h4>
         </div>
 
         <h3 class="text-center" id="message"></h3>
 
-        <form id="form" class="mx-auto col-6">
+        <form id="form" action="controller/admin/create_ctrl_particular.php" method="post" class="mx-auto col-6">
 
             <div class="form-floating my-3">
                 <input type="text" name="first_name" class="form-control" id="floatingFname" placeholder="Prénom">
@@ -76,34 +77,10 @@
         </form>
         <!-- Fin du formulaire HTML -->
     </div>
-    <div class="container-img-login d-none d-xl-block col-7"></div>
+    <div class="container-img-login d-none d-xl-block col-7 h-100"></div>
 </div>
 
 </body>
 </html>
 
-<script>
-    // Récupération du formulaire et de l'élément d'affichage du message
-    const form = document.getElementById('form');
-    const msg = document.getElementById('message');
 
-    // Ajout d'un écouteur d'événement pour soumettre le formulaire
-    form.addEventListener("submit", function(e) {
-        e.preventDefault(); // Empêcher le comportement par défaut du formulaire
-
-        const formData = new FormData(e.target); // Récupération des données du formulaire
-
-        const data = {
-            method: "POST",
-            body: formData,
-        };
-
-        // Envoi des données du formulaire via une requête fetch
-        fetch("controller/admin/ajax_create_ctrl_particular.php", data)
-            .then(response => response.json()) // Conversion de la réponse en format JSON
-            .then(data => {
-                console.log(data); // Affichage des données reçues dans la console
-                msg.innerHTML = data.message; // Affichage du message de la réponse
-            });
-    });
-</script>

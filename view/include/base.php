@@ -22,10 +22,12 @@
 
 <nav class="base_navbar home-navbar navbar-expand-lg bg-body-light">
   <div class="home-container-fluid ">
-    <a class="navbar-brand" target="_self" href="view/home"> Elit<span class="sub-navbar-brand">car</span> </a> 
+    <div class="menuacote">
+      <a class="navbar-brand" target="_self" href="view/home"> Elit<span class="sub-navbar-brand">car</span> </a> 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    </div>
     <div class="collapse navbar-collapse home-navbar-collapse" id="navbarNav">
       <ul class="navbar-nav home-navbar-nav">
         <?php if( !isset($_SESSION['name'])) {?>
@@ -50,13 +52,17 @@
           <li class="nav-item">
             <a class="nav-link home-nav-link" target="_self" href="view/particular/settings_particular.php"><?= $_SESSION['name'] ?></a>
           </li>
-        <?php }else if (isset($_SESSION['role']) && $_SESSION['role'] >= Role::OWNER->value){ ?>
+        <?php }else if (isset($_SESSION['role']) && $_SESSION['role'] == Role::ADMIN->value){ ?>
+          <li class="nav-item">
+            <a class="nav-link home-nav-link" target="_self" href="view/admin/settings_admin.php"><?= $_SESSION['name'] ?></a>
+          </li>
+        <?php }else if(isset($_SESSION['role']) && $_SESSION['role'] >= Role::OWNER->value){ ?>
           <li class="nav-item">
             <a class="nav-link home-nav-link" target="_self" href="view/professional/settings_professional.php"><?= $_SESSION['name'] ?></a>
           </li>
-        <?php }else { ?>
+        <?php }else {?>
           <li class="nav-item">
-            <a class="nav-link home-nav-link" target="_self" href="view/read_car"> FAQ ? </a>
+            <a class="nav-link home-nav-link" target="_self" href="view/ElitCarFAQ"> FAQ ? </a>
           </li>
         <?php } ?>
         <?php    

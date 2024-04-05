@@ -21,10 +21,12 @@ document.addEventListener("DOMContentLoaded", function() {
     showSlide(currentIndex);
   }
 
-  prevBtn.addEventListener('click', prevSlide);
-  nextBtn.addEventListener('click', nextSlide);
+  if(prevBtn){
+    prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', nextSlide);
+    showSlide(currentIndex);
+  }
 
-  showSlide(currentIndex);
 });
 
 // Ici on fait la fonction qui me permet d'afficher le mot de passe 
@@ -38,3 +40,43 @@ function togglePasswordVisibility() {
             passwordInput.type = "password";
         }
 }
+// 
+function redirectToGoogle() {
+  window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=940497895444-tb4oe307ftrctvr8vl4mrnkvgtegpa35.apps.googleusercontent.com&redirect_uri=http://localhost/ElitCar/view/home&response_type=code&scope=https://www.googleapis.com/auth/userinfo.profile+https://www.googleapis.com/auth/userinfo.email';
+}
+
+// bouton delete
+
+const deleteBtn = document.getElementById('delete');
+const bombs = document.querySelectorAll('.bomb');
+
+for (link of bombs) {
+    link.addEventListener('click', function(){
+        let href = this.dataset.link;
+        deleteBtn.href = href;
+    })
+  }
+
+
+// bouton blocked/deblocked
+
+const blockedBtn = document.getElementById('blocked');
+const bombs2 = document.querySelectorAll('.bomb2');
+
+for (link of bombs2) {
+    link.addEventListener('click', function(){
+        let href = this.dataset.link;
+        blockedBtn.href = href;
+    })
+  }
+
+
+const deblockedBtn = document.getElementById('deblocked');
+
+
+for (link of bombs2) {
+    link.addEventListener('click', function(){
+        let href = this.dataset.link;
+        deblockedBtn.href = href;
+    })
+  }

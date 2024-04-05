@@ -23,7 +23,7 @@
         $current_file = basename($_SERVER['SCRIPT_NAME']);
         echo ($current_file == 'add_advertisement.php') ? 'active-link' : ''; 
       ?>
-    " aria-current="page" href="view/professional/add_advertisement.php">AJOUTER UNE ANNONCE</a>
+    " aria-current="page" href="view/professional/add_car.php">AJOUTER UNE ANNONCE</a>
     </li>
   </ul>
 </div> 

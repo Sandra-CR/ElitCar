@@ -263,9 +263,6 @@ include_once "include/base.php";
                 <option value="967">Yemen +967</option>
                 <option value="260">Zambia +260</option>
                 <option value="263">Zimbabwe +263</option>
-
-
-
             </select>
 
             <p class="num-p">Seules les personnes auxquelles vous vous adressez auront accès à votre numéro. Un code de vérification par SMS vous sera envoyé.</p>

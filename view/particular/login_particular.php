@@ -34,18 +34,18 @@ include_once "../../controller/admin/tools.php"; // Inclusion du fichier contena
             <div class="divider-switch3 "></div>
             <div class="divider-switch4 "></div>
         </div>
+        <?php include_once "../message.php" ?> <!-- Inclusion du fichier contenant le message -->
         <div class="container-title-2">
             <h4 >Nous sommes contents de vous revoir</h4>
         </div>
         <div class="container-btn">
-            <button class="btn-log btn-secondary my-1">Google</button>
-            <button class="btn-log btn-secondary my-1">Facebook</button>
-            <button class="btn-log btn-secondary my-1">Apple</button>
+            <button class="btn-log-google border border-2 btn-secondary my-1" onclick="redirectToGoogle()"><img class="mx-1" src="img/google.jpg" width="23px" height="23px" alt=""> Continuer avec Google</button>
+            <!-- <button class="btn-log btn-secondary my-1">Facebook</button>
+            <button class="btn-log btn-secondary my-1">Apple</button> -->
         </div>
         <div class="container-choose mt-2">
             <p>ou</p>
         </div>
-        <?php include_once "../message.php" ?> <!-- Inclusion du fichier contenant le message -->
 
         <form id="form" class="mx-auto col-8 mt-2" action="" method="post">
 
@@ -62,42 +62,51 @@ include_once "../../controller/admin/tools.php"; // Inclusion du fichier contena
                 <label for="show_password"><p class="text-label">Afficher le mot de passe</p></label>
             </div>
             <div class="container-title-3 my-2">
-                <a href="view/login" target="_self" class="mt-3 fw-bold text-decoration-none text-dark">Mot de passe oublié?</a>
+                <a href="view/forgot" target="_self" class="mt-3 fw-bold text-decoration-none text-dark">Mot de passe oublié?</a>
             </div>
             <div class="container-btn-mail mx-auto">
                 <input type="submit" class="form-control mt-3 btn btn-warning text-light" value="Connexion">
             </div>
         </form>
     </div>
-    <div class="container-img-login d-none d-xl-block col-7"></div>
+    <div class="container-img-login d-none d-xl-block col-7 h-100"></div>
 
 </div>
 <?php
+
 // Vérification si les champs de formulaire ne sont pas vides
 if (!empty($_POST['mail']) && !empty($_POST['psw'])){
+    $status = "Online";
     $mail = $_POST['mail']; // Récupération de l'adresse e-mail du formulaire
     $sql = "SELECT * FROM particular WHERE mail='$mail'"; // Requête SQL pour sélectionner l'utilisateur particulier avec l'adresse e-mail fournie
     $stmt = $pdo->query($sql); // Exécution de la requête SQL
     $user = $stmt->fetch(PDO::FETCH_ASSOC); // Récupération des résultats de la requête sous forme de tableau associatif
-
+    
     if ($user) {
         // le compte existe
-        if (password_verify($_POST['psw'], $user['psw'])) {
-            session_start();
-            // le mot de passe est correct
-            $_SESSION["id"] = $user['id_user']; 
-            $_SESSION["email"] = $user['mail']; 
-            $_SESSION["name"] = $user['first_name'] . " " . $user['last_name']; // Attribution du nom complet de l'utilisateur à la session
-            $_SESSION["role"] = $user['role']; // Attribution du rôle de l'utilisateur à la session
-            $_SESSION["token"] = bin2hex(random_bytes(16)); // Génération d'un jeton de sécurité et attribution à la session
-            header('Location: ../home'); // Redirection vers la page d'accueil
-        } else {
-            sendMessage("Mots de passe incorrect", "failed", "login_particular"); // Redirection avec un message d'erreur si le mot de passe est incorrect
+        $_SESSION["blocked"] = $user['blocked']; // Attribution de l'état de l'utilisateur à la session
+        if($_SESSION["blocked"]== 0 ){
+            if (password_verify($_POST['psw'], $user['psw'])) {
+                session_start();
+                // le mot de passe est correct
+                $_SESSION["id"] = $user['id_user']; 
+                $_SESSION["email"] = $user['mail']; 
+                $_SESSION["name"] = $user['first_name'] . " " . $user['last_name']; // Attribution du nom complet de l'utilisateur à la session
+                $_SESSION["role"] = $user['role']; // Attribution du rôle de l'utilisateur à la session
+                
+                $_SESSION["token"] = bin2hex(random_bytes(16)); // Génération d'un jeton de sécurité et attribution à la session
+                sendMessage("Bon retour Parmi nous", "success", "../home.php"); // Redirection vers la page d'accueil
+            } else {
+                sendMessage("Mots de passe incorrect", "failed", "login_particular"); // Redirection avec un message d'erreur si le mot de passe est incorrect
+            }
+        }else{
+            sendMessage("le compte est bloqué", "failed", "login_particular"); // Redirection avec un message d'erreur si le compten'existe pas
+
         }
     } else {
         // le compte n'existe pas
-        sendMessage("le compte n'existe pas", "failed", "login_particular"); // Redirection avec un message d'erreur si le compte n'existe pas
-    }
+        sendMessage("le compte n'existe pas", "failed", "login_particular"); // Redirection avec un message d'erreur si le compten'existe pas
+        }
 } else {
     // Si les champs de formulaire sont vides, vous pouvez activer la ligne suivante pour afficher un message d'erreur.
     //sendMessage("Veuillez remplir correctement le formulaire", "failed", "login_particular.php");

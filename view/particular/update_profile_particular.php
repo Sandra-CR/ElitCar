@@ -2,16 +2,19 @@
 <!-- dashboard -->
 
 <?php 
- include_once "../../controller/admin/role.php";
- include_once "../include/base.php";
- include_once "../include/particular/dashboard_particular.php";?>
-
-<?php 
-    include_once "../../model/pdo.php";
+include_once "../../controller/admin/role.php";
+include_once "../include/base.php";
+if(isset($_SESSION['role']) && $_SESSION['role'] <= Role::CUSTOMER->value) {
+include_once "../include/particular/dashboard_particular.php";
+include_once "../../model/pdo.php";
+if (isset ($_SESSION['id'])) {
     $id = $_SESSION['id'];
     $sql = "SELECT * FROM particular WHERE id_user='$id'"; 
     $stmt = $pdo->query($sql); // Exécution de la requête SQL
     $user = $stmt->fetch(PDO::FETCH_ASSOC); // Récupération des résultats de la requête sous forme de tableau associatif
+    $d = new DateTime($user['birthdate']);
+}
+
 ?>
 
 
@@ -37,9 +40,6 @@
                 <div class="col-md-8">
                     <h5 class="mb-4 mt-5" style="font-weight:700 !important">Informations personnelles</h5>
 
-
-
-
                     <h3 id="message"></h3>
                     <form id="form-update-particular">
                         
@@ -55,7 +55,7 @@
                         <div class="row g-3 mb-3">
                             <div class="col">
                                 <label for="dateNaissance" class="form-label" style="font-weight:700;">Date de naissance</label>
-                                <input type="date" class="form-control" id="dateNaissance" name="birthdate" value="<?= htmlentities($user['birthdate']) ?>">
+                                <input type="date" class="form-control" id="dateNaissance" name="birthdate" value="<?=  $d->format('Y-m-d') ?>">
                             </div>
                         </div>
                         <div class="row g-3 mb-3">
@@ -67,15 +67,13 @@
                         <input type="submit" class="btn btn-warning mt-4" value="Sauvegarder les modifications" style="background-color:#FFAA00;color:white;font-weight:700;font-size:16px;height:50px;max-width:99%">
                     </form>
 
-
-
-
                 </div>
                 
             </div>
         </div>
     </div>
 </body>
+<?php }?>
 <script>
     // Récupération du formulaire et de l'élément d'affichage du message
     const formUpdate = document.getElementById('form-update-particular');
@@ -93,7 +91,7 @@
         };
 
         // Envoi des données du formulaire via une requête fetch
-        fetch("../controller/admin/ajax_update_ctrl_particular.php", data)
+        fetch("controller/admin/ajax_update_ctrl_particular.php", data)
             .then(response => response.json()) // Conversion de la réponse en format JSON
             .then(data => {
                 console.log(data); // Affichage des données reçues dans la console
@@ -101,3 +99,8 @@
             });
     });
 </script>
+<?php 
+if(isset($_SESSION['name'])) {
+    include_once "../messagerie/users.php"; // Inclure le fichier si un compte est connecté
+}
+?>
